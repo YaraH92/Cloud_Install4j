@@ -2,7 +2,7 @@
 install_branch_name: "12.12"
 #clear_temp_folder: True
 #state: "absent"
-clean_installation: True
-hardware_verification: False
+clean_installation: BOOL1
+hardware_verification: BOOL2
 
 cloud: {}

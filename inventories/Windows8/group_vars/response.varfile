@@ -1,6 +1,6 @@
-dbUrl=jdbc\:postgresql\://192.168.2.100\:5432/mydb
+dbUrl=jdbc\:postgresql\://0.0.0.0\:5432/CLOUDSERVER
 dbUser=postgres
-dbPassword=123456
+dbPassword=PASSWORD
 serverPort$Long=80
 proxy.available$Boolean=true
 proxyPort$Long=8052
