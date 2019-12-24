@@ -1,4 +1,4 @@
-- hosts: cloud-server
+- hosts: all
 
   roles:
     - role: link_finder
