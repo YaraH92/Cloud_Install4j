@@ -1,0 +1,525 @@
+ansible-playbook 2.8.1
+  config file = /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg
+  configured module search path = [u'/Users/yarahaddad/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /Library/Python/2.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 2.7.16 (default, Oct 17 2019, 17:14:30) [GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc-s
+Using /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg as config file
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to 
+allow bad characters in group names by default, this will change, but still be 
+user configurable on deprecation. This feature will be removed in version 2.10.
+ Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+ [WARNING]: Invalid characters were found in group names but not replaced, use
+-vvvv to see details
+
+PLAYBOOK: proxy.yml ************************************************************
+1 plays in proxy.yml
+
+PLAY [region-proxies] **********************************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/proxy.yml:3
+ok: [192.168.3.189] => {"ansible_facts": {"ansible_all_ipv4_addresses": ["192.168.3.189"], "ansible_all_ipv6_addresses": ["fe80::9b75:981b:e1f4:3304"], "ansible_apparmor": {"status": "disabled"}, "ansible_architecture": "x86_64", "ansible_bios_date": "12/12/2018", "ansible_bios_version": "6.00", "ansible_cmdline": {"BOOT_IMAGE": "/vmlinuz-3.10.0-514.26.2.el7.x86_64", "LANG": "en_US.UTF-8", "crashkernel": "auto", "quiet": true, "rd.lvm.lv": "centos_webdev/root", "rhgb": true, "ro": true, "root": "/dev/mapper/centos_webdev-root"}, "ansible_date_time": {"date": "2019-11-21", "day": "21", "epoch": "1574342462", "hour": "15", "iso8601": "2019-11-21T13:21:02Z", "iso8601_basic": "20191121T152102973378", "iso8601_basic_short": "20191121T152102", "iso8601_micro": "2019-11-21T13:21:02.973468Z", "minute": "21", "month": "11", "second": "02", "time": "15:21:02", "tz": "IST", "tz_offset": "+0200", "weekday": "Thursday", "weekday_number": "4", "weeknumber": "46", "year": "2019"}, "ansible_default_ipv4": {"address": "192.168.3.189", "alias": "ens160", "broadcast": "192.168.7.255", "gateway": "192.168.1.1", "interface": "ens160", "macaddress": "00:0c:29:ec:67:f1", "mtu": 1500, "netmask": "255.255.248.0", "network": "192.168.0.0", "type": "ether"}, "ansible_default_ipv6": {}, "ansible_device_links": {"ids": {"dm-0": ["dm-name-centos_webdev-swap", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGtXehx1NymDv6dUIGDWc6IPPuYhfJkTHa"], "dm-1": ["dm-name-centos_webdev-root", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGVkZCJ64FRxctrYQJupp57fITUAYOeByF"], "sda2": ["lvm-pv-uuid-HcPEAu-liE3-IwhY-AtZ0-JlSr-SLV9-4jI6ca"], "sr0": ["ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001"]}, "labels": {}, "masters": {"sda2": ["dm-0", "dm-1"]}, "uuids": {"dm-0": ["c1c840bc-1acc-459c-9af6-4dac282b3991"], "dm-1": ["cd25dbf9-8a58-4062-8f86-f91223da7120"], "sda1": ["db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"]}}, "ansible_devices": {"dm-0": {"holders": [], "host": "", "links": {"ids": ["dm-name-centos_webdev-swap", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGtXehx1NymDv6dUIGDWc6IPPuYhfJkTHa"], "labels": [], "masters": [], "uuids": ["c1c840bc-1acc-459c-9af6-4dac282b3991"]}, "model": null, "partitions": {}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "", "sectors": "6291456", "sectorsize": "512", "size": "3.00 GB", "support_discard": "0", "vendor": null, "virtual": 1}, "dm-1": {"holders": [], "host": "", "links": {"ids": ["dm-name-centos_webdev-root", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGVkZCJ64FRxctrYQJupp57fITUAYOeByF"], "labels": [], "masters": [], "uuids": ["cd25dbf9-8a58-4062-8f86-f91223da7120"]}, "model": null, "partitions": {}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "", "sectors": "55508992", "sectorsize": "512", "size": "26.47 GB", "support_discard": "0", "vendor": null, "virtual": 1}, "fd0": {"holders": [], "host": "", "links": {"ids": [], "labels": [], "masters": [], "uuids": []}, "model": null, "partitions": {}, "removable": "1", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "deadline", "sectors": "8", "sectorsize": "512", "size": "4.00 KB", "support_discard": "0", "vendor": null, "virtual": 1}, "sda": {"holders": [], "host": "SCSI storage controller: LSI Logic / Symbios Logic 53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI (rev 01)", "links": {"ids": [], "labels": [], "masters": [], "uuids": []}, "model": "Virtual disk", "partitions": {"sda1": {"holders": [], "links": {"ids": [], "labels": [], "masters": [], "uuids": ["db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"]}, "sectors": "1024000", "sectorsize": 512, "size": "500.00 MB", "start": "2048", "uuid": "db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"}, "sda2": {"holders": ["centos_webdev-swap", "centos_webdev-root"], "links": {"ids": ["lvm-pv-uuid-HcPEAu-liE3-IwhY-AtZ0-JlSr-SLV9-4jI6ca"], "labels": [], "masters": ["dm-0", "dm-1"], "uuids": []}, "sectors": "61888512", "sectorsize": 512, "size": "29.51 GB", "start": "1026048", "uuid": null}}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "deadline", "sectors": "62914560", "sectorsize": "512", "size": "30.00 GB", "support_discard": "0", "vendor": "VMware", "virtual": 1}, "sr0": {"holders": [], "host": "IDE interface: Intel Corporation 82371AB/EB/MB PIIX4 IDE (rev 01)", "links": {"ids": ["ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001"], "labels": [], "masters": [], "uuids": []}, "model": "VMware IDE CDR10", "partitions": {}, "removable": "1", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "cfq", "sectors": "2097151", "sectorsize": "512", "size": "1024.00 MB", "support_discard": "0", "vendor": "NECVMWar", "virtual": 1}}, "ansible_distribution": "CentOS", "ansible_distribution_file_parsed": true, "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_major_version": "7", "ansible_distribution_release": "Core", "ansible_distribution_version": "7", "ansible_dns": {"nameservers": ["192.168.4.95", "192.168.0.112"], "search": ["experitest.local"]}, "ansible_domain": "experitest.local", "ansible_effective_group_id": 1002, "ansible_effective_user_id": 1002, "ansible_ens160": {"active": true, "device": "ens160", "features": {"busy_poll": "off [fixed]", "fcoe_mtu": "off [fixed]", "generic_receive_offload": "on", "generic_segmentation_offload": "on", "highdma": "on", "hw_tc_offload": "off [fixed]", "l2_fwd_offload": "off [fixed]", "large_receive_offload": "on", "loopback": "off [fixed]", "netns_local": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "on", "rx_all": "off [fixed]", "rx_checksumming": "on", "rx_fcs": "off [fixed]", "rx_vlan_filter": "on [fixed]", "rx_vlan_offload": "on", "rx_vlan_stag_filter": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "scatter_gather": "on", "tcp_segmentation_offload": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "tx_checksumming": "on", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_ipip_segmentation": "off [fixed]", "tx_lockless": "off [fixed]", "tx_mpls_segmentation": "off [fixed]", "tx_nocache_copy": "off", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_sit_segmentation": "off [fixed]", "tx_tcp6_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_segmentation": "on", "tx_udp_tnl_segmentation": "off [fixed]", "tx_vlan_offload": "on", "tx_vlan_stag_hw_insert": "off [fixed]", "udp_fragmentation_offload": "off [fixed]", "vlan_challenged": "off [fixed]"}, "hw_timestamp_filters": [], "ipv4": {"address": "192.168.3.189", "broadcast": "192.168.7.255", "netmask": "255.255.248.0", "network": "192.168.0.0"}, "ipv6": [{"address": "fe80::9b75:981b:e1f4:3304", "prefix": "64", "scope": "link"}], "macaddress": "00:0c:29:ec:67:f1", "module": "vmxnet3", "mtu": 1500, "pciid": "0000:03:00.0", "promisc": false, "speed": 10000, "timestamping": ["rx_software", "software"], "type": "ether"}, "ansible_env": {"HOME": "/home/qa", "LANG": "en_US.UTF-8", "LESSOPEN": "||/usr/bin/lesspipe.sh %s", "LOGNAME": "qa", "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:", "MAIL": "/var/mail/qa", "PATH": "/usr/local/bin:/usr/bin", "PWD": "/home/qa", "SELINUX_LEVEL_REQUESTED": "", "SELINUX_ROLE_REQUESTED": "", "SELINUX_USE_CURRENT_RANGE": "", "SHELL": "/bin/bash", "SHLVL": "2", "SSH_CLIENT": "192.168.2.190 59664 22", "SSH_CONNECTION": "192.168.2.190 59664 192.168.3.189 22", "SSH_TTY": "/dev/pts/2", "TERM": "xterm-256color", "USER": "qa", "XDG_RUNTIME_DIR": "/run/user/1002", "XDG_SESSION_ID": "106", "_": "/usr/bin/python"}, "ansible_fibre_channel_wwn": [], "ansible_fips": false, "ansible_form_factor": "Other", "ansible_fqdn": "centos-vm1.experitest.local", "ansible_hostname": "centos-vm1", "ansible_hostnqn": "", "ansible_interfaces": ["lo", "ens160"], "ansible_is_chroot": true, "ansible_iscsi_iqn": "", "ansible_kernel": "3.10.0-514.26.2.el7.x86_64", "ansible_lo": {"active": true, "device": "lo", "features": {"busy_poll": "off [fixed]", "fcoe_mtu": "off [fixed]", "generic_receive_offload": "on", "generic_segmentation_offload": "on", "highdma": "on [fixed]", "hw_tc_offload": "off [fixed]", "l2_fwd_offload": "off [fixed]", "large_receive_offload": "off [fixed]", "loopback": "on [fixed]", "netns_local": "on [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "rx_all": "off [fixed]", "rx_checksumming": "on [fixed]", "rx_fcs": "off [fixed]", "rx_vlan_filter": "off [fixed]", "rx_vlan_offload": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "scatter_gather": "on", "tcp_segmentation_offload": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "tx_checksumming": "on", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_ipip_segmentation": "off [fixed]", "tx_lockless": "on [fixed]", "tx_mpls_segmentation": "off [fixed]", "tx_nocache_copy": "off [fixed]", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tx_sctp_segmentation": "on", "tx_sit_segmentation": "off [fixed]", "tx_tcp6_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_segmentation": "on", "tx_udp_tnl_segmentation": "off [fixed]", "tx_vlan_offload": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "udp_fragmentation_offload": "on", "vlan_challenged": "on [fixed]"}, "hw_timestamp_filters": [], "ipv4": {"address": "127.0.0.1", "broadcast": "host", "netmask": "255.0.0.0", "network": "127.0.0.0"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "mtu": 65536, "promisc": false, "timestamping": ["rx_software", "software"], "type": "loopback"}, "ansible_local": {}, "ansible_lsb": {}, "ansible_machine": "x86_64", "ansible_machine_id": "1bc4cdac369c446aa2e45a0a6fd5135f", "ansible_memfree_mb": 3110, "ansible_memory_mb": {"nocache": {"free": 3542, "used": 249}, "real": {"free": 3110, "total": 3791, "used": 681}, "swap": {"cached": 0, "free": 3071, "total": 3071, "used": 0}}, "ansible_memtotal_mb": 3791, "ansible_mounts": [{"block_available": 73006, "block_size": 4096, "block_total": 127147, "block_used": 54141, "device": "/dev/sda1", "fstype": "xfs", "inode_available": 511655, "inode_total": 512000, "inode_used": 345, "mount": "/boot", "options": "rw,seclabel,relatime,attr2,inode64,noquota", "size_available": 299032576, "size_total": 520794112, "uuid": "db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"}, {"block_available": 6261443, "block_size": 4096, "block_total": 6935236, "block_used": 673793, "device": "/dev/mapper/centos_webdev-root", "fstype": "xfs", "inode_available": 27706158, "inode_total": 27754496, "inode_used": 48338, "mount": "/", "options": "rw,seclabel,relatime,attr2,inode64,noquota", "size_available": 25646870528, "size_total": 28406726656, "uuid": "cd25dbf9-8a58-4062-8f86-f91223da7120"}], "ansible_nodename": "centos-vm1.experitest.local", "ansible_os_family": "RedHat", "ansible_pkg_mgr": "yum", "ansible_proc_cmdline": {"BOOT_IMAGE": "/vmlinuz-3.10.0-514.26.2.el7.x86_64", "LANG": "en_US.UTF-8", "crashkernel": "auto", "quiet": true, "rd.lvm.lv": ["centos_webdev/swap", "centos_webdev/root"], "rhgb": true, "ro": true, "root": "/dev/mapper/centos_webdev-root"}, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz", "1", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz"], "ansible_processor_cores": 1, "ansible_processor_count": 2, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 2, "ansible_product_name": "VMware Virtual Platform", "ansible_product_serial": "NA", "ansible_product_uuid": "NA", "ansible_product_version": "None", "ansible_python": {"executable": "/usr/bin/python", "has_sslcontext": true, "type": "CPython", "version": {"major": 2, "micro": 5, "minor": 7, "releaselevel": "final", "serial": 0}, "version_info": [2, 7, 5, "final", 0]}, "ansible_python_version": "2.7.5", "ansible_real_group_id": 1002, "ansible_real_user_id": 1002, "ansible_selinux": {"config_mode": "enforcing", "mode": "enforcing", "policyvers": 28, "status": "enabled", "type": "targeted"}, "ansible_selinux_python_present": true, "ansible_service_mgr": "systemd", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEM4J6uIDuQiniyw+G6IiFM2rm9ChMrqwYgzSHN2/OLG1fGc+BgFYLoLFKWOIBvgsu1igQM0jP9ln461FQwOWdk=", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIFc1nwf+OPqlJVJ+RcXuVkHvyuO1maem7E00A1P0XK0/", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDvDju5lWxyapZGsrzeQn7Wzf7qjTPr3aY5hnYDkDwQjNajuvlnxtMJCUMuFqJ80WVpICQaAl+fdSZLMj8hUBCamZsaSLzJjMbA9okwhQLQxoSAq2ThURTVFfQvuCz0zkshieAx4KKiDIDv7SkTd81euytH0BA/F1rhymkJt2SiG2ZUqTHIp0GmGHQRWOqkmz1qmbqQY6d5o6psHuavr8OJAhgHW0rCxdutqPEzQ4wzWX5yxRMF0KZEphW/+9ccOrKQ83anWBb89F3vLtt77p1dsl/oM0NtSe12XedABvvUnfHWi1Kx3EePUvJ72qgiNh5HoEnr/+fMCsy/1A/MUuQj", "ansible_swapfree_mb": 3071, "ansible_swaptotal_mb": 3071, "ansible_system": "Linux", "ansible_system_capabilities": [""], "ansible_system_capabilities_enforced": "True", "ansible_system_vendor": "VMware, Inc.", "ansible_uptime_seconds": 361223, "ansible_user_dir": "/home/qa", "ansible_user_gecos": "", "ansible_user_gid": 1002, "ansible_user_id": "qa", "ansible_user_shell": "/bin/bash", "ansible_user_uid": 1002, "ansible_userspace_architecture": "x86_64", "ansible_userspace_bits": "64", "ansible_virtualization_role": "guest", "ansible_virtualization_type": "VMware", "discovered_interpreter_python": "/usr/bin/python", "gather_subset": ["all"], "module_setup": true}, "changed": false}
+
+TASK [stop the old service] ****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/proxy.yml:22
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [remove the old service] **************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/proxy.yml:27
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+META: ran handlers
+
+TASK [link_finder : override default branch version] ***************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:2
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:7
+ok: [192.168.3.189] => {
+    "install_branch_name": "12.9"
+}
+
+TASK [link_finder : read tasks from first file found, use 'tasks/' relative subdir] ***
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:9
+included: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml for 192.168.3.189
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:2
+ok: [192.168.3.189] => (item=build_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "build_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=product_key) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "product_key", 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:8
+ok: [192.168.3.189] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : calculate download url mac] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:12
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : calculate download url win] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:21
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : calculate download url linux] ******************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:30
+ok: [192.168.3.189 -> localhost] => {"app_version": "12.9.7529", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:514171/artifacts/content/ansible/dist-Linux-PROXY-12.9.7529.zip", "file_name": "dist-Linux-PROXY-12.9.7529.zip"}
+
+TASK [link_finder : set_fact] **************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:48
+ok: [192.168.3.189] => {"ansible_facts": {"sanitize_role_name": "link_finder"}, "changed": false}
+
+TASK [link_finder : define file download link] *********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:51
+ok: [192.168.3.189] => {"ansible_facts": {"link_finder": {"file_to_download": {"app_version": "12.9.7529", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:514171/artifacts/content/ansible/dist-Linux-PROXY-12.9.7529.zip", "failed": false, "file_name": "dist-Linux-PROXY-12.9.7529.zip"}}}, "changed": false}
+
+TASK [link_finder : set app_version if install branch name is master] **********
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:56
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:62
+ok: [192.168.3.189] => {
+    "link_finder.file_to_download": {
+        "app_version": "12.9.7529", 
+        "changed": false, 
+        "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:514171/artifacts/content/ansible/dist-Linux-PROXY-12.9.7529.zip", 
+        "failed": false, 
+        "file_name": "dist-Linux-PROXY-12.9.7529.zip"
+    }
+}
+
+TASK [regional-proxy : validate vars] ******************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/main.yml:3
+included: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/variables.yml for 192.168.3.189
+
+TASK [regional-proxy : gather os specific variables] ***************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/variables.yml:3
+ok: [192.168.3.189] => {"ansible_facts": {"__installation_root_folder": "/opt/Experitest", "installation_folder": "{{ installation_root_folder }}/{{ app_name }}-{{ app_version }}", "installer_file_name": "dist-Linux-PROXY-{{ app_version }}.zip", "java_bin": "{{ java_installation_folder }}/jre{{ java_version }}/bin/java", "java_download_filename": "jre{{ java_version }}-linux-x64.tar.gz", "java_installation_folder": "{{ installation_root_folder }}/jre", "java_relative_path": "java/linux", "launcher_file_name": "start.sh", "nginx_application_properties": [{"nginx-manager.user": "{{ nginx_user }}"}, {"nginx-manager.nginx-conf-location": "{{ nginx_conf }}"}, {"nginx-manager.nginx-logs-location": "{{ nginx_logs }}"}, {"nginx-manager.nginx-pid-file": "/run/nginx.pid"}], "nginx_conf": "/etc/nginx", "nginx_logs": "/var/log/nginx", "nginx_user": "nginx", "relative_path": "regional-nginx/linux", "service_file_path": "/etc/systemd/system/{{ service_name }}", "service_name": "{{ app_name }}.service", "temp_folder": "/var/tmp/Experitest"}, "ansible_included_var_files": ["/Users/yarahaddad/.ansible/roles/regional-proxy/vars/linux.yml"], "changed": false}
+
+TASK [regional-proxy : make sure default values exist] *************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/variables.yml:7
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=java_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "java_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [regional-proxy : override default value] *********************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/variables.yml:13
+skipping: [192.168.3.189] => (item=app_version)  => {"ansible_loop_var": "item", "changed": false, "item": "app_version", "skip_reason": "Conditional result was False"}
+ok: [192.168.3.189] => (item=server_port) => {"ansible_facts": {"server_port": "8085"}, "ansible_loop_var": "item", "changed": false, "item": "server_port"}
+ok: [192.168.3.189] => (item=jmx_port) => {"ansible_facts": {"jmx_port": "51239"}, "ansible_loop_var": "item", "changed": false, "item": "jmx_port"}
+ok: [192.168.3.189] => (item=installation_root_folder) => {"ansible_facts": {"installation_root_folder": "/opt/Experitest"}, "ansible_loop_var": "item", "changed": false, "item": "installation_root_folder"}
+ok: [192.168.3.189] => (item=java_version) => {"ansible_facts": {"java_version": "1.8.0_221"}, "ansible_loop_var": "item", "changed": false, "item": "java_version"}
+
+TASK [regional-proxy : install] ************************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/main.yml:6
+included: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml for 192.168.3.189
+
+TASK [regional-proxy : assert all vars are set] ********************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:4
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=clear_temp_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "clear_temp_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=service_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=main_class) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "main_class", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installation_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=clear_before_install) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "clear_before_install", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=service_file_path) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_file_path", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installer_file_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installer_file_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=ansible_user_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "ansible_user_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=s3_download_url) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "s3_download_url", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=launcher_file_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "launcher_file_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=application_properties) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "application_properties", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=extra_java_options) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "extra_java_options", 
+    "msg": "All assertions passed"
+}
+
+TASK [regional-proxy : make sure epel-release is installed] ********************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:25
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["epel-release-7-11.noarch providing epel-release is already installed"]}
+
+TASK [regional-proxy : make sure rsync is installed] ***************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:31
+ok: [192.168.3.189] => {"changed": false, "changes": {"installed": ["rsync"]}, "msg": "Existing lock /var/run/yum.pid: another copy is running as pid 12184.\nAnother app is currently holding the yum lock; waiting for it to exit...\n  The other application is: yum\n    Memory :  65 M RSS (1.2 GB VSZ)\n    Started: Thu Nov 21 15:21:24 2019 - 00:03 ago\n    State  : Running, pid: 12184\nExisting lock /var/run/yum.pid: another copy is running as pid 12315.\nAnother app is currently holding the yum lock; waiting for it to exit...\n  The other application is: yum\n    Memory :  24 M RSS (1.2 GB VSZ)\n    Started: Thu Nov 21 15:21:25 2019 - 00:04 ago\n    State  : Sleeping, pid: 12315\n", "rc": 0, "results": ["Loaded plugins: fastestmirror\nLoading mirror speeds from cached hostfile\n * base: centos.interhost.net.il\n * epel: rep-epel-il.upress.io\n * extras: centos.interhost.net.il\n * updates: centos.interhost.net.il\nPackage rsync-3.1.2-6.el7_6.1.x86_64 already installed and latest version\nNothing to do\n"]}
+
+TASK [regional-proxy : make sure unzip is installed] ***************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:37
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["unzip-6.0-16.el7.x86_64 providing unzip is already installed"]}
+
+TASK [regional-proxy : make sure nginx is installed] ***************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:43
+changed: [192.168.3.189] => {"changed": true, "changes": {"installed": ["nginx"]}, "msg": "warning: /var/cache/yum/x86_64/7/epel/packages/nginx-1.16.1-1.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY\nImporting GPG key 0x352C64E5:\n Userid     : \"Fedora EPEL (7) <epel@fedoraproject.org>\"\n Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5\n Package    : epel-release-7-11.noarch (@extras)\n From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7\n", "rc": 0, "results": ["Loaded plugins: fastestmirror\nLoading mirror speeds from cached hostfile\n * base: centos.interhost.net.il\n * epel: rep-epel-il.upress.io\n * extras: centos.interhost.net.il\n * updates: centos.interhost.net.il\nResolving Dependencies\n--> Running transaction check\n---> Package nginx.x86_64 1:1.16.1-1.el7 will be installed\n--> Processing Dependency: nginx-all-modules = 1:1.16.1-1.el7 for package: 1:nginx-1.16.1-1.el7.x86_64\n--> Processing Dependency: nginx-filesystem = 1:1.16.1-1.el7 for package: 1:nginx-1.16.1-1.el7.x86_64\n--> Processing Dependency: libcrypto.so.10(OPENSSL_1.0.2)(64bit) for package: 1:nginx-1.16.1-1.el7.x86_64\n--> Processing Dependency: nginx-filesystem for package: 1:nginx-1.16.1-1.el7.x86_64\n--> Processing Dependency: redhat-indexhtml for package: 1:nginx-1.16.1-1.el7.x86_64\n--> Processing Dependency: libprofiler.so.0()(64bit) for package: 1:nginx-1.16.1-1.el7.x86_64\n--> Running transaction check\n---> Package centos-indexhtml.noarch 0:7-9.el7.centos will be installed\n---> Package gperftools-libs.x86_64 0:2.6.1-1.el7 will be installed\n---> Package nginx-all-modules.noarch 1:1.16.1-1.el7 will be installed\n--> Processing Dependency: nginx-mod-http-image-filter = 1:1.16.1-1.el7 for package: 1:nginx-all-modules-1.16.1-1.el7.noarch\n--> Processing Dependency: nginx-mod-http-perl = 1:1.16.1-1.el7 for package: 1:nginx-all-modules-1.16.1-1.el7.noarch\n--> Processing Dependency: nginx-mod-http-xslt-filter = 1:1.16.1-1.el7 for package: 1:nginx-all-modules-1.16.1-1.el7.noarch\n--> Processing Dependency: nginx-mod-mail = 1:1.16.1-1.el7 for package: 1:nginx-all-modules-1.16.1-1.el7.noarch\n--> Processing Dependency: nginx-mod-stream = 1:1.16.1-1.el7 for package: 1:nginx-all-modules-1.16.1-1.el7.noarch\n---> Package nginx-filesystem.noarch 1:1.16.1-1.el7 will be installed\n---> Package openssl-libs.x86_64 1:1.0.1e-60.el7_3.1 will be updated\n--> Processing Dependency: openssl-libs(x86-64) = 1:1.0.1e-60.el7_3.1 for package: 1:openssl-1.0.1e-60.el7_3.1.x86_64\n---> Package openssl-libs.x86_64 1:1.0.2k-19.el7 will be an update\n--> Running transaction check\n---> Package nginx-mod-http-image-filter.x86_64 1:1.16.1-1.el7 will be installed\n--> Processing Dependency: gd for package: 1:nginx-mod-http-image-filter-1.16.1-1.el7.x86_64\n--> Processing Dependency: libgd.so.2()(64bit) for package: 1:nginx-mod-http-image-filter-1.16.1-1.el7.x86_64\n---> Package nginx-mod-http-perl.x86_64 1:1.16.1-1.el7 will be installed\n---> Package nginx-mod-http-xslt-filter.x86_64 1:1.16.1-1.el7 will be installed\n--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.11)(64bit) for package: 1:nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64\n--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.18)(64bit) for package: 1:nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64\n--> Processing Dependency: libexslt.so.0()(64bit) for package: 1:nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64\n--> Processing Dependency: libxslt.so.1()(64bit) for package: 1:nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64\n---> Package nginx-mod-mail.x86_64 1:1.16.1-1.el7 will be installed\n---> Package nginx-mod-stream.x86_64 1:1.16.1-1.el7 will be installed\n---> Package openssl.x86_64 1:1.0.1e-60.el7_3.1 will be updated\n---> Package openssl.x86_64 1:1.0.2k-19.el7 will be an update\n--> Running transaction check\n---> Package gd.x86_64 0:2.0.35-26.el7 will be installed\n--> Processing Dependency: libpng15.so.15(PNG15_0)(64bit) for package: gd-2.0.35-26.el7.x86_64\n--> Processing Dependency: libjpeg.so.62(LIBJPEG_6.2)(64bit) for package: gd-2.0.35-26.el7.x86_64\n--> Processing Dependency: libpng15.so.15()(64bit) for package: gd-2.0.35-26.el7.x86_64\n--> Processing Dependency: libjpeg.so.62()(64bit) for package: gd-2.0.35-26.el7.x86_64\n--> Processing Dependency: libfontconfig.so.1()(64bit) for package: gd-2.0.35-26.el7.x86_64\n--> Processing Dependency: libXpm.so.4()(64bit) for package: gd-2.0.35-26.el7.x86_64\n--> Processing Dependency: libX11.so.6()(64bit) for package: gd-2.0.35-26.el7.x86_64\n---> Package libxslt.x86_64 0:1.1.28-5.el7 will be installed\n--> Running transaction check\n---> Package fontconfig.x86_64 0:2.13.0-4.3.el7 will be installed\n--> Processing Dependency: freetype >= 2.8-7 for package: fontconfig-2.13.0-4.3.el7.x86_64\n--> Processing Dependency: fontpackages-filesystem for package: fontconfig-2.13.0-4.3.el7.x86_64\n--> Processing Dependency: dejavu-sans-fonts for package: fontconfig-2.13.0-4.3.el7.x86_64\n---> Package libX11.x86_64 0:1.6.7-2.el7 will be installed\n--> Processing Dependency: libX11-common >= 1.6.7-2.el7 for package: libX11-1.6.7-2.el7.x86_64\n--> Processing Dependency: libxcb.so.1()(64bit) for package: libX11-1.6.7-2.el7.x86_64\n---> Package libXpm.x86_64 0:3.5.12-1.el7 will be installed\n---> Package libjpeg-turbo.x86_64 0:1.2.90-8.el7 will be installed\n---> Package libpng.x86_64 2:1.5.13-7.el7_2 will be installed\n--> Running transaction check\n---> Package dejavu-sans-fonts.noarch 0:2.33-6.el7 will be installed\n--> Processing Dependency: dejavu-fonts-common = 2.33-6.el7 for package: dejavu-sans-fonts-2.33-6.el7.noarch\n---> Package fontpackages-filesystem.noarch 0:1.44-8.el7 will be installed\n---> Package freetype.x86_64 0:2.4.11-12.el7 will be updated\n---> Package freetype.x86_64 0:2.8-14.el7 will be an update\n---> Package libX11-common.noarch 0:1.6.7-2.el7 will be installed\n---> Package libxcb.x86_64 0:1.13-1.el7 will be installed\n--> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.13-1.el7.x86_64\n--> Running transaction check\n---> Package dejavu-fonts-common.noarch 0:2.33-6.el7 will be installed\n---> Package libXau.x86_64 0:1.0.8-2.1.el7 will be installed\n--> Finished Dependency Resolution\n\nDependencies Resolved\n\n================================================================================\n Package                         Arch       Version              Repository\n                                                                           Size\n================================================================================\nInstalling:\n nginx                           x86_64     1:1.16.1-1.el7       epel     562 k\nInstalling for dependencies:\n centos-indexhtml                noarch     7-9.el7.centos       base      92 k\n dejavu-fonts-common             noarch     2.33-6.el7           base      64 k\n dejavu-sans-fonts               noarch     2.33-6.el7           base     1.4 M\n fontconfig                      x86_64     2.13.0-4.3.el7       base     254 k\n fontpackages-filesystem         noarch     1.44-8.el7           base     9.9 k\n gd                              x86_64     2.0.35-26.el7        base     146 k\n gperftools-libs                 x86_64     2.6.1-1.el7          base     272 k\n libX11                          x86_64     1.6.7-2.el7          base     607 k\n libX11-common                   noarch     1.6.7-2.el7          base     164 k\n libXau                          x86_64     1.0.8-2.1.el7        base      29 k\n libXpm                          x86_64     3.5.12-1.el7         base      55 k\n libjpeg-turbo                   x86_64     1.2.90-8.el7         base     135 k\n libpng                          x86_64     2:1.5.13-7.el7_2     base     213 k\n libxcb                          x86_64     1.13-1.el7           base     214 k\n libxslt                         x86_64     1.1.28-5.el7         base     242 k\n nginx-all-modules               noarch     1:1.16.1-1.el7       epel      19 k\n nginx-filesystem                noarch     1:1.16.1-1.el7       epel      21 k\n nginx-mod-http-image-filter     x86_64     1:1.16.1-1.el7       epel      30 k\n nginx-mod-http-perl             x86_64     1:1.16.1-1.el7       epel      39 k\n nginx-mod-http-xslt-filter      x86_64     1:1.16.1-1.el7       epel      29 k\n nginx-mod-mail                  x86_64     1:1.16.1-1.el7       epel      57 k\n nginx-mod-stream                x86_64     1:1.16.1-1.el7       epel      84 k\nUpdating for dependencies:\n freetype                        x86_64     2.8-14.el7           base     380 k\n openssl                         x86_64     1:1.0.2k-19.el7      base     493 k\n openssl-libs                    x86_64     1:1.0.2k-19.el7      base     1.2 M\n\nTransaction Summary\n================================================================================\nInstall  1 Package  (+22 Dependent packages)\nUpgrade             (  3 Dependent packages)\n\nTotal download size: 6.7 M\nDownloading packages:\nDelta RPMs disabled because /usr/bin/applydeltarpm not installed.\nPublic key for nginx-1.16.1-1.el7.x86_64.rpm is not installed\n--------------------------------------------------------------------------------\nTotal                                              3.2 MB/s | 6.7 MB  00:02     \nRetrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7\nRunning transaction check\nRunning transaction test\nTransaction test succeeded\nRunning transaction\n  Updating   : 1:openssl-libs-1.0.2k-19.el7.x86_64                         1/29 \n  Installing : fontpackages-filesystem-1.44-8.el7.noarch                   2/29 \n  Installing : 2:libpng-1.5.13-7.el7_2.x86_64                              3/29 \n  Updating   : freetype-2.8-14.el7.x86_64                                  4/29 \n  Installing : dejavu-fonts-common-2.33-6.el7.noarch                       5/29 \n  Installing : dejavu-sans-fonts-2.33-6.el7.noarch                         6/29 \n  Installing : fontconfig-2.13.0-4.3.el7.x86_64                            7/29 \n  Updating   : 1:openssl-1.0.2k-19.el7.x86_64                              8/29 \n  Installing : gperftools-libs-2.6.1-1.el7.x86_64                          9/29 \n  Installing : libXau-1.0.8-2.1.el7.x86_64                                10/29 \n  Installing : libxcb-1.13-1.el7.x86_64                                   11/29 \n  Installing : centos-indexhtml-7-9.el7.centos.noarch                     12/29 \n  Installing : libjpeg-turbo-1.2.90-8.el7.x86_64                          13/29 \n  Installing : libxslt-1.1.28-5.el7.x86_64                                14/29 \n  Installing : libX11-common-1.6.7-2.el7.noarch                           15/29 \n  Installing : libX11-1.6.7-2.el7.x86_64                                  16/29 \n  Installing : libXpm-3.5.12-1.el7.x86_64                                 17/29 \n  Installing : gd-2.0.35-26.el7.x86_64                                    18/29 \n  Installing : 1:nginx-filesystem-1.16.1-1.el7.noarch                     19/29 \n  Installing : 1:nginx-mod-mail-1.16.1-1.el7.x86_64                       20/29 \n  Installing : 1:nginx-mod-http-perl-1.16.1-1.el7.x86_64                  21/29 \n  Installing : 1:nginx-mod-stream-1.16.1-1.el7.x86_64                     22/29 \n  Installing : 1:nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64           23/29 \n  Installing : 1:nginx-1.16.1-1.el7.x86_64                                24/29 \n  Installing : 1:nginx-mod-http-image-filter-1.16.1-1.el7.x86_64          25/29 \n  Installing : 1:nginx-all-modules-1.16.1-1.el7.noarch                    26/29 \n  Cleanup    : 1:openssl-1.0.1e-60.el7_3.1.x86_64                         27/29 \n  Cleanup    : 1:openssl-libs-1.0.1e-60.el7_3.1.x86_64                    28/29 \n  Cleanup    : freetype-2.4.11-12.el7.x86_64                              29/29 \n  Verifying  : fontconfig-2.13.0-4.3.el7.x86_64                            1/29 \n  Verifying  : 1:nginx-mod-mail-1.16.1-1.el7.x86_64                        2/29 \n  Verifying  : 1:nginx-filesystem-1.16.1-1.el7.noarch                      3/29 \n  Verifying  : 2:libpng-1.5.13-7.el7_2.x86_64                              4/29 \n  Verifying  : 1:nginx-mod-http-perl-1.16.1-1.el7.x86_64                   5/29 \n  Verifying  : freetype-2.8-14.el7.x86_64                                  6/29 \n  Verifying  : fontpackages-filesystem-1.44-8.el7.noarch                   7/29 \n  Verifying  : dejavu-fonts-common-2.33-6.el7.noarch                       8/29 \n  Verifying  : libX11-1.6.7-2.el7.x86_64                                   9/29 \n  Verifying  : libX11-common-1.6.7-2.el7.noarch                           10/29 \n  Verifying  : libxcb-1.13-1.el7.x86_64                                   11/29 \n  Verifying  : libXpm-3.5.12-1.el7.x86_64                                 12/29 \n  Verifying  : 1:nginx-mod-stream-1.16.1-1.el7.x86_64                     13/29 \n  Verifying  : libxslt-1.1.28-5.el7.x86_64                                14/29 \n  Verifying  : 1:openssl-1.0.2k-19.el7.x86_64                             15/29 \n  Verifying  : dejavu-sans-fonts-2.33-6.el7.noarch                        16/29 \n  Verifying  : 1:nginx-1.16.1-1.el7.x86_64                                17/29 \n  Verifying  : libjpeg-turbo-1.2.90-8.el7.x86_64                          18/29 \n  Verifying  : 1:nginx-all-modules-1.16.1-1.el7.noarch                    19/29 \n  Verifying  : 1:nginx-mod-http-xslt-filter-1.16.1-1.el7.x86_64           20/29 \n  Verifying  : 1:openssl-libs-1.0.2k-19.el7.x86_64                        21/29 \n  Verifying  : centos-indexhtml-7-9.el7.centos.noarch                     22/29 \n  Verifying  : 1:nginx-mod-http-image-filter-1.16.1-1.el7.x86_64          23/29 \n  Verifying  : libXau-1.0.8-2.1.el7.x86_64                                24/29 \n  Verifying  : gperftools-libs-2.6.1-1.el7.x86_64                         25/29 \n  Verifying  : gd-2.0.35-26.el7.x86_64                                    26/29 \n  Verifying  : 1:openssl-1.0.1e-60.el7_3.1.x86_64                         27/29 \n  Verifying  : 1:openssl-libs-1.0.1e-60.el7_3.1.x86_64                    28/29 \n  Verifying  : freetype-2.4.11-12.el7.x86_64                              29/29 \n\nInstalled:\n  nginx.x86_64 1:1.16.1-1.el7                                                   \n\nDependency Installed:\n  centos-indexhtml.noarch 0:7-9.el7.centos                                      \n  dejavu-fonts-common.noarch 0:2.33-6.el7                                       \n  dejavu-sans-fonts.noarch 0:2.33-6.el7                                         \n  fontconfig.x86_64 0:2.13.0-4.3.el7                                            \n  fontpackages-filesystem.noarch 0:1.44-8.el7                                   \n  gd.x86_64 0:2.0.35-26.el7                                                     \n  gperftools-libs.x86_64 0:2.6.1-1.el7                                          \n  libX11.x86_64 0:1.6.7-2.el7                                                   \n  libX11-common.noarch 0:1.6.7-2.el7                                            \n  libXau.x86_64 0:1.0.8-2.1.el7                                                 \n  libXpm.x86_64 0:3.5.12-1.el7                                                  \n  libjpeg-turbo.x86_64 0:1.2.90-8.el7                                           \n  libpng.x86_64 2:1.5.13-7.el7_2                                                \n  libxcb.x86_64 0:1.13-1.el7                                                    \n  libxslt.x86_64 0:1.1.28-5.el7                                                 \n  nginx-all-modules.noarch 1:1.16.1-1.el7                                       \n  nginx-filesystem.noarch 1:1.16.1-1.el7                                        \n  nginx-mod-http-image-filter.x86_64 1:1.16.1-1.el7                             \n  nginx-mod-http-perl.x86_64 1:1.16.1-1.el7                                     \n  nginx-mod-http-xslt-filter.x86_64 1:1.16.1-1.el7                              \n  nginx-mod-mail.x86_64 1:1.16.1-1.el7                                          \n  nginx-mod-stream.x86_64 1:1.16.1-1.el7                                        \n\nDependency Updated:\n  freetype.x86_64 0:2.8-14.el7              openssl.x86_64 1:1.0.2k-19.el7      \n  openssl-libs.x86_64 1:1.0.2k-19.el7      \n\nComplete!\n"]}
+
+TASK [regional-proxy : make sure psmisc (killall) is installed] ****************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:49
+changed: [192.168.3.189] => {"changed": true, "changes": {"installed": ["psmisc"]}, "msg": "", "rc": 0, "results": ["Loaded plugins: fastestmirror\nLoading mirror speeds from cached hostfile\n * base: centos.interhost.net.il\n * epel: rep-epel-il.upress.io\n * extras: centos.interhost.net.il\n * updates: centos.interhost.net.il\nResolving Dependencies\n--> Running transaction check\n---> Package psmisc.x86_64 0:22.20-16.el7 will be installed\n--> Finished Dependency Resolution\n\nDependencies Resolved\n\n================================================================================\n Package          Arch             Version                 Repository      Size\n================================================================================\nInstalling:\n psmisc           x86_64           22.20-16.el7            base           141 k\n\nTransaction Summary\n================================================================================\nInstall  1 Package\n\nTotal download size: 141 k\nInstalled size: 475 k\nDownloading packages:\nRunning transaction check\nRunning transaction test\nTransaction test succeeded\nRunning transaction\n  Installing : psmisc-22.20-16.el7.x86_64                                   1/1 \n  Verifying  : psmisc-22.20-16.el7.x86_64                                   1/1 \n\nInstalled:\n  psmisc.x86_64 0:22.20-16.el7                                                  \n\nComplete!\n"]}
+
+TASK [regional-proxy : disable selinux] ****************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:57
+ [WARNING]: SELinux state temporarily changed from 'enforcing' to 'permissive'.
+State change will take effect next reboot.
+changed: [192.168.3.189] => {"changed": true, "configfile": "/etc/selinux/config", "msg": "Config SELinux state changed from 'enforcing' to 'disabled'", "policy": "targeted", "reboot_required": true, "state": "disabled"}
+
+TASK [regional-proxy : stop and disable firewall] ******************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:62
+changed: [192.168.3.189] => (item=firewalld) => {"ansible_loop_var": "item", "changed": true, "enabled": false, "item": "firewalld", "name": "firewalld", "state": "stopped", "status": {"ActiveEnterTimestamp": "Sun 2019-11-17 11:00:43 IST", "ActiveEnterTimestampMonotonic": "5159479", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "dbus.service basic.target polkit.service system.slice", "AllowIsolate": "no", "AssertResult": "yes", "AssertTimestamp": "Sun 2019-11-17 11:00:42 IST", "AssertTimestampMonotonic": "4144333", "Before": "libvirtd.service network.target shutdown.target NetworkManager.service", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "BusName": "org.fedoraproject.FirewallD1", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "yes", "ConditionTimestamp": "Sun 2019-11-17 11:00:42 IST", "ConditionTimestampMonotonic": "4144330", "Conflicts": "shutdown.target ip6tables.service ipset.service iptables.service ebtables.service", "ControlGroup": "/system.slice/firewalld.service", "ControlPID": "0", "DefaultDependencies": "yes", "Delegate": "no", "Description": "firewalld - dynamic firewall daemon", "DevicePolicy": "auto", "Documentation": "man:firewalld(1)", "EnvironmentFile": "/etc/sysconfig/firewalld (ignore_errors=yes)", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "666", "ExecMainStartTimestamp": "Sun 2019-11-17 11:00:42 IST", "ExecMainStartTimestampMonotonic": "4148204", "ExecMainStatus": "0", "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/usr/sbin/firewalld ; argv[]=/usr/sbin/firewalld --nofork --nopid $FIREWALLD_ARGS ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FragmentPath": "/usr/lib/systemd/system/firewalld.service", "GuessMainPID": "yes", "IOScheduling": "0", "Id": "firewalld.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Sun 2019-11-17 11:00:42 IST", "InactiveExitTimestampMonotonic": "4148240", "JobTimeoutAction": "none", "JobTimeoutUSec": "0", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "15078", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "15078", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "666", "MemoryAccounting": "no", "MemoryCurrent": "18446744073709551615", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "firewalld.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "Requires": "basic.target", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "null", "StandardInput": "null", "StandardOutput": "null", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "running", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "dbus", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "enabled", "WantedBy": "basic.target", "Wants": "system.slice", "WatchdogTimestamp": "Sun 2019-11-17 11:00:43 IST", "WatchdogTimestampMonotonic": "5159461", "WatchdogUSec": "0"}}
+
+TASK [regional-proxy : make sure temp folder] **********************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:74
+ok: [192.168.3.189] => {"changed": false, "gid": 0, "group": "root", "mode": "0766", "owner": "qa", "path": "/var/tmp/Experitest", "secontext": "unconfined_u:object_r:user_tmp_t:s0", "size": 42, "state": "directory", "uid": 1002}
+
+TASK [regional-proxy : make sure java is installed on the machine] *************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:83
+changed: [192.168.3.189] => {"changed": true, "cmd": ["/opt/Experitest/jre/jre1.8.0_221/bin/java", "-version"], "delta": "0:00:00.123464", "end": "2019-11-21 15:21:51.540116", "rc": 0, "start": "2019-11-21 15:21:51.416652", "stderr": "java version \"1.8.0_221\"\nJava(TM) SE Runtime Environment (build 1.8.0_221-b11)\nJava HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)", "stderr_lines": ["java version \"1.8.0_221\"", "Java(TM) SE Runtime Environment (build 1.8.0_221-b11)", "Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)"], "stdout": "", "stdout_lines": []}
+
+TASK [regional-proxy : fail if java is not found] ******************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:89
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [regional-proxy : download zip from s3 url] *******************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:96
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [regional-proxy : download zip from custom url] ***************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:103
+changed: [192.168.3.189] => {"changed": true, "checksum_dest": null, "checksum_src": "098fd5ab5633626950b91f1f4dcb132dc3e163f2", "dest": "/var/tmp/Experitest/dist-Linux-PROXY-12.9.7529.zip", "elapsed": 1, "gid": 1002, "group": "qa", "md5sum": "20289a0cafb907048fea1c59429f7932", "mode": "0664", "msg": "OK (23931534 bytes)", "owner": "qa", "secontext": "unconfined_u:object_r:user_home_t:s0", "size": 23931534, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574342345.06-76946600495366/tmpJMuUB9", "state": "file", "status_code": 200, "uid": 1002, "url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:514171/artifacts/content/ansible/dist-Linux-PROXY-12.9.7529.zip"}
+
+TASK [regional-proxy : stop the old service] ***********************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:112
+fatal: [192.168.3.189]: FAILED! => {"changed": false, "msg": "Could not find the requested service regional-proxy.service: host"}
+...ignoring
+
+TASK [regional-proxy : clear old installation folder] **************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:121
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [regional-proxy : make sure installation folder exists] *******************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:129
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "qa", "path": "/opt/Experitest/regional-proxy-12.9.7529", "secontext": "unconfined_u:object_r:usr_t:s0", "size": 6, "state": "directory", "uid": 1002}
+
+TASK [regional-proxy : make sure unzip folder exist] ***************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:136
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "qa", "path": "/var/tmp/Experitest/dist-Linux-PROXY-12.9.7529", "secontext": "unconfined_u:object_r:user_tmp_t:s0", "size": 6, "state": "directory", "uid": 1002}
+
+TASK [regional-proxy : unzip the file] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:143
+changed: [192.168.3.189] => {"changed": true, "dest": "/var/tmp/Experitest/dist-Linux-PROXY-12.9.7529", "extract_results": {"cmd": ["/bin/unzip", "-o", "/var/tmp/Experitest/dist-Linux-PROXY-12.9.7529.zip", "-d", "/var/tmp/Experitest/dist-Linux-PROXY-12.9.7529"], "err": "", "out": "Archive:  /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529.zip\n   creating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/\n   creating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/\n   creating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/nginx/\n   creating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/nginx/bin/\n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/nginx/bin/libcrypto.1.0.0.dylib  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/nginx/bin/libpcre.1.dylib  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/nginx/bin/libssl.1.0.0.dylib  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/nginx/bin/libz.1.dylib  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/nginx/bin/nginx  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/bin/nginx/bin/nginx.exe  \n   creating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/config/\n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/config/application.properties  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/config/logback-local.xml  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/config/logback.properties  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/config/logback.xml  \n   creating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/\n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/HdrHistogram-2.1.9.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/LatencyUtils-2.0.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/classmate-1.3.4.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/commons-codec-1.11.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/commons-logging-1.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/commons-os-1.0.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/file-store-api-12.9-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/file-store-engine-12.9-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/file-store-rest-upgrade-12.9-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/freemarker-2.3.28.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/hibernate-validator-6.0.14.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/httpclient-4.5.8.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/httpcore-4.4.11.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jackson-annotations-2.9.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jackson-core-2.9.9.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jackson-databind-2.9.9.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jackson-datatype-jdk8-2.9.8.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jackson-datatype-jsr310-2.9.8.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jackson-module-parameter-names-2.9.8.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/javax.annotation-api-1.3.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jboss-logging-3.3.2.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jolokia-core-1.5.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/json-simple-1.1.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/jul-to-slf4j-1.7.25.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/log4j-api-2.11.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/log4j-to-slf4j-2.11.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/logback-classic-1.2.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/logback-core-1.2.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/micrometer-core-1.1.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/nginx-manager-api-12.9-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/nginx-manager-impl-12.9-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/service-common-api-1.0.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/service-common-client-1.0.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/service-common-web-1.0.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/service-rest-support-data-12.9-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/slf4j-api-1.7.26.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/snakeyaml-1.23.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-aop-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-beans-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-actuator-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-actuator-autoconfigure-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-autoconfigure-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-starter-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-starter-actuator-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-starter-json-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-starter-logging-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-starter-security-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-starter-tomcat-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-boot-starter-web-2.1.2.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-context-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-core-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-expression-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-jcl-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-security-config-5.1.3.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-security-core-5.1.3.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-security-web-5.1.3.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-web-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/spring-webmvc-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/tomcat-annotations-api-9.0.14.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/tomcat-embed-core-9.0.14.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/tomcat-embed-el-9.0.14.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/tomcat-embed-websocket-9.0.14.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/lib/validation-api-2.0.1.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/region-proxy  \n  inflating: /var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/region-proxy.vmoptions  \n", "rc": 0}, "gid": 0, "group": "root", "handler": "ZipArchive", "mode": "0755", "owner": "qa", "secontext": "unconfined_u:object_r:user_tmp_t:s0", "size": 18, "src": "/var/tmp/Experitest/dist-Linux-PROXY-12.9.7529.zip", "state": "directory", "uid": 1002}
+
+TASK [regional-proxy : synchronize zip content to installation folder] *********
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:152
+NOTIFIED HANDLER regional-proxy : start the service for 192.168.3.189
+changed: [192.168.3.189] => {"changed": true, "cmd": ["rsync", "-r", "/var/tmp/Experitest/dist-Linux-PROXY-12.9.7529/Proxy/", "/opt/Experitest/regional-proxy-12.9.7529/"], "delta": "0:00:00.252364", "end": "2019-11-21 15:21:58.182102", "rc": 0, "start": "2019-11-21 15:21:57.929738", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+TASK [regional-proxy : copy service file] **************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:158
+changed: [192.168.3.189] => {"changed": true, "checksum": "4f2b91c6f303d90f3edae85c1c2d98e8a3e9c736", "dest": "/etc/systemd/system/regional-proxy.service", "gid": 0, "group": "root", "md5sum": "6529238013c38532b28d0043f47141b0", "mode": "0644", "owner": "root", "secontext": "system_u:object_r:systemd_unit_file_t:s0", "size": 346, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574342351.64-71028014924700/source", "state": "file", "uid": 0}
+
+TASK [regional-proxy : copy start script] **************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:164
+changed: [192.168.3.189] => {"changed": true, "checksum": "97e7e69008f7aada3b7e2d08bc5c49dfd9312839", "dest": "/opt/Experitest/regional-proxy-12.9.7529/start.sh", "gid": 0, "group": "root", "md5sum": "56aad8469129848a059d23d986a8139b", "mode": "0777", "owner": "qa", "secontext": "system_u:object_r:usr_t:s0", "size": 981, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574342352.89-28910911704474/source", "state": "file", "uid": 1002}
+
+TASK [regional-proxy : update application properties file] *********************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:174
+changed: [192.168.3.189] => (item={'value': u'8085', 'key': u'server.port'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "server.port", "value": "8085"}, "msg": "line added"}
+
+TASK [regional-proxy : update logback properties file] *************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:182
+
+TASK [regional-proxy : update nginx property to application properties file] ***
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:190
+changed: [192.168.3.189] => (item={'value': u'nginx', 'key': u'nginx-manager.user'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "nginx-manager.user", "value": "nginx"}, "msg": "line added"}
+changed: [192.168.3.189] => (item={'value': u'/etc/nginx', 'key': u'nginx-manager.nginx-conf-location'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "nginx-manager.nginx-conf-location", "value": "/etc/nginx"}, "msg": "line added"}
+changed: [192.168.3.189] => (item={'value': u'/var/log/nginx', 'key': u'nginx-manager.nginx-logs-location'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "nginx-manager.nginx-logs-location", "value": "/var/log/nginx"}, "msg": "line added"}
+changed: [192.168.3.189] => (item={'value': u'/run/nginx.pid', 'key': u'nginx-manager.nginx-pid-file'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "nginx-manager.nginx-pid-file", "value": "/run/nginx.pid"}, "msg": "line added"}
+
+TASK [regional-proxy : set permissions for logs folder] ************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:198
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0777", "owner": "qa", "path": "/opt/Experitest/regional-proxy-12.9.7529/logs", "secontext": "unconfined_u:object_r:usr_t:s0", "size": 6, "state": "directory", "uid": 1002}
+
+TASK [regional-proxy : update permissions for nginx logs folder] ***************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:206
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0777", "owner": "nginx", "path": "/var/log/nginx", "secontext": "system_u:object_r:httpd_log_t:s0", "size": 6, "state": "directory", "uid": 995}
+
+TASK [regional-proxy : reset pairing key] **************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:215
+ok: [192.168.3.189] => {"changed": false, "path": "/opt/Experitest/regional-proxy-12.9.7529/config/pairing", "state": "absent"}
+
+TASK [regional-proxy : sanitize role name] *************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:223
+ok: [192.168.3.189] => {"ansible_facts": {"sanitize_role_name": "regional_proxy"}, "changed": false}
+
+TASK [regional-proxy : expose role output] *************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-install.yml:227
+ok: [192.168.3.189] => {"ansible_facts": {"regional_proxy": {"configuration_file": "/opt/Experitest/regional-proxy-12.9.7529/config/application.properties", "installation_folder": "/opt/Experitest/regional-proxy-12.9.7529", "java_bin": "/opt/Experitest/jre/jre1.8.0_221/bin/java", "jmx_port": "51239", "server_port": "8085"}}, "changed": false}
+
+TASK [regional-proxy : clear temp folder] **************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/main.yml:10
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [regional-proxy : track versions] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/main.yml:14
+included: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-track-versions.yml for 192.168.3.189
+
+TASK [regional-proxy : assert all vars are set] ********************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-track-versions.yml:5
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [regional-proxy : test for current installation version] ******************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-track-versions.yml:14
+ok: [192.168.3.189] => {"changed": false, "stat": {"exists": false}}
+
+TASK [regional-proxy : load current_version from remote file] ******************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-track-versions.yml:19
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [regional-proxy : move current to be previous] ****************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-track-versions.yml:32
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [regional-proxy : update current version with new version] ****************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-track-versions.yml:41
+changed: [192.168.3.189] => {"changed": true, "checksum": "35ec55b3cf7e71cb05a647f2a007eb78b7b7316a", "dest": "/opt/Experitest/regional-proxy-current", "gid": 0, "group": "root", "md5sum": "3fd98b48cb340beca8e5e18c206ccc51", "mode": "0644", "owner": "root", "secontext": "system_u:object_r:usr_t:s0", "size": 9, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574342359.4-3040344504508/source", "state": "file", "uid": 0}
+
+TASK [regional-proxy : remove archived versions] *******************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/main.yml:18
+included: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml for 192.168.3.189
+
+TASK [regional-proxy : assert all vars are set] ********************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:4
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [regional-proxy : test for previous installation version] *****************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:13
+ok: [192.168.3.189] => {"changed": false, "stat": {"exists": false}}
+
+TASK [regional-proxy : load previous_version from remote file] *****************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:18
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [regional-proxy : set previous_version from remote file] ******************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:25
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [regional-proxy : test for current installation version] ******************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:31
+ok: [192.168.3.189] => {"changed": false, "stat": {"atime": 1574342527.0308414, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "35ec55b3cf7e71cb05a647f2a007eb78b7b7316a", "ctime": 1574342527.0368412, "dev": 64769, "device_type": 0, "executable": false, "exists": true, "gid": 0, "gr_name": "root", "inode": 100868195, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0644", "mtime": 1574342526.5858412, "nlink": 1, "path": "/opt/Experitest/regional-proxy-current", "pw_name": "root", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 9, "uid": 0, "version": "413071419", "wgrp": false, "woth": false, "writeable": false, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+
+TASK [regional-proxy : load current_version from remote file] ******************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:36
+ok: [192.168.3.189] => {"changed": false, "content": "MTIuOS43NTI5", "encoding": "base64", "source": "/opt/Experitest/regional-proxy-current"}
+
+TASK [regional-proxy : set current_version from remote file] *******************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:43
+ok: [192.168.3.189] => {"ansible_facts": {"current_version": "12.9.7529"}, "changed": false}
+
+TASK [regional-proxy : find old versions] **************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:49
+ok: [192.168.3.189] => {"changed": false, "examined": 3, "files": [], "matched": 0, "msg": ""}
+
+TASK [regional-proxy : remove old versions] ************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/linux-remove-archived.yml:59
+
+TASK [regional-proxy : uninstall] **********************************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/tasks/main.yml:22
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [experitest_com_public : win copy private key] ****************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/experitest_com_public/tasks/main.yml:2
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [experitest_com_public : win copy certificate] ****************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/experitest_com_public/tasks/main.yml:8
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [experitest_com_public : mac copy private key] ****************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/experitest_com_public/tasks/main.yml:15
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [experitest_com_public : mac copy certificate] ****************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/experitest_com_public/tasks/main.yml:22
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [experitest_com_public : linux copy private key] **************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/experitest_com_public/tasks/main.yml:30
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [experitest_com_public : linux copy certificate] **************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/experitest_com_public/tasks/main.yml:37
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+RUNNING HANDLER [regional-proxy : start the service] ***************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/handlers/main.yml:2
+included: /Users/yarahaddad/.ansible/roles/regional-proxy/handlers/linux-start-service.yml for 192.168.3.189
+
+RUNNING HANDLER [regional-proxy : start the service] ***************************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/handlers/linux-start-service.yml:2
+changed: [192.168.3.189] => {"changed": true, "enabled": true, "name": "regional-proxy.service", "state": "started", "status": {"ActiveEnterTimestampMonotonic": "0", "ActiveExitTimestampMonotonic": "0", "ActiveState": "inactive", "After": "system.slice -.mount systemd-journald.socket basic.target", "AllowIsolate": "no", "AssertResult": "no", "AssertTimestampMonotonic": "0", "Before": "shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "no", "ConditionTimestampMonotonic": "0", "Conflicts": "shutdown.target", "ControlPID": "0", "DefaultDependencies": "yes", "Delegate": "no", "Description": "regional-proxy service", "DevicePolicy": "auto", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/opt/Experitest/regional-proxy-12.9.7529/start.sh ; argv[]=/opt/Experitest/regional-proxy-12.9.7529/start.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FragmentPath": "/etc/systemd/system/regional-proxy.service", "GuessMainPID": "yes", "IOScheduling": "0", "Id": "regional-proxy.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestampMonotonic": "0", "JobTimeoutAction": "none", "JobTimeoutUSec": "0", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "15078", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "15078", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryCurrent": "18446744073709551615", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "regional-proxy.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "Requires": "basic.target -.mount", "RequiresMountsFor": "/opt/Experitest/regional-proxy-12.9.7529", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "dead", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "simple", "UMask": "0022", "UnitFilePreset": "disabled", "UnitFileState": "disabled", "Wants": "system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0", "WorkingDirectory": "/opt/Experitest/regional-proxy-12.9.7529"}}
+
+RUNNING HANDLER [regional-proxy : wait for service to start] *******************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/handlers/linux-start-service.yml:10
+fatal: [192.168.3.189]: FAILED! => {"changed": false, "failed_attempts": 19, "msg": "Maximum attempts reached: URLError: <urlopen error [Errno 111] Connection refused>"}
+
+RUNNING HANDLER [regional-proxy : get installed version] ***********************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/handlers/linux-start-service.yml:16
+
+RUNNING HANDLER [regional-proxy : print installed version] *********************
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/handlers/linux-start-service.yml:22
+
+RUNNING HANDLER [regional-proxy : fail if app_version is not equal to installed version] ***
+task path: /Users/yarahaddad/.ansible/roles/regional-proxy/handlers/linux-start-service.yml:26
+META: ran handlers
+
+NO MORE HOSTS LEFT *************************************************************
+
+PLAY RECAP *********************************************************************
+192.168.3.189              : ok=52   changed=18   unreachable=0    failed=1    skipped=23   rescued=0    ignored=1   
+

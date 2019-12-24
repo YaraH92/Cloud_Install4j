@@ -1,0 +1,18 @@
+
+- name: install Chocolatey
+  win_chocolatey:
+    name: chocolatey
+    state: latest
+
+- name: disable enhanced exit codes
+  win_chocolatey_feature:
+    name: useEnhancedExitCodes
+    state: disabled
+
+- name: make sure choco is installed
+  win_shell: choco --version
+  register: c
+
+- name: validate output
+  assert:
+    that: c.stdout_lines | length == 1

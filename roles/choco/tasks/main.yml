@@ -1,0 +1,7 @@
+
+- name: install
+  include_tasks: "tasks/windows-install.yml"
+  when: 
+    - state|default('present') == 'present'
+    - ansible_os_family == 'Windows'
+

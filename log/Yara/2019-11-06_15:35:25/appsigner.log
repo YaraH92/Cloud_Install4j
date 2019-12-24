@@ -1,0 +1,312 @@
+ansible-playbook 2.8.1
+  config file = /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg
+  configured module search path = [u'/Users/yarahaddad/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /Library/Python/2.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 2.7.16 (default, Aug 24 2019, 18:37:03) [GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc-s
+Using /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg as config file
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to 
+allow bad characters in group names by default, this will change, but still be 
+user configurable on deprecation. This feature will be removed in version 2.10.
+ Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+ [WARNING]: Invalid characters were found in group names but not replaced, use
+-vvvv to see details
+
+PLAYBOOK: appsigner.yml ********************************************************
+1 plays in appsigner.yml
+
+PLAY [app-signers] *************************************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/appsigner.yml:1
+ok: [192.168.2.100] => {"ansible_facts": {"ansible_architecture": "64-bit", "ansible_bios_date": "01-30-2018", "ansible_bios_version": "1.7.0", "ansible_date_time": {"date": "2019-11-06", "day": "06", "epoch": "1573054548.09536", "hour": "15", "iso8601": "2019-11-06T13:35:48Z", "iso8601_basic": "20191106T153548092356", "iso8601_basic_short": "20191106T153548", "iso8601_micro": "2019-11-06T13:35:48.092356Z", "minute": "35", "month": "11", "second": "48", "time": "15:35:48", "tz": "Israel Standard Time", "tz_offset": "+02:00", "weekday": "Wednesday", "weekday_number": "3", "weeknumber": "44", "year": "2019"}, "ansible_distribution": "Microsoft Windows 10 Pro", "ansible_distribution_major_version": "10", "ansible_distribution_version": "10.0.17763.0", "ansible_domain": "", "ansible_env": {"ALLUSERSPROFILE": "C:\\ProgramData", "ANDROID_ADB": "C:\\Program Files (x86)\\Experitest\\Cloud\\Agent\\bin\\adb", "ANDROID_HOME": "C:\\Users\\yara.haddad\\AppData\\Local\\Android\\Sdk", "APPDATA": "C:\\Users\\yara.haddad\\AppData\\Roaming", "COMPUTERNAME": "YHADDAD-PC", "ChocolateyInstall": "C:\\ProgramData\\chocolatey", "ChocolateyLastPathUpdate": "132174457298188960", "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe", "CommonProgramFiles": "C:\\Program Files\\Common Files", "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files", "CommonProgramW6432": "C:\\Program Files\\Common Files", "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData", "HOMEDRIVE": "C:", "HOMEPATH": "\\Users\\yara.haddad", "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_191", "LOCALAPPDATA": "C:\\Users\\yara.haddad\\AppData\\Local", "LOGONSERVER": "\\\\YHADDAD-PC", "NUMBER_OF_PROCESSORS": "4", "OS": "Windows_NT", "OneDrive": "C:\\Users\\yara.haddad\\OneDrive", "OneDriveConsumer": "C:\\Users\\yara.haddad\\OneDrive", "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW;.CPL", "PROCESSOR_ARCHITECTURE": "AMD64", "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel", "PROCESSOR_LEVEL": "6", "PROCESSOR_REVISION": "9e09", "PROMPT": "$P$G", "PSExecutionPolicyPreference": "Unrestricted", "PSModulePath": "C:\\Users\\yara.haddad\\Documents\\WindowsPowerShell\\Modules;C:\\ProgramData\\Boxstarter;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules", "PUBLIC": "C:\\Users\\Public", "Path": "C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;C:\\Python33\\;C:\\Python33\\Scripts;C:\\ProgramData\\Boxstarter;C:\\Program Files\\apache-maven-3.6.0;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Experitest\\Cloud\\Agent\\bin\\adb;C:\\Users\\yara.haddad\\AppData\\Local\\Android\\Sdk\\tools;%ANDROID_HOME\\platform-tools;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\gradle-4.7\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Experitest\\Cloud\\Agent\\bin\\adb;;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Ruby25-x64\\bin;C:\\Users\\yara.haddad\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\yara.haddad\\AppData\\Roaming\\npm;C:\\Users\\yara.haddad\\AppData\\Local\\Microsoft\\WindowsApps", "ProgramData": "C:\\ProgramData", "ProgramFiles": "C:\\Program Files", "ProgramFiles(x86)": "C:\\Program Files (x86)", "ProgramW6432": "C:\\Program Files", "SystemDrive": "C:", "SystemRoot": "C:\\WINDOWS", "TEMP": "C:\\Users\\yara.haddad\\AppData\\Local\\Temp", "TMP": "C:\\Users\\yara.haddad\\AppData\\Local\\Temp", "USERDOMAIN": "YHADDAD-PC", "USERDOMAIN_ROAMINGPROFILE": "YHADDAD-PC", "USERNAME": "yara.haddad", "USERPROFILE": "C:\\Users\\yara.haddad", "asl.log": "Destination=file", "windir": "C:\\WINDOWS"}, "ansible_fqdn": "Yhaddad-PC.", "ansible_hostname": "YHADDAD-PC", "ansible_interfaces": [{"connection_name": "vEthernet (DockerNAT)", "default_gateway": null, "dns_domain": null, "interface_index": 24, "interface_name": "Hyper-V Virtual Ethernet Adapter #2", "macaddress": "00:15:5D:02:64:00"}, {"connection_name": "vEthernet (Default Switch)", "default_gateway": null, "dns_domain": null, "interface_index": 25, "interface_name": "Hyper-V Virtual Ethernet Adapter", "macaddress": "02:15:52:FA:A3:63"}, {"connection_name": "Ethernet", "default_gateway": "192.168.1.1", "dns_domain": "experitest.local", "interface_index": 14, "interface_name": "Realtek PCIe GBE Family Controller", "macaddress": "50:9A:4C:28:6E:23"}], "ansible_ip_addresses": ["10.0.75.1", "fe80::acd7:7614:1056:d8b3", "172.17.73.17", "fe80::ec8e:c09c:8fa3:4a7b", "192.168.2.100"], "ansible_kernel": "10.0.17763.0", "ansible_lastboot": "2019-10-29 11:10:20Z", "ansible_machine_id": "S-1-5-21-2438716050-1164170111-3478533550", "ansible_memtotal_mb": 16293, "ansible_nodename": "Yhaddad-PC.", "ansible_os_family": "Windows", "ansible_os_name": "Microsoft Windows 10 Pro", "ansible_os_product_type": "workstation", "ansible_owner_contact": "", "ansible_owner_name": "", "ansible_powershell_version": 5, "ansible_processor": ["GenuineIntel", "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz", "GenuineIntel", "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz", "GenuineIntel", "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz", "GenuineIntel", "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz"], "ansible_processor_cores": 4, "ansible_processor_count": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 4, "ansible_product_name": "Vostro 3668", "ansible_product_serial": "9V8RGL2", "ansible_reboot_pending": true, "ansible_swaptotal_mb": 0, "ansible_system": "Win32NT", "ansible_system_description": "", "ansible_system_vendor": "Dell Inc.", "ansible_uptime_seconds": 707130, "ansible_user_dir": "C:\\Users\\yara.haddad", "ansible_user_gecos": "", "ansible_user_id": "yara.haddad", "ansible_user_sid": "S-1-5-21-2438716050-1164170111-3478533550-1063", "ansible_virtualization_role": "NA", "ansible_virtualization_type": "NA", "ansible_win_rm_certificate_expires": "2022-11-02 12:50:31", "ansible_windows_domain": "JUMPCLOUD", "ansible_windows_domain_member": false, "ansible_windows_domain_role": "Stand-alone workstation", "gather_subset": ["all"], "module_setup": true}, "changed": false}
+META: ran handlers
+
+TASK [link_finder : override default branch version] ***************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:2
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:7
+ok: [192.168.2.100] => {
+    "install_branch_name": "12.10"
+}
+
+TASK [link_finder : read tasks from first file found, use 'tasks/' relative subdir] ***
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:9
+included: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml for 192.168.2.100
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:2
+ok: [192.168.2.100] => (item=build_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "build_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=product_key) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "product_key", 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:8
+ok: [192.168.2.100] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : calculate download url mac] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:12
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : calculate download url win] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:21
+ok: [192.168.2.100 -> localhost] => {"app_version": "12.10.7524", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Windows-SIGNER-12.10.7524.zip", "file_name": "dist-Windows-SIGNER-12.10.7524.zip"}
+
+TASK [link_finder : calculate download url linux] ******************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:30
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : set_fact] **************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:48
+ok: [192.168.2.100] => {"ansible_facts": {"sanitize_role_name": "link_finder"}, "changed": false}
+
+TASK [link_finder : define file download link] *********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:51
+ok: [192.168.2.100] => {"ansible_facts": {"link_finder": {"file_to_download": {"app_version": "12.10.7524", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Windows-SIGNER-12.10.7524.zip", "failed": false, "file_name": "dist-Windows-SIGNER-12.10.7524.zip"}}}, "changed": false}
+
+TASK [link_finder : set app_version if install branch name is master] **********
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:56
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:62
+ok: [192.168.2.100] => {
+    "link_finder.file_to_download": {
+        "app_version": "12.10.7524", 
+        "changed": false, 
+        "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Windows-SIGNER-12.10.7524.zip", 
+        "failed": false, 
+        "file_name": "dist-Windows-SIGNER-12.10.7524.zip"
+    }
+}
+
+TASK [app-signer : validate vars] **********************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/main.yml:3
+included: /Users/yarahaddad/.ansible/roles/app-signer/tasks/variables.yml for 192.168.2.100
+
+TASK [app-signer : gather os specific variables] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/variables.yml:3
+ok: [192.168.2.100] => {"ansible_facts": {"__installation_root_folder": "C:\\Experitest", "installation_folder": "{{ installation_root_folder }}\\{{ app_name }}-{{ app_version }}", "installer_file_name": "dist-Windows-SIGNER-{{ app_version }}.zip", "java_bin": "{{ java_installation_folder }}\\jre{{ java_version }}\\bin\\java.exe", "java_download_filename": "jre{{ java_version }}-windows-x64.zip", "java_installation_folder": "{{ installation_root_folder }}\\jre", "java_relative_path": "java/windows", "launcher_file_name": "start.bat", "relative_path": "app-signer/windows", "service_name": "experitest-{{ app_name }}", "temp_folder": "c:\\temp\\experitest"}, "ansible_included_var_files": ["/Users/yarahaddad/.ansible/roles/app-signer/vars/windows.yml"], "changed": false}
+
+TASK [app-signer : make sure default values exist] *****************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/variables.yml:7
+ok: [192.168.2.100] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=java_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "java_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [app-signer : override default value] *************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/variables.yml:13
+skipping: [192.168.2.100] => (item=app_version)  => {"ansible_loop_var": "item", "changed": false, "item": "app_version", "skip_reason": "Conditional result was False"}
+ok: [192.168.2.100] => (item=server_port) => {"ansible_facts": {"server_port": "8083"}, "ansible_loop_var": "item", "changed": false, "item": "server_port"}
+ok: [192.168.2.100] => (item=jmx_port) => {"ansible_facts": {"jmx_port": "51237"}, "ansible_loop_var": "item", "changed": false, "item": "jmx_port"}
+ok: [192.168.2.100] => (item=installation_root_folder) => {"ansible_facts": {"installation_root_folder": "C:\\Experitest"}, "ansible_loop_var": "item", "changed": false, "item": "installation_root_folder"}
+ok: [192.168.2.100] => (item=java_version) => {"ansible_facts": {"java_version": "1.8.0_181"}, "ansible_loop_var": "item", "changed": false, "item": "java_version"}
+
+TASK [app-signer : install] ****************************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/main.yml:6
+included: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml for 192.168.2.100
+
+TASK [app-signer : assert all vars are set] ************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:4
+ok: [192.168.2.100] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=temp_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "temp_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=clear_temp_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "clear_temp_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=service_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=main_class) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "main_class", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=installation_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=clear_before_install) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "clear_before_install", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=installer_file_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installer_file_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=s3_download_url) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "s3_download_url", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=launcher_file_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "launcher_file_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=application_properties) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "application_properties", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=extra_java_options) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "extra_java_options", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=kill_notepad) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "kill_notepad", 
+    "msg": "All assertions passed"
+}
+
+TASK [app-signer : install Chocolatey] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:25
+ok: [192.168.2.100] => {"changed": false, "rc": 0, "stdout": "Upgrading the following packages:\r\nchocolatey\r\nBy upgrading you accept licenses for the packages.\r\nchocolatey|0.10.15|0.10.15|false\r\n\r\nChocolatey upgraded 0/1 packages. \r\n See the log for details (C:\\ProgramData\\chocolatey\\logs\\chocolatey.log).\r\n", "stdout_lines": ["Upgrading the following packages:", "chocolatey", "By upgrading you accept licenses for the packages.", "chocolatey|0.10.15|0.10.15|false", "", "Chocolatey upgraded 0/1 packages. ", " See the log for details (C:\\ProgramData\\chocolatey\\logs\\chocolatey.log)."]}
+
+TASK [app-signer : disable enhanced exit codes] ********************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:30
+ok: [192.168.2.100] => {"changed": false}
+
+TASK [app-signer : install nssm dependency] ************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:35
+ok: [192.168.2.100] => {"changed": false, "rc": 0}
+
+TASK [app-signer : install visual c++ redistributable 2015 dependency] *********
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:39
+fatal: [192.168.2.100]: FAILED! => {"changed": false, "msg": "unexpected rc from install  qgq0cezf.1db: see rc, stdout and stderr for more details", "rc": 1638, "reboot_required": false, "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [app-signer : make sure temp folder exists] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:51
+ok: [192.168.2.100] => {"changed": false}
+
+TASK [app-signer : make sure java is installed on the machine] *****************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:58
+changed: [192.168.2.100] => {"changed": true, "cmd": "C:\\Experitest\\jre\\jre1.8.0_181\\bin\\java.exe -version", "delta": "0:00:00.162999", "end": "2019-11-06 01:36:23.446980", "rc": 0, "start": "2019-11-06 01:36:23.283980", "stderr": "java version \"1.8.0_181\"\r\nJava(TM) SE Runtime Environment (build 1.8.0_181-b13)\r\nJava HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)\r\n", "stderr_lines": ["java version \"1.8.0_181\"", "Java(TM) SE Runtime Environment (build 1.8.0_181-b13)", "Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)"], "stdout": "", "stdout_lines": []}
+
+TASK [app-signer : fail if java is not found] **********************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:63
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : download zip from s3 url] ***********************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:70
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : download zip from custom url] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:78
+ok: [192.168.2.100] => {"changed": false, "checksum_dest": "c2d27a0d051364a3e42aad4fbfc25b8013a30b97", "dest": "c:\\temp\\experitest\\dist-Windows-SIGNER-12.10.7524.zip", "elapsed": 0, "msg": "OK", "size": 177151432, "status_code": 200, "url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Windows-SIGNER-12.10.7524.zip"}
+
+TASK [app-signer : stop the old install4j service if exists] *******************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:88
+ok: [192.168.2.100] => (item=Cloud Application Signer) => {"ansible_loop_var": "item", "changed": false, "exists": false, "item": "Cloud Application Signer"}
+
+TASK [app-signer : stop the old service] ***************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:96
+changed: [192.168.2.100] => {"changed": true, "changed_by": "remove_service"}
+
+TASK [app-signer : kill notepad] ***********************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:106
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : kill notepad++] *********************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:114
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : clear old installation folder] ******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:127
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : make sure installation folder exists] ***********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:135
+changed: [192.168.2.100] => {"changed": true}
+
+TASK [app-signer : make sure unzip folder exists] ******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/windows-install.yml:141
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was:    at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+fatal: [192.168.2.100]: FAILED! => {"changed": false, "msg": "internal error: failed to become user 'yara.haddad': Exception calling \"CreateProcessAsUser\" with \"9\" argument(s): \"CreateProcessWithTokenW() failed (The RPC server is unavailable, Win32ErrorCode 1722)\""}
+
+PLAY RECAP *********************************************************************
+192.168.2.100              : ok=25   changed=3    unreachable=0    failed=1    skipped=9    rescued=0    ignored=1   
+

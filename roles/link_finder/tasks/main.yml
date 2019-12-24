@@ -1,0 +1,16 @@
+
+- name: override default branch version
+  set_fact:
+    "install_branch_name": "{{ __install_branch_name }}"
+  when: vars['install_branch_name'] is not defined or vars['install_branch_name'] is none
+
+
+- name: read tasks from first file found, use 'tasks/' relative subdir
+  include_tasks: "{{ lookup('first_found', params) }}"
+  vars:
+    params:
+      files:
+        - '{{ product_key | lower }}.yml'
+        - default.yml
+      paths:
+        - 'tasks'

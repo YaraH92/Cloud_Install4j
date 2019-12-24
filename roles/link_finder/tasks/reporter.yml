@@ -1,0 +1,65 @@
+## 
+- name: assert all vars are set
+  assert: { that: "{{ item }} != '' " }
+  with_items:
+  - build_id
+  - product_key
+
+- name: assert all vars are set
+  assert: 
+    that: branch is defined or install_branch_name is defined
+  
+- name: calculate download url mac
+  calculate_URL:
+    build_id: "{{ build_id }}"
+    branch: "{{ branch | default(install_branch_name) }}"
+    regex_pattern: ".*Mac-{{ product_key }}.*.zip"
+  register: file_to_download_mac
+  delegate_to: localhost 
+  when: ansible_os_family == "Darwin"
+
+- name: calculate download url win
+  calculate_URL:
+    build_id: "{{ build_id }}"
+    branch: "{{ branch | default(install_branch_name) }}"
+    regex_pattern: ".*Windows-{{ product_key }}.*.zip"
+  register: file_to_download_win
+  delegate_to: localhost
+  when: ansible_os_family == "Windows"
+
+- name: calculate download url linux
+  calculate_URL:
+    build_id: "{{ build_id }}"
+    branch: "{{ branch | default(install_branch_name) }}"
+    regex_pattern: ".*Windows-{{ product_key }}.*.zip"
+  register: file_to_download_linux
+  delegate_to: localhost
+  when: ansible_os_family == "RedHat"
+
+# - name: calculate download url linux
+#   calculate_URL:
+#     build_id: "{{ build_id }}"
+#     branch: "{{ branch | default(install_branch_name) }}"
+#     regex_pattern: ".*.sh"
+#   register: file_to_download_linux
+#   delegate_to: localhost
+#   when: ansible_os_family == "RedHat" and product_key == "NV"
+
+- set_fact:
+    sanitize_role_name: "{{ role_name | replace('-', '_') | regex_replace('([^A-Za-z0-9_])', '') | trim }}"
+
+- name: define file download link
+  set_fact:
+    "{{ sanitize_role_name }}":
+      file_to_download: "{{ (ansible_os_family == 'Windows') | ternary(file_to_download_win, (ansible_os_family == 'Darwin') | ternary(file_to_download_mac, file_to_download_linux))  }}"
+
+- debug: msg="link_finder.file_to_download.file_name.split('-')[3] | splitext)[0]"
+
+- name: set app_version if install branch name is master
+  set_fact:
+    "{{ sanitize_role_name }}":
+      file_to_download:  "{{ link_finder.file_to_download | combine( { 'app_version': (link_finder.file_to_download.file_name.split('_')[2] | splitext)[0] } ) }}"
+  when: install_branch_name == 'master'
+
+- debug: 
+    var: "{{ sanitize_role_name }}.file_to_download"

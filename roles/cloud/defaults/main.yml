@@ -1,0 +1,14 @@
+---
+# defaults file for seetest
+required_modifiable_fields:
+  - app_version
+  - installation_folder
+
+__app_version: 12.9.6081
+custom_download_url: ""
+
+app_name: cloud
+clear_temp_folder: False
+clear_before_install: False
+clean_installation: False
+hardware_verification: True

@@ -1,0 +1,7 @@
+#hhhh
+install_branch_name: "12.12"
+#clear_temp_folder: True
+#state: "absent"
+clean_installation: True
+
+cloud: {}

@@ -1,0 +1,22 @@
+---
+# tasks file for seetest
+- name: validate vars
+  include_tasks: tasks/variables.yml
+
+- name: clear temp folder
+  include_tasks: "tasks/{{ ansible_os_family | lower }}-clear-temp.yml"
+  when: clear_temp_folder | default('no') | bool
+
+- name: uninstall
+  include_tasks: "tasks/{{ ansible_os_family | lower }}-uninstall.yml"
+  when: (state|default('present') == 'absent') or (clean_installation|default('no')| bool)
+
+- name: install
+  include_tasks: "tasks/{{ ansible_os_family | lower }}-install.yml"
+  when: state|default('present') == 'present'
+
+
+  
+
+
+

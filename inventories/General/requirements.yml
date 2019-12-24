@@ -1,0 +1,45 @@
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-cloud-server.git
+  version: master
+  name: cloud-server
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-regional-proxy.git
+  version: master
+  name: regional-proxy
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-cloud-agent.git
+  version: master
+  name: cloud-agent
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-file-storage.git
+  version: master
+  name: file-storage
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-app-signer.git
+  version: master
+  name: app-signer
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-reporter.git
+  version: master
+  name: reporter
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-cloud-nv
+  version: master
+  name: cloud-nv
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-selenium-agent  
+  version: master
+  name: selenium-agent 
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-java8.git  
+  version: master
+  name: java8
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-brew.git  
+  version: master
+  name: brew2
+
+- src: git+https://github.com/ExperitestOfficial/ansible-role-disk-space-validator.git
+  version: master
+  name: disk-space-validator
+

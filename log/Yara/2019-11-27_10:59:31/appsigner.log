@@ -1,0 +1,488 @@
+ansible-playbook 2.8.1
+  config file = /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg
+  configured module search path = [u'/Users/yarahaddad/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /Library/Python/2.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 2.7.16 (default, Oct 17 2019, 17:14:30) [GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc-s
+Using /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg as config file
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to 
+allow bad characters in group names by default, this will change, but still be 
+user configurable on deprecation. This feature will be removed in version 2.10.
+ Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+ [WARNING]: Invalid characters were found in group names but not replaced, use
+-vvvv to see details
+
+PLAYBOOK: appsigner.yml ********************************************************
+1 plays in appsigner.yml
+
+PLAY [app-signers] *************************************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/appsigner.yml:1
+ok: [192.168.3.189] => {"ansible_facts": {"ansible_all_ipv4_addresses": ["192.168.3.189"], "ansible_all_ipv6_addresses": ["fe80::9b75:981b:e1f4:3304"], "ansible_apparmor": {"status": "disabled"}, "ansible_architecture": "x86_64", "ansible_bios_date": "12/12/2018", "ansible_bios_version": "6.00", "ansible_cmdline": {"BOOT_IMAGE": "/vmlinuz-3.10.0-514.26.2.el7.x86_64", "LANG": "en_US.UTF-8", "crashkernel": "auto", "quiet": true, "rd.lvm.lv": "centos_webdev/root", "rhgb": true, "ro": true, "root": "/dev/mapper/centos_webdev-root"}, "ansible_date_time": {"date": "2019-11-27", "day": "27", "epoch": "1574845360", "hour": "11", "iso8601": "2019-11-27T09:02:40Z", "iso8601_basic": "20191127T110240239927", "iso8601_basic_short": "20191127T110240", "iso8601_micro": "2019-11-27T09:02:40.240015Z", "minute": "02", "month": "11", "second": "40", "time": "11:02:40", "tz": "IST", "tz_offset": "+0200", "weekday": "Wednesday", "weekday_number": "3", "weeknumber": "47", "year": "2019"}, "ansible_default_ipv4": {"address": "192.168.3.189", "alias": "ens160", "broadcast": "192.168.7.255", "gateway": "192.168.1.1", "interface": "ens160", "macaddress": "00:0c:29:ec:67:f1", "mtu": 1500, "netmask": "255.255.248.0", "network": "192.168.0.0", "type": "ether"}, "ansible_default_ipv6": {}, "ansible_device_links": {"ids": {"dm-0": ["dm-name-centos_webdev-swap", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGtXehx1NymDv6dUIGDWc6IPPuYhfJkTHa"], "dm-1": ["dm-name-centos_webdev-root", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGVkZCJ64FRxctrYQJupp57fITUAYOeByF"], "sda2": ["lvm-pv-uuid-HcPEAu-liE3-IwhY-AtZ0-JlSr-SLV9-4jI6ca"], "sr0": ["ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001"]}, "labels": {}, "masters": {"sda2": ["dm-0", "dm-1"]}, "uuids": {"dm-0": ["c1c840bc-1acc-459c-9af6-4dac282b3991"], "dm-1": ["cd25dbf9-8a58-4062-8f86-f91223da7120"], "sda1": ["db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"]}}, "ansible_devices": {"dm-0": {"holders": [], "host": "", "links": {"ids": ["dm-name-centos_webdev-swap", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGtXehx1NymDv6dUIGDWc6IPPuYhfJkTHa"], "labels": [], "masters": [], "uuids": ["c1c840bc-1acc-459c-9af6-4dac282b3991"]}, "model": null, "partitions": {}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "", "sectors": "6291456", "sectorsize": "512", "size": "3.00 GB", "support_discard": "0", "vendor": null, "virtual": 1}, "dm-1": {"holders": [], "host": "", "links": {"ids": ["dm-name-centos_webdev-root", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGVkZCJ64FRxctrYQJupp57fITUAYOeByF"], "labels": [], "masters": [], "uuids": ["cd25dbf9-8a58-4062-8f86-f91223da7120"]}, "model": null, "partitions": {}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "", "sectors": "55508992", "sectorsize": "512", "size": "26.47 GB", "support_discard": "0", "vendor": null, "virtual": 1}, "fd0": {"holders": [], "host": "", "links": {"ids": [], "labels": [], "masters": [], "uuids": []}, "model": null, "partitions": {}, "removable": "1", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "deadline", "sectors": "8", "sectorsize": "512", "size": "4.00 KB", "support_discard": "0", "vendor": null, "virtual": 1}, "sda": {"holders": [], "host": "SCSI storage controller: LSI Logic / Symbios Logic 53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI (rev 01)", "links": {"ids": [], "labels": [], "masters": [], "uuids": []}, "model": "Virtual disk", "partitions": {"sda1": {"holders": [], "links": {"ids": [], "labels": [], "masters": [], "uuids": ["db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"]}, "sectors": "1024000", "sectorsize": 512, "size": "500.00 MB", "start": "2048", "uuid": "db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"}, "sda2": {"holders": ["centos_webdev-swap", "centos_webdev-root"], "links": {"ids": ["lvm-pv-uuid-HcPEAu-liE3-IwhY-AtZ0-JlSr-SLV9-4jI6ca"], "labels": [], "masters": ["dm-0", "dm-1"], "uuids": []}, "sectors": "61888512", "sectorsize": 512, "size": "29.51 GB", "start": "1026048", "uuid": null}}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "deadline", "sectors": "62914560", "sectorsize": "512", "size": "30.00 GB", "support_discard": "0", "vendor": "VMware", "virtual": 1}, "sr0": {"holders": [], "host": "IDE interface: Intel Corporation 82371AB/EB/MB PIIX4 IDE (rev 01)", "links": {"ids": ["ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001"], "labels": [], "masters": [], "uuids": []}, "model": "VMware IDE CDR10", "partitions": {}, "removable": "1", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "cfq", "sectors": "2097151", "sectorsize": "512", "size": "1024.00 MB", "support_discard": "0", "vendor": "NECVMWar", "virtual": 1}}, "ansible_distribution": "CentOS", "ansible_distribution_file_parsed": true, "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_major_version": "7", "ansible_distribution_release": "Core", "ansible_distribution_version": "7", "ansible_dns": {"nameservers": ["192.168.4.95", "192.168.0.112"], "search": ["experitest.local"]}, "ansible_domain": "experitest.local", "ansible_effective_group_id": 1002, "ansible_effective_user_id": 1002, "ansible_ens160": {"active": true, "device": "ens160", "features": {"busy_poll": "off [fixed]", "fcoe_mtu": "off [fixed]", "generic_receive_offload": "on", "generic_segmentation_offload": "on", "highdma": "on", "hw_tc_offload": "off [fixed]", "l2_fwd_offload": "off [fixed]", "large_receive_offload": "on", "loopback": "off [fixed]", "netns_local": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "on", "rx_all": "off [fixed]", "rx_checksumming": "on", "rx_fcs": "off [fixed]", "rx_vlan_filter": "on [fixed]", "rx_vlan_offload": "on", "rx_vlan_stag_filter": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "scatter_gather": "on", "tcp_segmentation_offload": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "tx_checksumming": "on", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_ipip_segmentation": "off [fixed]", "tx_lockless": "off [fixed]", "tx_mpls_segmentation": "off [fixed]", "tx_nocache_copy": "off", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_sit_segmentation": "off [fixed]", "tx_tcp6_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_segmentation": "on", "tx_udp_tnl_segmentation": "off [fixed]", "tx_vlan_offload": "on", "tx_vlan_stag_hw_insert": "off [fixed]", "udp_fragmentation_offload": "off [fixed]", "vlan_challenged": "off [fixed]"}, "hw_timestamp_filters": [], "ipv4": {"address": "192.168.3.189", "broadcast": "192.168.7.255", "netmask": "255.255.248.0", "network": "192.168.0.0"}, "ipv6": [{"address": "fe80::9b75:981b:e1f4:3304", "prefix": "64", "scope": "link"}], "macaddress": "00:0c:29:ec:67:f1", "module": "vmxnet3", "mtu": 1500, "pciid": "0000:03:00.0", "promisc": false, "speed": 10000, "timestamping": ["rx_software", "software"], "type": "ether"}, "ansible_env": {"HOME": "/home/qa", "LANG": "en_US.UTF-8", "LESSOPEN": "||/usr/bin/lesspipe.sh %s", "LOGNAME": "qa", "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:", "MAIL": "/var/mail/qa", "PATH": "/usr/local/bin:/usr/bin", "PWD": "/home/qa", "SHELL": "/bin/bash", "SHLVL": "2", "SSH_CLIENT": "192.168.2.190 62934 22", "SSH_CONNECTION": "192.168.2.190 62934 192.168.3.189 22", "SSH_TTY": "/dev/pts/4", "TERM": "xterm-256color", "USER": "qa", "XDG_RUNTIME_DIR": "/run/user/1002", "XDG_SESSION_ID": "55", "_": "/usr/bin/python"}, "ansible_fibre_channel_wwn": [], "ansible_fips": false, "ansible_form_factor": "Other", "ansible_fqdn": "centos-vm1.experitest.local", "ansible_hostname": "centos-vm1", "ansible_hostnqn": "", "ansible_interfaces": ["lo", "ens160"], "ansible_is_chroot": true, "ansible_iscsi_iqn": "", "ansible_kernel": "3.10.0-514.26.2.el7.x86_64", "ansible_lo": {"active": true, "device": "lo", "features": {"busy_poll": "off [fixed]", "fcoe_mtu": "off [fixed]", "generic_receive_offload": "on", "generic_segmentation_offload": "on", "highdma": "on [fixed]", "hw_tc_offload": "off [fixed]", "l2_fwd_offload": "off [fixed]", "large_receive_offload": "off [fixed]", "loopback": "on [fixed]", "netns_local": "on [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "rx_all": "off [fixed]", "rx_checksumming": "on [fixed]", "rx_fcs": "off [fixed]", "rx_vlan_filter": "off [fixed]", "rx_vlan_offload": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "scatter_gather": "on", "tcp_segmentation_offload": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "tx_checksumming": "on", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_ipip_segmentation": "off [fixed]", "tx_lockless": "on [fixed]", "tx_mpls_segmentation": "off [fixed]", "tx_nocache_copy": "off [fixed]", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tx_sctp_segmentation": "on", "tx_sit_segmentation": "off [fixed]", "tx_tcp6_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_segmentation": "on", "tx_udp_tnl_segmentation": "off [fixed]", "tx_vlan_offload": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "udp_fragmentation_offload": "on", "vlan_challenged": "on [fixed]"}, "hw_timestamp_filters": [], "ipv4": {"address": "127.0.0.1", "broadcast": "host", "netmask": "255.0.0.0", "network": "127.0.0.0"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "mtu": 65536, "promisc": false, "timestamping": ["rx_software", "software"], "type": "loopback"}, "ansible_local": {}, "ansible_lsb": {}, "ansible_machine": "x86_64", "ansible_machine_id": "1bc4cdac369c446aa2e45a0a6fd5135f", "ansible_memfree_mb": 3351, "ansible_memory_mb": {"nocache": {"free": 3578, "used": 213}, "real": {"free": 3351, "total": 3791, "used": 440}, "swap": {"cached": 0, "free": 3071, "total": 3071, "used": 0}}, "ansible_memtotal_mb": 3791, "ansible_mounts": [{"block_available": 73006, "block_size": 4096, "block_total": 127147, "block_used": 54141, "device": "/dev/sda1", "fstype": "xfs", "inode_available": 511655, "inode_total": 512000, "inode_used": 345, "mount": "/boot", "options": "rw,relatime,attr2,inode64,noquota", "size_available": 299032576, "size_total": 520794112, "uuid": "db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"}, {"block_available": 5906895, "block_size": 4096, "block_total": 6935236, "block_used": 1028341, "device": "/dev/mapper/centos_webdev-root", "fstype": "xfs", "inode_available": 27702258, "inode_total": 27754496, "inode_used": 52238, "mount": "/", "options": "rw,relatime,attr2,inode64,noquota", "size_available": 24194641920, "size_total": 28406726656, "uuid": "cd25dbf9-8a58-4062-8f86-f91223da7120"}], "ansible_nodename": "centos-vm1.experitest.local", "ansible_os_family": "RedHat", "ansible_pkg_mgr": "yum", "ansible_proc_cmdline": {"BOOT_IMAGE": "/vmlinuz-3.10.0-514.26.2.el7.x86_64", "LANG": "en_US.UTF-8", "crashkernel": "auto", "quiet": true, "rd.lvm.lv": ["centos_webdev/swap", "centos_webdev/root"], "rhgb": true, "ro": true, "root": "/dev/mapper/centos_webdev-root"}, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz", "1", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz"], "ansible_processor_cores": 1, "ansible_processor_count": 2, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 2, "ansible_product_name": "VMware Virtual Platform", "ansible_product_serial": "NA", "ansible_product_uuid": "NA", "ansible_product_version": "None", "ansible_python": {"executable": "/usr/bin/python", "has_sslcontext": true, "type": "CPython", "version": {"major": 2, "micro": 5, "minor": 7, "releaselevel": "final", "serial": 0}, "version_info": [2, 7, 5, "final", 0]}, "ansible_python_version": "2.7.5", "ansible_real_group_id": 1002, "ansible_real_user_id": 1002, "ansible_selinux": {"status": "disabled"}, "ansible_selinux_python_present": true, "ansible_service_mgr": "systemd", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEM4J6uIDuQiniyw+G6IiFM2rm9ChMrqwYgzSHN2/OLG1fGc+BgFYLoLFKWOIBvgsu1igQM0jP9ln461FQwOWdk=", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIFc1nwf+OPqlJVJ+RcXuVkHvyuO1maem7E00A1P0XK0/", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDvDju5lWxyapZGsrzeQn7Wzf7qjTPr3aY5hnYDkDwQjNajuvlnxtMJCUMuFqJ80WVpICQaAl+fdSZLMj8hUBCamZsaSLzJjMbA9okwhQLQxoSAq2ThURTVFfQvuCz0zkshieAx4KKiDIDv7SkTd81euytH0BA/F1rhymkJt2SiG2ZUqTHIp0GmGHQRWOqkmz1qmbqQY6d5o6psHuavr8OJAhgHW0rCxdutqPEzQ4wzWX5yxRMF0KZEphW/+9ccOrKQ83anWBb89F3vLtt77p1dsl/oM0NtSe12XedABvvUnfHWi1Kx3EePUvJ72qgiNh5HoEnr/+fMCsy/1A/MUuQj", "ansible_swapfree_mb": 3071, "ansible_swaptotal_mb": 3071, "ansible_system": "Linux", "ansible_system_capabilities": [""], "ansible_system_capabilities_enforced": "True", "ansible_system_vendor": "VMware, Inc.", "ansible_uptime_seconds": 165294, "ansible_user_dir": "/home/qa", "ansible_user_gecos": "", "ansible_user_gid": 1002, "ansible_user_id": "qa", "ansible_user_shell": "/bin/bash", "ansible_user_uid": 1002, "ansible_userspace_architecture": "x86_64", "ansible_userspace_bits": "64", "ansible_virtualization_role": "guest", "ansible_virtualization_type": "VMware", "discovered_interpreter_python": "/usr/bin/python", "gather_subset": ["all"], "module_setup": true}, "changed": false}
+META: ran handlers
+
+TASK [link_finder : override default branch version] ***************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:2
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:7
+ok: [192.168.3.189] => {
+    "install_branch_name": "12.11"
+}
+
+TASK [link_finder : read tasks from first file found, use 'tasks/' relative subdir] ***
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:9
+included: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml for 192.168.3.189
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:2
+ok: [192.168.3.189] => (item=build_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "build_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=product_key) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "product_key", 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:8
+ok: [192.168.3.189] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : calculate download url mac] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:12
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : calculate download url win] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:21
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : calculate download url linux] ******************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:30
+ok: [192.168.3.189 -> localhost] => {"app_version": "12.11.7667", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:526105/artifacts/content/ansible/dist-Linux-SIGNER-12.11.7667.zip", "file_name": "dist-Linux-SIGNER-12.11.7667.zip"}
+
+TASK [link_finder : set_fact] **************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:48
+ok: [192.168.3.189] => {"ansible_facts": {"sanitize_role_name": "link_finder"}, "changed": false}
+
+TASK [link_finder : define file download link] *********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:51
+ok: [192.168.3.189] => {"ansible_facts": {"link_finder": {"file_to_download": {"app_version": "12.11.7667", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:526105/artifacts/content/ansible/dist-Linux-SIGNER-12.11.7667.zip", "failed": false, "file_name": "dist-Linux-SIGNER-12.11.7667.zip"}}}, "changed": false}
+
+TASK [link_finder : set app_version if install branch name is master] **********
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:56
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:62
+ok: [192.168.3.189] => {
+    "link_finder.file_to_download": {
+        "app_version": "12.11.7667", 
+        "changed": false, 
+        "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:526105/artifacts/content/ansible/dist-Linux-SIGNER-12.11.7667.zip", 
+        "failed": false, 
+        "file_name": "dist-Linux-SIGNER-12.11.7667.zip"
+    }
+}
+
+TASK [app-signer : validate vars] **********************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/main.yml:3
+included: /Users/yarahaddad/.ansible/roles/app-signer/tasks/variables.yml for 192.168.3.189
+
+TASK [app-signer : gather os specific variables] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/variables.yml:3
+ok: [192.168.3.189] => {"ansible_facts": {"__installation_root_folder": "/opt/Experitest", "installation_folder": "{{ installation_root_folder }}/{{ app_name }}-{{ app_version }}", "installer_file_name": "dist-Linux-SIGNER-{{ app_version }}.zip", "java_bin": "{{ java_installation_folder }}/jre{{ java_version }}/bin/java", "java_download_filename": "jre{{ java_version }}-linux-x64.tar.gz", "java_installation_folder": "{{ installation_root_folder }}/jre", "java_relative_path": "java/linux", "launcher_file_name": "start.sh", "relative_path": "app-signer/linux", "service_file_path": "/etc/systemd/system/{{ service_name }}", "service_name": "{{ app_name }}.service", "temp_folder": "/var/tmp/Experitest"}, "ansible_included_var_files": ["/Users/yarahaddad/.ansible/roles/app-signer/vars/linux.yml"], "changed": false}
+
+TASK [app-signer : make sure default values exist] *****************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/variables.yml:7
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=java_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "java_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [app-signer : override default value] *************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/variables.yml:13
+skipping: [192.168.3.189] => (item=app_version)  => {"ansible_loop_var": "item", "changed": false, "item": "app_version", "skip_reason": "Conditional result was False"}
+ok: [192.168.3.189] => (item=server_port) => {"ansible_facts": {"server_port": "8083"}, "ansible_loop_var": "item", "changed": false, "item": "server_port"}
+ok: [192.168.3.189] => (item=jmx_port) => {"ansible_facts": {"jmx_port": "51237"}, "ansible_loop_var": "item", "changed": false, "item": "jmx_port"}
+ok: [192.168.3.189] => (item=installation_root_folder) => {"ansible_facts": {"installation_root_folder": "/opt/Experitest"}, "ansible_loop_var": "item", "changed": false, "item": "installation_root_folder"}
+ok: [192.168.3.189] => (item=java_version) => {"ansible_facts": {"java_version": "1.8.0_221"}, "ansible_loop_var": "item", "changed": false, "item": "java_version"}
+
+TASK [app-signer : install] ****************************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/main.yml:6
+included: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml for 192.168.3.189
+
+TASK [app-signer : assert all vars are set] ************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:4
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=clear_temp_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "clear_temp_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=service_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=main_class) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "main_class", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installation_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=clear_before_install) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "clear_before_install", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=service_file_path) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_file_path", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installer_file_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installer_file_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=ansible_user_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "ansible_user_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=s3_download_url) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "s3_download_url", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=launcher_file_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "launcher_file_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=application_properties) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "application_properties", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=extra_java_options) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "extra_java_options", 
+    "msg": "All assertions passed"
+}
+
+TASK [app-signer : make sure epel-release is installed] ************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:25
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["epel-release-7-11.noarch providing epel-release is already installed"]}
+
+TASK [app-signer : make sure rsync is installed] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:31
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["rsync-3.1.2-6.el7_6.1.x86_64 providing rsync is already installed"]}
+
+TASK [app-signer : make sure unzip is installed] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:37
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["unzip-6.0-16.el7.x86_64 providing unzip is already installed"]}
+
+TASK [app-signer : make sure psmisc (killall) is installed] ********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:43
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["psmisc-22.20-16.el7.x86_64 providing psmisc is already installed"]}
+
+TASK [app-signer : disable selinux] ********************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:51
+ok: [192.168.3.189] => {"changed": false, "configfile": "/etc/selinux/config", "msg": "", "policy": "targeted", "reboot_required": false, "state": "disabled"}
+
+TASK [app-signer : stop and disable firewall] **********************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:56
+ok: [192.168.3.189] => (item=firewalld) => {"ansible_loop_var": "item", "changed": false, "enabled": false, "item": "firewalld", "name": "firewalld", "state": "stopped", "status": {"ActiveEnterTimestampMonotonic": "0", "ActiveExitTimestampMonotonic": "0", "ActiveState": "inactive", "After": "polkit.service basic.target system.slice dbus.service", "AllowIsolate": "no", "AssertResult": "no", "AssertTimestampMonotonic": "0", "Before": "NetworkManager.service libvirtd.service shutdown.target network.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "BusName": "org.fedoraproject.FirewallD1", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "no", "ConditionTimestampMonotonic": "0", "Conflicts": "ipset.service shutdown.target ip6tables.service iptables.service ebtables.service", "ControlPID": "0", "DefaultDependencies": "yes", "Delegate": "no", "Description": "firewalld - dynamic firewall daemon", "DevicePolicy": "auto", "Documentation": "man:firewalld(1)", "EnvironmentFile": "/etc/sysconfig/firewalld (ignore_errors=yes)", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/usr/sbin/firewalld ; argv[]=/usr/sbin/firewalld --nofork --nopid $FIREWALLD_ARGS ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FragmentPath": "/usr/lib/systemd/system/firewalld.service", "GuessMainPID": "yes", "IOScheduling": "0", "Id": "firewalld.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestampMonotonic": "0", "JobTimeoutAction": "none", "JobTimeoutUSec": "0", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "15078", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "15078", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryCurrent": "18446744073709551615", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "firewalld.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "Requires": "basic.target", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "null", "StandardInput": "null", "StandardOutput": "null", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "dead", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "dbus", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "disabled", "Wants": "system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}}
+
+TASK [app-signer : make sure temp folder] **************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:68
+ok: [192.168.3.189] => {"changed": false, "gid": 0, "group": "root", "mode": "0766", "owner": "qa", "path": "/var/tmp/Experitest", "size": 4096, "state": "directory", "uid": 1002}
+
+TASK [app-signer : make sure java is installed on the machine] *****************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:77
+changed: [192.168.3.189] => {"changed": true, "cmd": ["/opt/Experitest/jre/jre1.8.0_221/bin/java", "-version"], "delta": "0:00:00.119740", "end": "2019-11-27 11:02:48.913333", "rc": 0, "start": "2019-11-27 11:02:48.793593", "stderr": "java version \"1.8.0_221\"\nJava(TM) SE Runtime Environment (build 1.8.0_221-b11)\nJava HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)", "stderr_lines": ["java version \"1.8.0_221\"", "Java(TM) SE Runtime Environment (build 1.8.0_221-b11)", "Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)"], "stdout": "", "stdout_lines": []}
+
+TASK [app-signer : fail if java is not found] **********************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:83
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : download zip from s3 url] ***********************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:90
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : download zip from custom url] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:97
+changed: [192.168.3.189] => {"changed": true, "checksum_dest": null, "checksum_src": "8daa23a0e99d4b0f24d1030c51e6e2beeebe749f", "dest": "/var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667.zip", "elapsed": 23, "gid": 1002, "group": "qa", "md5sum": "eb4c8481fae42297bb554c8f55d21b4d", "mode": "0664", "msg": "OK (179196439 bytes)", "owner": "qa", "size": 179196439, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574845206.18-247190735222201/tmpWVcMGu", "state": "file", "status_code": 200, "uid": 1002, "url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:526105/artifacts/content/ansible/dist-Linux-SIGNER-12.11.7667.zip"}
+
+TASK [app-signer : stop the old service] ***************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:106
+fatal: [192.168.3.189]: FAILED! => {"changed": false, "msg": "Could not find the requested service app-signer.service: host"}
+...ignoring
+
+TASK [app-signer : clear old installation folder] ******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:115
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : make sure installation folder exists] ***********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:123
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "qa", "path": "/opt/Experitest/app-signer-12.11.7667", "size": 6, "state": "directory", "uid": 1002}
+
+TASK [app-signer : make sure unzip folder exist] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:130
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "qa", "path": "/var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667", "size": 6, "state": "directory", "uid": 1002}
+
+TASK [app-signer : unzip the file] *********************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:137
+changed: [192.168.3.189] => {"changed": true, "dest": "/var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667", "extract_results": {"cmd": ["/bin/unzip", "-o", "/var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667.zip", "-d", "/var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667"], "err": "", "out": "Archive:  /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667.zip\n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/appsigner  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/appsigner.vmoptions  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/\n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/AdbWinApi.dll  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/AdbWinUsbApi.dll  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/Interop.PortableDeviceApiLib.dll  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/Interop.PortableDeviceTypesLib.dll  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/MockLocationsProvider.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/SimpleKeyboard.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/TransferRateTest.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/UIAutomator.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/a.com.experitest.ExperiBank.LoginActivity.2.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/a.com.experitest.simplebrowser.WebViewActivity.2.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/a.tag  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/adb  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/adb-sms-android-app.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/adb.exe  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/1.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/aapt.exe  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/aapt2.exe  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/aapt2_64.exe  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/aapt2_64_linux  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/aapt2_64_mac  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/aapt_64.exe  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/aapt_64_linux  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/aapt_64_mac  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/apktool.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/baksmali.jar  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/lib64/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/lib64/libc++.dylib  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt/libwinpthread-1.dll  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/1.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/aapt.exe  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/aapt_64_linux  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/aapt_64_mac  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/apktool.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/baksmali.jar  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/lib64/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/apt_backup/lib64/libc++.dylib  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/camera2_mock.zip  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/camera_mock.zip  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/com.experitest.ExperiBank.LoginActivity.2.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/com.experitest.ExperiBank.LoginActivity.2.properties  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/com.experitest.ExperiBank.LoginActivity.2.version  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/com.experitest.simplebrowser.WebViewActivity.2.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/com.experitest.simplebrowser.WebViewActivity.2.properties  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/com.experitest.simplebrowser.WebViewActivity.2.version  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/dump_android_log.cmd  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/fingerprint_mock.zip  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/instrumentationAddOn.jar  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/\n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/darwin/\n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/darwin/lib64/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/darwin/lib64/libc++.dylib  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/darwin/zipalign  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/linux/\n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/linux/lib64/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/linux/lib64/libc++.so  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/linux/zipalign  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/win32-x86/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/js/win32-x86/zipalign.exe  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/out.post  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/securityModeSmali.zip  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/service.zip  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/signapk.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/simplebrowser.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/supported_devices.csv  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/tags  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/testkey.pk8  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/testkey.x509.pem  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/tracer_mock.zip  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/adb/ulm.apk  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/bin/vc_redist.x64.exe  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/config/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/config/application.properties  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/config/logback-local.xml  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/config/logback.properties  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/config/logback.xml  \n   creating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/\n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/HdrHistogram-2.1.10.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/LatencyUtils-2.0.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/animal-sniffer-annotations-1.14.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/annotations-13.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/annotations-26.4.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/aopalliance-repackaged-2.5.0-b42.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/app-signer-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/app-signer-api-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/asm-5.0.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/bcpkix-jdk15on-1.62.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/bcprov-jdk15on-1.62.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/byte-buddy-1.8.15.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/checker-qual-2.5.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/classmate-1.3.4.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/common-26.4.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-cli-1.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-codec-1.11.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-collections-3.2.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-compress-1.8.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-configuration-1.9.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-exec-1.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-io-2.4.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-lang-2.6.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-lang3-3.7.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-logging-1.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-os-1.0.1-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-text-1.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/commons-version-1.0.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/compiler-0.8.14.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/dd-plist-0.999.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/ddmlib-26.4.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/devportal-client-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/error_prone_annotations-2.1.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/file-store-api-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/file-store-client-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/file-store-engine-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/file-store-rest-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/file-store-rest-upgrade-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/gson-2.8.5.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/guava-26.0-jre.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/hasp-srm-api-7.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/hibernate-validator-6.0.13.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/hk2-api-2.5.0-b42.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/hk2-locator-2.5.0-b42.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/hk2-utils-2.5.0-b42.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/httpclient-4.5.9.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/httpcore-4.4.11.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/httpmime-4.5.6.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/imgscalr-lib-4.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/ios-infra-api-1.2.207.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/ios-infra-impl-1.2.207.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/j2objc-annotations-1.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jackson-annotations-2.9.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jackson-core-2.9.9.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jackson-databind-2.9.9.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jackson-datatype-jdk8-2.9.7.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jackson-datatype-jsr310-2.9.7.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jackson-module-jaxb-annotations-2.8.10.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jackson-module-parameter-names-2.9.7.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/java-flac-encoder-0.3.7.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/java-lame-master-3.98.4.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/javassist-3.22.0-CR2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/javax.annotation-api-1.3.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/javax.inject-1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/javax.inject-2.5.0-b42.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/javax.ws.rs-api-2.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jboss-logging-3.3.2.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jcommander-1.48.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jersey-client-2.27.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jersey-common-2.27.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jersey-entity-filtering-2.27.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jersey-hk2-2.27.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jersey-media-json-jackson-2.27.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jna-4.0.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jolokia-core-1.5.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/json-20140107.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/json-simple-1.1.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jsr305-3.0.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jsystem-1.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jul-to-slf4j-1.7.25.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/junixsocket-1.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jyscr-12.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jython-standalone-2.7.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/jzlib-1.1.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/kotlin-stdlib-1.3.31.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/kotlin-stdlib-common-1.3.31.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/kotlin-stdlib-jdk7-1.3.31.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/kotlin-stdlib-jdk8-1.3.31.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/kxml2-2.3.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/libthrift-0.10.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/log4j-api-2.10.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/log4j-to-slf4j-2.10.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/logback-classic-1.2.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/logback-core-1.2.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/micrometer-core-1.0.7.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/monitor-common-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/netty-all-4.1.37.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/netty-buffer-4.1.37.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/netty-common-4.1.37.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/netty-resolver-4.1.37.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/netty-transport-4.1.37.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/netty-transport-native-kqueue-4.1.37.Final-osx-x86_64.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/netty-transport-native-unix-common-4.1.37.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/okhttp-3.11.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/okio-1.14.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/osgi-resource-locator-1.0.1.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/rhino-1.7R4.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/selenium-api-3.141.59.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/selenium-chrome-driver-3.141.59.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/selenium-java-3.141.59.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/selenium-remote-driver-3.141.59.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/selenium-support-3.141.59.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/serializer-2.7.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/service-common-api-1.0.4-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/service-common-client-1.0.4.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/service-common-web-1.0.3.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/service-rest-support-data-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/slf4j-api-1.7.26.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/snakeyaml-1.19.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-aop-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-beans-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-actuator-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-actuator-autoconfigure-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-autoconfigure-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-starter-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-starter-actuator-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-starter-json-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-starter-logging-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-starter-security-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-starter-tomcat-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-boot-starter-web-2.0.6.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-context-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-core-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-expression-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-jcl-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-security-config-5.0.9.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-security-core-5.0.9.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-security-web-5.0.9.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-web-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/spring-webmvc-5.1.8.RELEASE.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/staple-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/staple-dto-12.11-SNAPSHOT.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/tomcat-embed-core-8.5.34.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/tomcat-embed-el-8.5.34.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/tomcat-embed-websocket-8.5.34.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/validation-api-2.0.1.Final.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/velocity-1.7.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/xalan-2.7.2.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/xercesImpl-2.12.0.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/xml-apis-1.4.01.jar  \n  inflating: /var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/lib/xmlwise-1.2.11.jar  \n", "rc": 0}, "gid": 0, "group": "root", "handler": "ZipArchive", "mode": "0755", "owner": "qa", "size": 19, "src": "/var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667.zip", "state": "directory", "uid": 1002}
+
+TASK [app-signer : synchronize zip content to installation folder] *************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:146
+NOTIFIED HANDLER app-signer : start the service for 192.168.3.189
+changed: [192.168.3.189] => {"changed": true, "cmd": ["rsync", "-r", "/var/tmp/Experitest/dist-Linux-SIGNER-12.11.7667/Signer/", "/opt/Experitest/app-signer-12.11.7667/"], "delta": "0:00:01.690662", "end": "2019-11-27 11:03:23.328712", "rc": 0, "start": "2019-11-27 11:03:21.638050", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+TASK [app-signer : copy service file] ******************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:152
+changed: [192.168.3.189] => {"changed": true, "checksum": "8dcbe5d7c9574be8adfb030d63d120cb78d2bd41", "dest": "/etc/systemd/system/app-signer.service", "gid": 0, "group": "root", "md5sum": "83d777a22451a558dce6e04383e2eefc", "mode": "0644", "owner": "root", "size": 332, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574845240.54-10416468979602/source", "state": "file", "uid": 0}
+
+TASK [app-signer : copy start script] ******************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:158
+changed: [192.168.3.189] => {"changed": true, "checksum": "bcdf709e30aed5f7ffd612ef1674db36dc8cb972", "dest": "/opt/Experitest/app-signer-12.11.7667/start.sh", "gid": 0, "group": "root", "md5sum": "79b397fddc1ddf02395cd0a08dc54acd", "mode": "0777", "owner": "qa", "size": 993, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574845241.84-205330162809720/source", "state": "file", "uid": 1002}
+
+TASK [app-signer : update application properties file] *************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:168
+changed: [192.168.3.189] => (item={'value': u'8083', 'key': u'server.port'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "server.port", "value": "8083"}, "msg": "line added"}
+
+TASK [app-signer : update logback properties file] *****************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:176
+
+TASK [app-signer : set permissions for logs folder] ****************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:184
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0777", "owner": "qa", "path": "/opt/Experitest/app-signer-12.11.7667/logs", "size": 6, "state": "directory", "uid": 1002}
+
+TASK [app-signer : reset pairing key] ******************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:192
+ok: [192.168.3.189] => {"changed": false, "path": "/opt/Experitest/app-signer-12.11.7667/config/pairing", "state": "absent"}
+
+TASK [app-signer : check the zipalign file exists] *****************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:200
+ok: [192.168.3.189] => {"changed": false, "stat": {"atime": 1574845402.3728595, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 496, "charset": "binary", "checksum": "91e8efec8992532b1749a5e6c4cc6502326d5fee", "ctime": 1574845402.3738594, "dev": 64769, "device_type": 0, "executable": true, "exists": true, "gid": 0, "gr_name": "root", "inode": 5231617, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "application/x-sharedlib", "mode": "0755", "mtime": 1574845402.3738594, "nlink": 1, "path": "/opt/Experitest/app-signer-12.11.7667/bin/adb/js/linux/zipalign", "pw_name": "root", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 250200, "uid": 0, "version": "18446744071825408500", "wgrp": false, "woth": false, "writeable": false, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}}
+
+TASK [app-signer : set permissions to zipalign file] ***************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:205
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0777", "owner": "root", "path": "/opt/Experitest/app-signer-12.11.7667/bin/adb/js/linux/zipalign", "size": 250200, "state": "file", "uid": 0}
+
+TASK [app-signer : sanitize role name] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:215
+ok: [192.168.3.189] => {"ansible_facts": {"sanitize_role_name": "app_signer"}, "changed": false}
+
+TASK [app-signer : expose role output] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-install.yml:219
+ok: [192.168.3.189] => {"ansible_facts": {"app_signer": {"configuration_file": "/opt/Experitest/app-signer-12.11.7667/config/application.properties", "installation_folder": "/opt/Experitest/app-signer-12.11.7667", "java_bin": "/opt/Experitest/jre/jre1.8.0_221/bin/java", "jmx_port": "51237", "server_port": "8083"}}, "changed": false}
+
+TASK [app-signer : clear temp folder] ******************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/main.yml:10
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : track versions] *********************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/main.yml:14
+included: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-track-versions.yml for 192.168.3.189
+
+TASK [app-signer : assert all vars are set] ************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-track-versions.yml:5
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [app-signer : test for current installation version] **********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-track-versions.yml:14
+ok: [192.168.3.189] => {"changed": false, "stat": {"exists": false}}
+
+TASK [app-signer : load current_version from remote file] **********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-track-versions.yml:19
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : move current to be previous] ********************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-track-versions.yml:32
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : update current version with new version] ********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-track-versions.yml:41
+changed: [192.168.3.189] => {"changed": true, "checksum": "fd136517aedb07b7ea217a2ce1182dcb90b453ba", "dest": "/opt/Experitest/app-signer-current", "gid": 0, "group": "root", "md5sum": "380368c49b310a62e1e9795c80247c54", "mode": "0644", "owner": "root", "size": 10, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574845248.65-98172860991456/source", "state": "file", "uid": 0}
+
+TASK [app-signer : remove archived versions] ***********************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/main.yml:18
+included: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml for 192.168.3.189
+
+TASK [app-signer : assert all vars are set] ************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:4
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [app-signer : test for previous installation version] *********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:13
+ok: [192.168.3.189] => {"changed": false, "stat": {"exists": false}}
+
+TASK [app-signer : load previous_version from remote file] *********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:18
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : set previous_version from remote file] **********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:25
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [app-signer : test for current installation version] **********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:31
+ok: [192.168.3.189] => {"changed": false, "stat": {"atime": 1574845413.1448588, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "fd136517aedb07b7ea217a2ce1182dcb90b453ba", "ctime": 1574845413.1448588, "dev": 64769, "device_type": 0, "executable": false, "exists": true, "gid": 0, "gr_name": "root", "inode": 39107613, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0644", "mtime": 1574845412.1888587, "nlink": 1, "path": "/opt/Experitest/app-signer-current", "pw_name": "root", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 10, "uid": 0, "version": "1614543743", "wgrp": false, "woth": false, "writeable": false, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+
+TASK [app-signer : load current_version from remote file] **********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:36
+ok: [192.168.3.189] => {"changed": false, "content": "MTIuMTEuNzY2Nw==", "encoding": "base64", "source": "/opt/Experitest/app-signer-current"}
+
+TASK [app-signer : set current_version from remote file] ***********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:43
+ok: [192.168.3.189] => {"ansible_facts": {"current_version": "12.11.7667"}, "changed": false}
+
+TASK [app-signer : find old versions] ******************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:49
+ok: [192.168.3.189] => {"changed": false, "examined": 8, "files": [], "matched": 0, "msg": ""}
+
+TASK [app-signer : remove old versions] ****************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/linux-remove-archived.yml:59
+
+TASK [app-signer : uninstall] **************************************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/tasks/main.yml:22
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+RUNNING HANDLER [app-signer : start the service] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/handlers/main.yml:2
+included: /Users/yarahaddad/.ansible/roles/app-signer/handlers/linux-start-service.yml for 192.168.3.189
+
+RUNNING HANDLER [app-signer : start the service] *******************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/handlers/linux-start-service.yml:2
+changed: [192.168.3.189] => {"changed": true, "enabled": true, "name": "app-signer.service", "state": "started", "status": {"ActiveEnterTimestampMonotonic": "0", "ActiveExitTimestampMonotonic": "0", "ActiveState": "inactive", "After": "basic.target system.slice systemd-journald.socket -.mount", "AllowIsolate": "no", "AssertResult": "no", "AssertTimestampMonotonic": "0", "Before": "shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "no", "ConditionTimestampMonotonic": "0", "Conflicts": "shutdown.target", "ControlPID": "0", "DefaultDependencies": "yes", "Delegate": "no", "Description": "app-signer service", "DevicePolicy": "auto", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/opt/Experitest/app-signer-12.11.7667/start.sh ; argv[]=/opt/Experitest/app-signer-12.11.7667/start.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FragmentPath": "/etc/systemd/system/app-signer.service", "GuessMainPID": "yes", "IOScheduling": "0", "Id": "app-signer.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestampMonotonic": "0", "JobTimeoutAction": "none", "JobTimeoutUSec": "0", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "15078", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "15078", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryCurrent": "18446744073709551615", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "app-signer.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "Requires": "-.mount basic.target", "RequiresMountsFor": "/opt/Experitest/app-signer-12.11.7667", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "dead", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "simple", "UMask": "0022", "UnitFilePreset": "disabled", "UnitFileState": "disabled", "Wants": "system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0", "WorkingDirectory": "/opt/Experitest/app-signer-12.11.7667"}}
+
+RUNNING HANDLER [app-signer : wait for service to start] ***********************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/handlers/linux-start-service.yml:10
+ok: [192.168.3.189] => {"changed": false, "failed_attempts": 1}
+
+RUNNING HANDLER [app-signer : get installed version] ***************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/handlers/linux-start-service.yml:16
+ok: [192.168.3.189] => {"cache_control": "no-cache, no-store, max-age=0, must-revalidate", "changed": false, "connection": "close", "content": "{\"build\":{\"version\":\"12.11.7667\",\"artifact\":\"app-signer\",\"name\":\"app-signer\",\"group\":\"com.experitest\",\"time\":\"2019-11-27T08:31:01.255Z\"}}", "content_type": "application/vnd.spring-boot.actuator.v2+json;charset=UTF-8", "cookies": {}, "cookies_string": "", "date": "Wed, 27 Nov 2019 09:03:45 GMT", "elapsed": 0, "expires": "0", "json": {"build": {"artifact": "app-signer", "group": "com.experitest", "name": "app-signer", "time": "2019-11-27T08:31:01.255Z", "version": "12.11.7667"}}, "msg": "OK (unknown bytes)", "pragma": "no-cache", "redirected": false, "status": 200, "transfer_encoding": "chunked", "url": "http://localhost:8083/manage/info", "x_content_type_options": "nosniff", "x_frame_options": "DENY", "x_xss_protection": "1; mode=block"}
+
+RUNNING HANDLER [app-signer : print installed version] *************************
+task path: /Users/yarahaddad/.ansible/roles/app-signer/handlers/linux-start-service.yml:22
+ok: [192.168.3.189] => {
+    "msg": " Installed version: 12.11.7667"
+}
+
+RUNNING HANDLER [app-signer : fail if app_version is not equal to installed version] ***
+task path: /Users/yarahaddad/.ansible/roles/app-signer/handlers/linux-start-service.yml:26
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *********************************************************************
+192.168.3.189              : ok=54   changed=13   unreachable=0    failed=0    skipped=16   rescued=0    ignored=1   
+

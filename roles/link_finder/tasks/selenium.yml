@@ -1,0 +1,40 @@
+## 
+- name: assert all vars are set
+  assert: { that: "{{ item }} != '' " }
+  with_items:
+  - build_id
+  - product_key
+
+- name: assert all vars are set
+  assert: 
+    that: branch is defined or install_branch_name is defined
+
+
+- name: calculate download url
+  calculate_URL:
+    build_id: "{{ build_id }}"
+    branch: "{{ branch | default(install_branch_name) }}"
+    regex_pattern: "{{ (ansible_os_family == 'Darwin') | ternary('.*dmg', '.*exe') }}"
+  register: file_to_download
+  delegate_to: localhost 
+
+- debug: 
+    msg: "{{ file_to_download }}"
+
+- set_fact:
+    version_with_underscores: "{{ file_to_download['file_name'] | replace('_', '.') }}"
+
+- set_fact:
+    _extend_return_object:
+        app_version: "{{ version_with_underscores.split('.')[3] }}.{{ version_with_underscores.split('.')[4] }}.{{ version_with_underscores.split('.')[5] }}"
+
+- set_fact:
+    sanitize_role_name: "{{ role_name | replace('-', '_') | regex_replace('([^A-Za-z0-9_])', '') | trim }}"
+
+- name: define win or mac link
+  set_fact:
+    "{{ sanitize_role_name }}":
+      file_to_download: "{{ file_to_download | combine(_extend_return_object) }}"
+
+- debug: 
+    var: "{{ sanitize_role_name }}.file_to_download"

@@ -1,0 +1,18 @@
+
+
+- name: apply only if kill_cmd is yes
+  block:
+
+    - name: kill cmd
+      win_command: taskkill /F /IM cmd.exe
+      when: ansible_os_family == "Windows"
+      ignore_errors: yes
+
+    # - name: kill notepad++
+    #   win_command: taskkill /F /IM notepad++.exe
+    #   when: ansible_os_family == "Windows"
+    #   ignore_errors: yes
+
+  when: 
+    - ansible_os_family == "Windows"
+    - kill_cmd | default('no') | bool

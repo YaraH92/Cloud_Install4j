@@ -1,0 +1,13 @@
+
+- hosts: mac
+  serial: 10
+  roles:
+    - brew2
+
+- hosts: all
+  roles:
+    - java8
+
+- hosts: windows
+  roles:
+    - winrm-startup

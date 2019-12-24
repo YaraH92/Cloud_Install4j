@@ -1,0 +1,71 @@
+
+# keystore file
+
+- name: cloud server certs
+  block: 
+
+    - name: update keystore file
+      win_copy:
+        src: "{{ certificate_file_name }}/{{ certificate_file_name }}"
+        dest: "{{ cloud_installation_folder }}/conf/{{ certificate_file_name }}"
+      become: yes
+      when: ansible_os_family == 'Windows'
+
+    - name: update keystore file
+      copy:
+        src: "{{ certificate_file_name }}/{{ certificate_file_name }}"
+        dest: "{{ cloud_installation_folder }}/conf/{{ certificate_file_name }}"
+      become: yes
+      when: ansible_os_family == 'Darwin'
+
+  when: cloud_installation_folder is defined
+
+- name: reporter server certs
+  block: 
+
+    - name: update keystore file
+      win_copy:
+        src: "{{ certificate_file_name }}/{{ certificate_file_name }}"
+        dest: "{{ reporter_server_installation_folder }}/config/{{ certificate_file_name }}"
+      become: yes
+      when: ansible_os_family == 'Windows'
+
+    - name: update keystore file
+      copy:
+        src: "{{ certificate_file_name }}/{{ certificate_file_name }}"
+        dest: "{{ reporter_server_installation_folder }}/conf/{{ certificate_file_name }}"
+      become: yes
+      when: ansible_os_family == 'Darwin'
+
+  when: reporter_server_installation_folder is defined
+
+- name: region proxy certs
+  block: 
+
+    - name: win copy private key
+      win_copy: 
+        src:  "{{ certificate_file_name }}/server_private_key.key"
+        dest: "{{ nginx_conf_folder }}\\"
+      when: ansible_os_family == "Windows"
+
+    - name: win copy certificate  
+      win_copy: 
+        src:  "{{ certificate_file_name }}/server_public_key.crt"
+        dest: "{{ nginx_conf_folder }}\\"
+      when: ansible_os_family == "Windows"
+
+    - name: mac copy private key  
+      copy: 
+        src:  "{{ certificate_file_name }}/server_private_key.key"
+        dest: "{{ nginx_conf_folder }}/"
+      become: yes
+      when: ansible_os_family == "Darwin"
+
+    - name: mac copy certificate  
+      copy: 
+        src:  "{{ certificate_file_name }}/server_public_key.crt"
+        dest: "{{ nginx_conf_folder }}/"
+      become: yes
+      when: ansible_os_family == "Darwin"
+
+  when: nginx_conf_folder is defined

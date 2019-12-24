@@ -1,0 +1,28 @@
+
+- name: assert all vars are set
+  assert: { that: "{{ item }} != '' " }
+  with_items:
+  - installation_folder
+  - temp_folder
+
+# uninstall
+- debug: msg="\"{{ installation_folder }}\\uninstall.exe\""
+
+- name: check uninstall.exe exists
+  win_stat:
+    path: "\"{{ installation_folder }}\\uninstall.exe\""
+  register: uninstaller_exists
+  become: yes
+
+- name: run uninstaller
+  win_command: "\"{{ installation_folder }}\\uninstall.exe\" -q"
+  become: yes
+  when: 
+    - uninstaller_exists.stat.exists
+
+- name: remove cloud folder
+  win_file:
+    path: "{{ installation_folder }}"
+    state: absent
+
+

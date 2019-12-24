@@ -1,0 +1,348 @@
+ansible-playbook 2.8.1
+  config file = /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg
+  configured module search path = [u'/Users/yarahaddad/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /Library/Python/2.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 2.7.16 (default, Aug 24 2019, 18:37:03) [GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc-s
+Using /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg as config file
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to 
+allow bad characters in group names by default, this will change, but still be 
+user configurable on deprecation. This feature will be removed in version 2.10.
+ Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+ [WARNING]: Invalid characters were found in group names but not replaced, use
+-vvvv to see details
+
+PLAYBOOK: cloudagent.yml *******************************************************
+1 plays in cloudagent.yml
+
+PLAY [cloud-agents] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/cloudagent.yml:1
+ok: [192.168.2.190] => {"ansible_facts": {"ansible_VHC128": {"device": "VHC128", "flags": [], "ipv4": [], "ipv6": [], "macaddress": "unknown", "mtu": "0", "type": "unknown"}, "ansible_XHC0": {"device": "XHC0", "flags": [], "ipv4": [], "ipv6": [], "macaddress": "unknown", "mtu": "0", "type": "unknown"}, "ansible_XHC1": {"device": "XHC1", "flags": [], "ipv4": [], "ipv6": [], "macaddress": "unknown", "mtu": "0", "type": "unknown"}, "ansible_XHC20": {"device": "XHC20", "flags": [], "ipv4": [], "ipv6": [], "macaddress": "unknown", "mtu": "0", "type": "unknown"}, "ansible_all_ipv4_addresses": ["192.168.2.190", "169.254.253.53"], "ansible_all_ipv6_addresses": ["fe80::415:9b6:7d6e:7898%en0", "fe80::aede:48ff:fe00:1122%en6", "fe80::442:9e10:184:d2c8%en1", "fe80::66d1:16fb:e71c:aa04%utun0", "fe80::7290:1286:80d7:c44e%utun1", "fe80::d83:e52b:1fd2:197b%utun2", "fe80::8ce7:79d7:aed9:9fa6%utun3", "fe80::4736:bd69:9be8:7d90%utun4", "fe80::95ec:c948:bd22:33e6%utun5", "fe80::e468:47ab:c677:e23c%utun6", "fe80::8e2b:8d4e:d5b:42f0%utun7", "fe80::aeee:9d27:888d:e05e%utun8", "fe80::8c9b:2927:ba0e:2694%utun9", "fe80::858d:a929:6164:172f%utun10", "fe80::efd0:7049:9bea:f1d1%utun11", "fe80::aa7c:3d46:3f0e:7cb2%utun12", "fe80::c45e:e2d5:4bf5:746e%utun13", "fe80::9e83:b9cb:78c7:e377%utun14", "fe80::253f:2de7:52a1:ed98%utun15", "fe80::b097:e9b8:a111:6297%utun16", "fe80::5aaf:34e7:3fa:c06b%utun17", "fe80::e052:5d0a:5fe:27ec%utun18", "fe80::f415:b7fd:c5db:dd0e%utun19", "fe80::4d66:a319:2ea9:92ef%utun20", "fe80::797f:a74a:3129:37bc%utun21", "fe80::7ff2:6472:1738:9e58%utun22", "fe80::6ff0:2088:62bc:587f%utun23", "fe80::6b6f:8c3f:d6ee:a04d%utun24", "fe80::b532:da44:6267:d127%utun25", "fe80::b529:4f4:7d34:264%utun26", "fe80::a3c3:fe63:4e56:d4a8%utun27", "fe80::1d8:34f9:ba08:12e6%utun28", "fe80::e41e:90fd:94da:b086%utun29", "fe80::4212:43ab:2743:a8ee%utun30", "fe80::9c9:d1d7:cccf:f244%utun31", "fe80::cdf9:86c8:64ab:6dd0%utun32", "fe80::ea51:d8a0:84eb:a1e%utun33", "fe80::79b5:904d:62af:db44%utun34", "fe80::7fe5:e2fe:745f:70ca%utun35"], "ansible_ap1": {"device": "ap1", "flags": ["BROADCAST", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "f2:18:98:b2:62:79", "media": "Unknown", "media_select": "autoselect", "mtu": "1500", "options": ["CHANNEL_IO"], "status": "inactive", "type": "ether"}, "ansible_apparmor": {"status": "disabled"}, "ansible_architecture": "x86_64", "ansible_awdl0": {"device": "awdl0", "flags": ["UP", "BROADCAST", "RUNNING", "PROMISC", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "e2:36:7b:29:14:9a", "media": "Unknown", "media_select": "autoselect", "mtu": "1484", "options": ["PERFORMNUD", "DAD"], "status": "inactive", "type": "ether"}, "ansible_bridge0": {"device": "bridge0", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "82:32:03:45:b4:01", "media": "Unknown", "media_select": "Unknown", "media_type": "unknown type", "mtu": "1500", "options": ["PERFORMNUD", "DAD"], "status": "inactive", "type": "ether"}, "ansible_date_time": {"date": "2019-11-06", "day": "06", "epoch": "1573042237", "hour": "14", "iso8601": "2019-11-06T12:10:37Z", "iso8601_basic": "20191106T141037135407", "iso8601_basic_short": "20191106T141037", "iso8601_micro": "2019-11-06T12:10:37.135480Z", "minute": "10", "month": "11", "second": "37", "time": "14:10:37", "tz": "IST", "tz_offset": "+0200", "weekday": "Wednesday", "weekday_number": "3", "weeknumber": "44", "year": "2019"}, "ansible_default_ipv4": {"address": "192.168.2.190", "broadcast": "192.168.7.255", "device": "en0", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "SIMPLEX", "MULTICAST"], "gateway": "192.168.1.1", "interface": "en0", "macaddress": "f0:18:98:ee:cc:5e", "media": "Unknown", "media_options": ["full-duplex", "flow-control"], "media_select": "autoselect", "media_type": "1000base", "mtu": "1500", "netmask": "255.255.248.0", "network": "192.168.0.0", "options": ["PERFORMNUD", "DAD"], "status": "active", "type": "ether"}, "ansible_default_ipv6": {}, "ansible_distribution": "MacOSX", "ansible_distribution_major_version": "10", "ansible_distribution_release": "19.0.0", "ansible_distribution_version": "10.15", "ansible_dns": {"domain": "experitest.local", "nameservers": ["192.168.4.95", "192.168.0.112"]}, "ansible_domain": "experitest.local", "ansible_effective_group_id": 20, "ansible_effective_user_id": 501, "ansible_en0": {"device": "en0", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "SIMPLEX", "MULTICAST"], "ipv4": [{"address": "192.168.2.190", "broadcast": "192.168.7.255", "netmask": "255.255.248.0", "network": "192.168.0.0"}], "ipv6": [{"address": "fe80::415:9b6:7d6e:7898%en0", "prefix": "64"}], "macaddress": "f0:18:98:ee:cc:5e", "media": "Unknown", "media_options": ["full-duplex", "flow-control"], "media_select": "autoselect", "media_type": "1000base", "mtu": "1500", "options": ["PERFORMNUD", "DAD"], "status": "active", "type": "ether"}, "ansible_en1": {"device": "en1", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "SIMPLEX", "MULTICAST"], "ipv4": [{"address": "169.254.253.53", "broadcast": "169.254.255.255", "netmask": "255.255.0.0", "network": "169.254.0.0"}], "ipv6": [{"address": "fe80::442:9e10:184:d2c8%en1", "prefix": "64"}], "macaddress": "f0:18:98:b2:62:79", "media": "Unknown", "media_options": [], "media_select": "autoselect", "media_type": "<unknow", "mtu": "1500", "options": ["PERFORMNUD", "DAD"], "type": "ether"}, "ansible_en2": {"device": "en2", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "PROMISC", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "82:32:03:45:b4:01", "media": "Unknown", "media_select": "autoselect", "media_type": "full-duplex", "mtu": "1500", "options": ["TSO4", "TSO6", "CHANNEL_IO"], "status": "inactive", "type": "ether"}, "ansible_en3": {"device": "en3", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "PROMISC", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "82:32:03:45:b4:00", "media": "Unknown", "media_select": "autoselect", "media_type": "full-duplex", "mtu": "1500", "options": ["TSO4", "TSO6", "CHANNEL_IO"], "status": "inactive", "type": "ether"}, "ansible_en4": {"device": "en4", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "PROMISC", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "82:32:03:45:b4:05", "media": "Unknown", "media_select": "autoselect", "media_type": "full-duplex", "mtu": "1500", "options": ["TSO4", "TSO6", "CHANNEL_IO"], "status": "inactive", "type": "ether"}, "ansible_en5": {"device": "en5", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "PROMISC", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "82:32:03:45:b4:04", "media": "Unknown", "media_select": "autoselect", "media_type": "full-duplex", "mtu": "1500", "options": ["TSO4", "TSO6", "CHANNEL_IO"], "status": "inactive", "type": "ether"}, "ansible_en6": {"device": "en6", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::aede:48ff:fe00:1122%en6", "prefix": "64", "scope": "0x9"}], "macaddress": "ac:de:48:00:11:22", "media": "Unknown", "media_options": ["full-duplex"], "media_select": "autoselect", "media_type": "100baseT", "mtu": "1500", "options": ["PERFORMNUD", "DAD"], "status": "active", "type": "ether"}, "ansible_env": {"HOME": "/Users/yarahaddad", "LANG": "en_US.UTF-8", "LOGNAME": "yarahaddad", "MAIL": "/var/mail/yarahaddad", "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin", "PWD": "/Users/yarahaddad", "SHELL": "/bin/bash", "SHLVL": "2", "SSH_CLIENT": "192.168.2.190 52311 22", "SSH_CONNECTION": "192.168.2.190 52311 192.168.2.190 22", "SSH_TTY": "/dev/ttys004", "TERM": "xterm-256color", "TMPDIR": "/var/folders/z0/tqwkmgk96rl49ymp_1b631pw0000gn/T/", "USER": "yarahaddad", "VERSIONER_PYTHON_VERSION": "2.7", "_": "/usr/bin/python", "__CF_USER_TEXT_ENCODING": "0x1F5:0x0:0x0"}, "ansible_fibre_channel_wwn": [], "ansible_fips": false, "ansible_fqdn": "yaras-mac-mini.experitest.local", "ansible_gif0": {"device": "gif0", "flags": ["POINTOPOINT", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "unknown", "mtu": "1280", "type": "unknown"}, "ansible_hostname": "yaras-mac-mini", "ansible_hostnqn": "", "ansible_interfaces": ["VHC128", "XHC0", "XHC1", "XHC20", "ap1", "awdl0", "bridge0", "en0", "en1", "en2", "en3", "en4", "en5", "en6", "gif0", "llw0", "lo0", "p2p0", "stf0", "utun0", "utun1", "utun10", "utun11", "utun12", "utun13", "utun14", "utun15", "utun16", "utun17", "utun18", "utun19", "utun2", "utun20", "utun21", "utun22", "utun23", "utun24", "utun25", "utun26", "utun27", "utun28", "utun29", "utun3", "utun30", "utun31", "utun32", "utun33", "utun34", "utun35", "utun4", "utun5", "utun6", "utun7", "utun8", "utun9"], "ansible_is_chroot": false, "ansible_iscsi_iqn": "", "ansible_kernel": "19.0.0", "ansible_llw0": {"device": "llw0", "flags": ["UP", "BROADCAST", "SMART", "RUNNING", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "e2:36:7b:29:14:9a", "media": "Unknown", "media_select": "autoselect", "mtu": "1500", "options": ["PERFORMNUD", "DAD"], "status": "inactive", "type": "ether"}, "ansible_lo0": {"device": "lo0", "flags": ["UP", "LOOPBACK", "RUNNING", "MULTICAST"], "ipv4": [{"address": "127.0.0.1", "broadcast": "127.255.255.255", "netmask": "255.0.0.0", "network": "127.0.0.0"}], "ipv6": [{"address": "::1", "prefix": "128"}, {"address": "fe80::1%lo0", "prefix": "64", "scope": "0x1"}], "macaddress": "unknown", "mtu": "16384", "options": ["PERFORMNUD", "DAD"], "type": "loopback"}, "ansible_local": {}, "ansible_lsb": {}, "ansible_machine": "x86_64", "ansible_memfree_mb": 535, "ansible_memtotal_mb": 8192, "ansible_model": "Macmini8,1", "ansible_nodename": "yaras-mac-mini.experitest.local", "ansible_os_family": "Darwin", "ansible_osrevision": "199506", "ansible_osversion": "19A602", "ansible_p2p0": {"device": "p2p0", "flags": ["BROADCAST", "SIMPLEX", "MULTICAST"], "ipv4": [], "ipv6": [], "macaddress": "02:18:98:b2:62:79", "media": "Unknown", "media_select": "autoselect", "mtu": "2304", "options": ["CHANNEL_IO"], "status": "inactive", "type": "ether"}, "ansible_pkg_mgr": "homebrew", "ansible_processor": "Intel(R) Core(TM) i5-8500B CPU @ 3.00GHz", "ansible_processor_cores": "6", "ansible_processor_vcpus": "6", "ansible_product_name": "Macmini8,1", "ansible_python": {"executable": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python", "has_sslcontext": true, "type": "CPython", "version": {"major": 2, "micro": 16, "minor": 7, "releaselevel": "final", "serial": 0}, "version_info": [2, 7, 16, "final", 0]}, "ansible_python_version": "2.7.16", "ansible_real_group_id": 20, "ansible_real_user_id": 501, "ansible_selinux": {"status": "Missing selinux Python library"}, "ansible_selinux_python_present": false, "ansible_service_mgr": "launchd", "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAM1UrrrW7degzMjOvBX6NwTq77Ito7Wx7IbqB/fFdHr2+YTYKn1uekq+m/1i3YDpYaoXLGSR2ZdL7G4+Vn+//B1aYNyikVXJL/oL1iTfhMW6ptakBYJoHucTLSTfhq07cscL6JUyVkTufYNUi30Jb62zo1lAITvJHKpoRR/FrcgvAAAAFQDfFYzOda4Gz4v8rcqpr/MHXokUzwAAAIEAtBDl4J8E95Gh2CVeUvwRVpiHe6Sn8n4ImDsFJ8BORB5qv/1ZYWYTZtGetWa3TBEibnlhvR5h014FWauzr+7fhTHRlrPkf4OlIirhjUGq+yEEVBZFyXB8ulXchDelyVvK99noL3wDj9yalckpkEuJJMKdFOnsaEiqSmOkenrrHUgAAACAbhWlBXAUWle1vJ1Bz7g2Z+s11FrEyN3zyYZoVX4xkgyfZjP5z0y7Qw7eKdLiAq+1qmJXTAcPWZWkCau1SVehg4Y13w/AMo8GapL2q7iboMOjqHEqqhu6zttNzIz7DGJr/JdmEuQuL3isUd1hXcoh1DvFq5nkGPMUn0Nponatcwo=", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBF0mjBli41ym/J79SRsFA85TAYdzwL7ds/kZZFPjo+bSVJaYv7rubVDfrjtjGmO+ofhWBvCyuP4yknlkUg1N6xk=", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAINNwUtlMvAXNzddfliOiiKmR48p9mJw2sex+F4SPy3FP", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC8XN0xG8FXgAdZn0NIAP31FqJRerEt4C1xEKocOEGgITljo+KnyIGGEVJg5YXXdTOKiwenWYhTRNCiKtV+u4ki1RqplMl+Wc3h+7Nn+/tms2ewAJleM01aUHpbXl2rbqor9clOE1PcMBOZG8dXdac8fZIMA6I5Xn4pZRW4gCFvqoeWNl4q+OOgsLoVmKLoWkRyCphW3ok7uXjRI1qDbjYYn8KRAkHI3bC2THJuw5lsWmo5M3ugxlsTppPVvkCg6kdMVE8YdZ1wr0Uld++15GgJJVXDlBWpWXEPVgHzjwJ3CqfDGwTPw7bYTeMCnuhStmiRxfhTCc0N/xHxFkYdJWW7", "ansible_stf0": {"device": "stf0", "flags": [], "ipv4": [], "ipv6": [], "macaddress": "unknown", "mtu": "1280", "type": "unknown"}, "ansible_system": "Darwin", "ansible_user_dir": "/Users/yarahaddad", "ansible_user_gecos": "yara haddad", "ansible_user_gid": 20, "ansible_user_id": "yarahaddad", "ansible_user_shell": "/bin/bash", "ansible_user_uid": 501, "ansible_userspace_architecture": "x86_64", "ansible_userspace_bits": "64", "ansible_utun0": {"device": "utun0", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::66d1:16fb:e71c:aa04%utun0", "prefix": "64", "scope": "0x14"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun1": {"device": "utun1", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::7290:1286:80d7:c44e%utun1", "prefix": "64", "scope": "0x15"}], "macaddress": "unknown", "mtu": "2000", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun10": {"device": "utun10", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::858d:a929:6164:172f%utun10", "prefix": "64", "scope": "0x1e"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun11": {"device": "utun11", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::efd0:7049:9bea:f1d1%utun11", "prefix": "64", "scope": "0x1f"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun12": {"device": "utun12", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::aa7c:3d46:3f0e:7cb2%utun12", "prefix": "64", "scope": "0x20"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun13": {"device": "utun13", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::c45e:e2d5:4bf5:746e%utun13", "prefix": "64", "scope": "0x21"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun14": {"device": "utun14", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::9e83:b9cb:78c7:e377%utun14", "prefix": "64", "scope": "0x22"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun15": {"device": "utun15", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::253f:2de7:52a1:ed98%utun15", "prefix": "64", "scope": "0x23"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun16": {"device": "utun16", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::b097:e9b8:a111:6297%utun16", "prefix": "64", "scope": "0x24"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun17": {"device": "utun17", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::5aaf:34e7:3fa:c06b%utun17", "prefix": "64", "scope": "0x25"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun18": {"device": "utun18", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::e052:5d0a:5fe:27ec%utun18", "prefix": "64", "scope": "0x26"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun19": {"device": "utun19", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::f415:b7fd:c5db:dd0e%utun19", "prefix": "64", "scope": "0x27"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun2": {"device": "utun2", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::d83:e52b:1fd2:197b%utun2", "prefix": "64", "scope": "0x16"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun20": {"device": "utun20", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::4d66:a319:2ea9:92ef%utun20", "prefix": "64", "scope": "0x28"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun21": {"device": "utun21", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::797f:a74a:3129:37bc%utun21", "prefix": "64", "scope": "0x29"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun22": {"device": "utun22", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::7ff2:6472:1738:9e58%utun22", "prefix": "64", "scope": "0x2a"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun23": {"device": "utun23", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::6ff0:2088:62bc:587f%utun23", "prefix": "64", "scope": "0x2b"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun24": {"device": "utun24", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::6b6f:8c3f:d6ee:a04d%utun24", "prefix": "64", "scope": "0x2c"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun25": {"device": "utun25", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::b532:da44:6267:d127%utun25", "prefix": "64", "scope": "0x2d"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun26": {"device": "utun26", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::b529:4f4:7d34:264%utun26", "prefix": "64", "scope": "0x2e"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun27": {"device": "utun27", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::a3c3:fe63:4e56:d4a8%utun27", "prefix": "64", "scope": "0x2f"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun28": {"device": "utun28", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::1d8:34f9:ba08:12e6%utun28", "prefix": "64", "scope": "0x30"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun29": {"device": "utun29", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::e41e:90fd:94da:b086%utun29", "prefix": "64", "scope": "0x31"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun3": {"device": "utun3", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::8ce7:79d7:aed9:9fa6%utun3", "prefix": "64", "scope": "0x17"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun30": {"device": "utun30", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::4212:43ab:2743:a8ee%utun30", "prefix": "64", "scope": "0x32"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun31": {"device": "utun31", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::9c9:d1d7:cccf:f244%utun31", "prefix": "64", "scope": "0x33"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun32": {"device": "utun32", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::cdf9:86c8:64ab:6dd0%utun32", "prefix": "64", "scope": "0x34"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun33": {"device": "utun33", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::ea51:d8a0:84eb:a1e%utun33", "prefix": "64", "scope": "0x35"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun34": {"device": "utun34", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::79b5:904d:62af:db44%utun34", "prefix": "64", "scope": "0x36"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun35": {"device": "utun35", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::7fe5:e2fe:745f:70ca%utun35", "prefix": "64", "scope": "0x37"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun4": {"device": "utun4", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::4736:bd69:9be8:7d90%utun4", "prefix": "64", "scope": "0x18"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun5": {"device": "utun5", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::95ec:c948:bd22:33e6%utun5", "prefix": "64", "scope": "0x19"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun6": {"device": "utun6", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::e468:47ab:c677:e23c%utun6", "prefix": "64", "scope": "0x1a"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun7": {"device": "utun7", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::8e2b:8d4e:d5b:42f0%utun7", "prefix": "64", "scope": "0x1b"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun8": {"device": "utun8", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::aeee:9d27:888d:e05e%utun8", "prefix": "64", "scope": "0x1c"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_utun9": {"device": "utun9", "flags": ["UP", "POINTOPOINT", "RUNNING", "MULTICAST"], "ipv4": [], "ipv6": [{"address": "fe80::8c9b:2927:ba0e:2694%utun9", "prefix": "64", "scope": "0x1d"}], "macaddress": "unknown", "mtu": "1380", "options": ["PERFORMNUD", "DAD"], "type": "unknown"}, "ansible_virtualization_role": "", "ansible_virtualization_type": "", "discovered_interpreter_python": "/usr/bin/python", "gather_subset": ["all"], "module_setup": true}, "changed": false}
+ok: [192.168.2.100] => {"ansible_facts": {"ansible_architecture": "64-bit", "ansible_bios_date": "01-30-2018", "ansible_bios_version": "1.7.0", "ansible_date_time": {"date": "2019-11-06", "day": "06", "epoch": "1573049439.05669", "hour": "14", "iso8601": "2019-11-06T12:10:39Z", "iso8601_basic": "20191106T141039053693", "iso8601_basic_short": "20191106T141039", "iso8601_micro": "2019-11-06T12:10:39.053693Z", "minute": "10", "month": "11", "second": "39", "time": "14:10:39", "tz": "Israel Standard Time", "tz_offset": "+02:00", "weekday": "Wednesday", "weekday_number": "3", "weeknumber": "44", "year": "2019"}, "ansible_distribution": "Microsoft Windows 10 Pro", "ansible_distribution_major_version": "10", "ansible_distribution_version": "10.0.17763.0", "ansible_domain": "", "ansible_env": {"ALLUSERSPROFILE": "C:\\ProgramData", "ANDROID_ADB": "C:\\Program Files (x86)\\Experitest\\Cloud\\Agent\\bin\\adb", "ANDROID_HOME": "C:\\Users\\yara.haddad\\AppData\\Local\\Android\\Sdk", "APPDATA": "C:\\Users\\yara.haddad\\AppData\\Roaming", "COMPUTERNAME": "YHADDAD-PC", "ChocolateyInstall": "C:\\ProgramData\\chocolatey", "ChocolateyLastPathUpdate": "132174457298188960", "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe", "CommonProgramFiles": "C:\\Program Files\\Common Files", "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files", "CommonProgramW6432": "C:\\Program Files\\Common Files", "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData", "HOMEDRIVE": "C:", "HOMEPATH": "\\Users\\yara.haddad", "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_191", "LOCALAPPDATA": "C:\\Users\\yara.haddad\\AppData\\Local", "LOGONSERVER": "\\\\YHADDAD-PC", "NUMBER_OF_PROCESSORS": "4", "OS": "Windows_NT", "OneDrive": "C:\\Users\\yara.haddad\\OneDrive", "OneDriveConsumer": "C:\\Users\\yara.haddad\\OneDrive", "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW;.CPL", "PROCESSOR_ARCHITECTURE": "AMD64", "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel", "PROCESSOR_LEVEL": "6", "PROCESSOR_REVISION": "9e09", "PROMPT": "$P$G", "PSExecutionPolicyPreference": "Unrestricted", "PSModulePath": "C:\\Users\\yara.haddad\\Documents\\WindowsPowerShell\\Modules;C:\\ProgramData\\Boxstarter;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules", "PUBLIC": "C:\\Users\\Public", "Path": "C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;C:\\Python33\\;C:\\Python33\\Scripts;C:\\ProgramData\\Boxstarter;C:\\Program Files\\apache-maven-3.6.0;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Experitest\\Cloud\\Agent\\bin\\adb;C:\\Users\\yara.haddad\\AppData\\Local\\Android\\Sdk\\tools;%ANDROID_HOME\\platform-tools;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\gradle-4.7\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Experitest\\Cloud\\Agent\\bin\\adb;;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Ruby25-x64\\bin;C:\\Users\\yara.haddad\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\yara.haddad\\AppData\\Roaming\\npm;C:\\Users\\yara.haddad\\AppData\\Local\\Microsoft\\WindowsApps", "ProgramData": "C:\\ProgramData", "ProgramFiles": "C:\\Program Files", "ProgramFiles(x86)": "C:\\Program Files (x86)", "ProgramW6432": "C:\\Program Files", "SystemDrive": "C:", "SystemRoot": "C:\\WINDOWS", "TEMP": "C:\\Users\\yara.haddad\\AppData\\Local\\Temp", "TMP": "C:\\Users\\yara.haddad\\AppData\\Local\\Temp", "USERDOMAIN": "YHADDAD-PC", "USERDOMAIN_ROAMINGPROFILE": "YHADDAD-PC", "USERNAME": "yara.haddad", "USERPROFILE": "C:\\Users\\yara.haddad", "asl.log": "Destination=file", "windir": "C:\\WINDOWS"}, "ansible_fqdn": "Yhaddad-PC.", "ansible_hostname": "YHADDAD-PC", "ansible_interfaces": [{"connection_name": "vEthernet (DockerNAT)", "default_gateway": null, "dns_domain": null, "interface_index": 24, "interface_name": "Hyper-V Virtual Ethernet Adapter #2", "macaddress": "00:15:5D:02:64:00"}, {"connection_name": "vEthernet (Default Switch)", "default_gateway": null, "dns_domain": null, "interface_index": 25, "interface_name": "Hyper-V Virtual Ethernet Adapter", "macaddress": "02:15:52:FA:A3:63"}, {"connection_name": "Ethernet", "default_gateway": "192.168.1.1", "dns_domain": "experitest.local", "interface_index": 14, "interface_name": "Realtek PCIe GBE Family Controller", "macaddress": "50:9A:4C:28:6E:23"}], "ansible_ip_addresses": ["10.0.75.1", "fe80::acd7:7614:1056:d8b3", "172.17.73.17", "fe80::ec8e:c09c:8fa3:4a7b", "192.168.2.100"], "ansible_kernel": "10.0.17763.0", "ansible_lastboot": "2019-10-29 11:10:20Z", "ansible_machine_id": "S-1-5-21-2438716050-1164170111-3478533550", "ansible_memtotal_mb": 16293, "ansible_nodename": "Yhaddad-PC.", "ansible_os_family": "Windows", "ansible_os_name": "Microsoft Windows 10 Pro", "ansible_os_product_type": "workstation", "ansible_owner_contact": "", "ansible_owner_name": "", "ansible_powershell_version": 5, "ansible_processor": ["GenuineIntel", "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz", "GenuineIntel", "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz", "GenuineIntel", "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz", "GenuineIntel", "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz"], "ansible_processor_cores": 4, "ansible_processor_count": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 4, "ansible_product_name": "Vostro 3668", "ansible_product_serial": "9V8RGL2", "ansible_reboot_pending": true, "ansible_swaptotal_mb": 0, "ansible_system": "Win32NT", "ansible_system_description": "", "ansible_system_vendor": "Dell Inc.", "ansible_uptime_seconds": 702021, "ansible_user_dir": "C:\\Users\\yara.haddad", "ansible_user_gecos": "", "ansible_user_id": "yara.haddad", "ansible_user_sid": "S-1-5-21-2438716050-1164170111-3478533550-1063", "ansible_virtualization_role": "NA", "ansible_virtualization_type": "NA", "ansible_win_rm_certificate_expires": "2022-11-02 12:50:31", "ansible_windows_domain": "JUMPCLOUD", "ansible_windows_domain_member": false, "ansible_windows_domain_role": "Stand-alone workstation", "gather_subset": ["all"], "module_setup": true}, "changed": false}
+
+TASK [kill_cmd] ****************************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/cloudagent.yml:12
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+META: ran handlers
+
+TASK [link_finder : override default branch version] ***************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:2
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:7
+ok: [192.168.2.100] => {
+    "install_branch_name": "12.10"
+}
+ok: [192.168.2.190] => {
+    "install_branch_name": "12.10"
+}
+
+TASK [link_finder : read tasks from first file found, use 'tasks/' relative subdir] ***
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:9
+included: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml for 192.168.2.100, 192.168.2.190
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:2
+ok: [192.168.2.100] => (item=build_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "build_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=product_key) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "product_key", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => (item=build_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "build_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => (item=product_key) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "product_key", 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:8
+ok: [192.168.2.100] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : calculate download url mac] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:12
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+ok: [192.168.2.190 -> localhost] => {"app_version": "12.10.7524", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Mac-AGENT-12.10.7524.zip", "file_name": "dist-Mac-AGENT-12.10.7524.zip"}
+
+TASK [link_finder : calculate download url win] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:21
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+ok: [192.168.2.100 -> localhost] => {"app_version": "12.10.7524", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Windows-AGENT-12.10.7524.zip", "file_name": "dist-Windows-AGENT-12.10.7524.zip"}
+
+TASK [link_finder : calculate download url linux] ******************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:30
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : set_fact] **************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:48
+ok: [192.168.2.100] => {"ansible_facts": {"sanitize_role_name": "link_finder"}, "changed": false}
+ok: [192.168.2.190] => {"ansible_facts": {"sanitize_role_name": "link_finder"}, "changed": false}
+
+TASK [link_finder : define file download link] *********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:51
+ok: [192.168.2.100] => {"ansible_facts": {"link_finder": {"file_to_download": {"app_version": "12.10.7524", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Windows-AGENT-12.10.7524.zip", "failed": false, "file_name": "dist-Windows-AGENT-12.10.7524.zip"}}}, "changed": false}
+ok: [192.168.2.190] => {"ansible_facts": {"link_finder": {"file_to_download": {"app_version": "12.10.7524", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Mac-AGENT-12.10.7524.zip", "failed": false, "file_name": "dist-Mac-AGENT-12.10.7524.zip"}}}, "changed": false}
+
+TASK [link_finder : set app_version if install branch name is master] **********
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:56
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/default.yml:62
+ok: [192.168.2.100] => {
+    "link_finder.file_to_download": {
+        "app_version": "12.10.7524", 
+        "changed": false, 
+        "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Windows-AGENT-12.10.7524.zip", 
+        "failed": false, 
+        "file_name": "dist-Windows-AGENT-12.10.7524.zip"
+    }
+}
+ok: [192.168.2.190] => {
+    "link_finder.file_to_download": {
+        "app_version": "12.10.7524", 
+        "changed": false, 
+        "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:513710/artifacts/content/ansible/dist-Mac-AGENT-12.10.7524.zip", 
+        "failed": false, 
+        "file_name": "dist-Mac-AGENT-12.10.7524.zip"
+    }
+}
+
+TASK [cloud-agent : validate vars] *********************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/main.yml:3
+included: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/variables.yml for 192.168.2.100, 192.168.2.190
+
+TASK [cloud-agent : gather os specific variables] ******************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/variables.yml:3
+ok: [192.168.2.100] => {"ansible_facts": {"__installation_root_folder": "C:\\Experitest", "cambrionix_api_path": "C:\\Program Files (x86)\\Cambrionix\\Cambrionix API", "installation_folder": "{{ installation_root_folder }}\\{{ app_name }}-{{ app_version }}", "installer_file_name": "dist-Windows-AGENT-{{ app_version }}.zip", "java_bin": "{{ java_installation_folder }}\\jre{{ java_version }}\\bin\\java.exe", "java_download_filename": "jre{{ java_version }}-windows-x64.zip", "java_installation_folder": "{{ installation_root_folder }}\\jre", "java_relative_path": "java/windows", "launcher_file_name": "start.bat", "relative_path": "cloud-agent/windows", "service_name": "experitest-{{ app_name }}", "temp_folder": "c:\\temp\\experitest"}, "ansible_included_var_files": ["/Users/yarahaddad/.ansible/roles/cloud-agent/vars/windows.yml"], "changed": false}
+ok: [192.168.2.190] => {"ansible_facts": {"__installation_root_folder": "/Applications/Experitest", "installation_folder": "{{ installation_root_folder }}/{{ app_name }}-{{ app_version }}", "installer_file_name": "dist-Mac-AGENT-{{ app_version }}.zip", "java_bin": "{{ java_installation_folder }}/jre{{ java_version }}.jre/Contents/Home/bin/java", "java_download_filename": "jre{{ java_version }}-macosx-x64.tar.gz", "java_installation_folder": "{{ installation_root_folder }}/jre", "java_relative_path": "java/osx", "launcher_file_name": "start.sh", "relative_path": "cloud-agent/osx", "service_plist_file_path": "/Library/LaunchDaemons/{{ service_name }}.plist", "temp_folder": "/tmp/experitest"}, "ansible_included_var_files": ["/Users/yarahaddad/.ansible/roles/cloud-agent/vars/darwin.yml"], "changed": false}
+
+TASK [cloud-agent : make sure default values exist] ****************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/variables.yml:7
+ok: [192.168.2.100] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=java_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "java_version", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => (item=java_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "java_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [cloud-agent : override default value] ************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/variables.yml:13
+skipping: [192.168.2.100] => (item=app_version)  => {"ansible_loop_var": "item", "changed": false, "item": "app_version", "skip_reason": "Conditional result was False"}
+ok: [192.168.2.100] => (item=server_port) => {"ansible_facts": {"server_port": "8081"}, "ansible_loop_var": "item", "changed": false, "item": "server_port"}
+ok: [192.168.2.100] => (item=jmx_port) => {"ansible_facts": {"jmx_port": "51235"}, "ansible_loop_var": "item", "changed": false, "item": "jmx_port"}
+ok: [192.168.2.100] => (item=installation_root_folder) => {"ansible_facts": {"installation_root_folder": "C:\\Experitest"}, "ansible_loop_var": "item", "changed": false, "item": "installation_root_folder"}
+skipping: [192.168.2.190] => (item=app_version)  => {"ansible_loop_var": "item", "changed": false, "item": "app_version", "skip_reason": "Conditional result was False"}
+ok: [192.168.2.100] => (item=java_version) => {"ansible_facts": {"java_version": "1.8.0_181"}, "ansible_loop_var": "item", "changed": false, "item": "java_version"}
+ok: [192.168.2.190] => (item=server_port) => {"ansible_facts": {"server_port": "8081"}, "ansible_loop_var": "item", "changed": false, "item": "server_port"}
+ok: [192.168.2.190] => (item=jmx_port) => {"ansible_facts": {"jmx_port": "51235"}, "ansible_loop_var": "item", "changed": false, "item": "jmx_port"}
+ok: [192.168.2.190] => (item=installation_root_folder) => {"ansible_facts": {"installation_root_folder": "/Applications/Experitest"}, "ansible_loop_var": "item", "changed": false, "item": "installation_root_folder"}
+ok: [192.168.2.190] => (item=java_version) => {"ansible_facts": {"java_version": "1.8.0_181"}, "ansible_loop_var": "item", "changed": false, "item": "java_version"}
+
+TASK [cloud-agent : install] ***************************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/main.yml:6
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [cloud-agent : clear temp folder] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/main.yml:10
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [cloud-agent : track versions] ********************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/main.yml:14
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [cloud-agent : remove archived versions] **********************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/main.yml:18
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [cloud-agent : uninstall] *************************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/main.yml:22
+included: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/windows-uninstall.yml for 192.168.2.100
+included: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/darwin-uninstall.yml for 192.168.2.190
+
+TASK [cloud-agent : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/windows-uninstall.yml:2
+META: noop
+ok: [192.168.2.100] => (item=service_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.100] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+
+TASK [cloud-agent : stop the old service] **************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/windows-uninstall.yml:8
+META: noop
+changed: [192.168.2.100] => {"changed": true, "changed_by": "remove_service"}
+
+TASK [cloud-agent : kill adb processes] ****************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/windows-uninstall.yml:14
+META: noop
+changed: [192.168.2.100] => {"changed": true, "cmd": "taskkill /IM adb.exe /F", "delta": "0:00:00.952999", "end": "2019-11-06 12:10:54.250764", "failed_when_result": false, "rc": 0, "start": "2019-11-06 12:10:53.297765", "stderr": "", "stderr_lines": [], "stdout": "SUCCESS: The process \"adb.exe\" with PID 91700 has been terminated.\r\n", "stdout_lines": ["SUCCESS: The process \"adb.exe\" with PID 91700 has been terminated."]}
+
+TASK [cloud-agent : remove tracking files] *************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/windows-uninstall.yml:22
+META: noop
+changed: [192.168.2.100] => (item=cloudagent-previous) => {"ansible_loop_var": "item", "changed": true, "item": "cloudagent-previous"}
+changed: [192.168.2.100] => (item=cloudagent-current) => {"ansible_loop_var": "item", "changed": true, "item": "cloudagent-current"}
+
+TASK [cloud-agent : find app versions] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/windows-uninstall.yml:30
+META: noop
+ok: [192.168.2.100] => {"changed": false, "cmd": "Get-ChildItem -Path C:\\Experitest\\cloudagent-* -Directory -Name", "delta": "0:00:00.501996", "end": "2019-11-06 12:11:02.480763", "rc": 0, "start": "2019-11-06 12:11:01.978766", "stderr": "", "stderr_lines": [], "stdout": "cloudagent-12.10.7524\r\ncloudagent-12.11.7528\r\n", "stdout_lines": ["cloudagent-12.10.7524", "cloudagent-12.11.7528"]}
+
+TASK [cloud-agent : remove application versions] *******************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/windows-uninstall.yml:36
+META: noop
+ [WARNING]: conditional statements should not include jinja2 templating
+delimiters such as {{ }} or {% %}. Found: item | regex_search("{{ app_name
+}}-")
+changed: [192.168.2.100] => (item=cloudagent-12.10.7524) => {"ansible_loop_var": "item", "changed": true, "item": "cloudagent-12.10.7524"}
+changed: [192.168.2.100] => (item=cloudagent-12.11.7528) => {"ansible_loop_var": "item", "changed": true, "item": "cloudagent-12.11.7528"}
+META: noop
+
+TASK [cloud-agent : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/darwin-uninstall.yml:2
+ok: [192.168.2.190] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.2.190] => (item=service_plist_file_path) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_plist_file_path", 
+    "msg": "All assertions passed"
+}
+META: noop
+
+TASK [cloud-agent : stop the service] ******************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/darwin-uninstall.yml:8
+changed: [192.168.2.190] => {"changed": true, "cmd": ["launchctl", "unload", "/Library/LaunchDaemons/com.experitest.cloudagent.plist"], "delta": "0:00:00.004586", "end": "2019-11-06 14:11:14.749240", "rc": 0, "start": "2019-11-06 14:11:14.744654", "stderr": "/Library/LaunchDaemons/com.experitest.cloudagent.plist: Operation now in progress", "stderr_lines": ["/Library/LaunchDaemons/com.experitest.cloudagent.plist: Operation now in progress"], "stdout": "", "stdout_lines": []}
+META: noop
+
+TASK [cloud-agent : remove the service] ****************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/darwin-uninstall.yml:12
+changed: [192.168.2.190] => {"changed": true, "path": "/Library/LaunchDaemons/com.experitest.cloudagent.plist", "state": "absent"}
+META: noop
+
+TASK [cloud-agent : remove tracking files] *************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/darwin-uninstall.yml:18
+changed: [192.168.2.190] => (item=cloudagent-previous) => {"ansible_loop_var": "item", "changed": true, "item": "cloudagent-previous", "path": "/Applications/Experitest/cloudagent-previous", "state": "absent"}
+changed: [192.168.2.190] => (item=cloudagent-current) => {"ansible_loop_var": "item", "changed": true, "item": "cloudagent-current", "path": "/Applications/Experitest/cloudagent-current", "state": "absent"}
+META: noop
+
+TASK [cloud-agent : find app versions] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/darwin-uninstall.yml:27
+ok: [192.168.2.190] => {"changed": false, "examined": 4, "files": [{"atime": 1573035472.3835366, "ctime": 1573035465.8782818, "dev": 16777220, "gid": 80, "gr_name": "admin", "inode": 9871602, "isblk": false, "ischr": false, "isdir": true, "isfifo": false, "isgid": false, "islnk": false, "isreg": false, "issock": false, "isuid": false, "mode": "0755", "mtime": 1573035465.8782818, "nlink": 11, "path": "/Applications/Experitest/cloudagent-12.10.7524", "pw_name": "yarahaddad", "rgrp": true, "roth": true, "rusr": true, "size": 352, "uid": 501, "wgrp": false, "woth": false, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}, {"atime": 1573041672.030728, "ctime": 1573041665.408994, "dev": 16777220, "gid": 80, "gr_name": "admin", "inode": 9884170, "isblk": false, "ischr": false, "isdir": true, "isfifo": false, "isgid": false, "islnk": false, "isreg": false, "issock": false, "isuid": false, "mode": "0755", "mtime": 1573041665.408994, "nlink": 12, "path": "/Applications/Experitest/cloudagent-12.11.7528", "pw_name": "yarahaddad", "rgrp": true, "roth": true, "rusr": true, "size": 384, "uid": 501, "wgrp": false, "woth": false, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}], "matched": 2, "msg": ""}
+META: noop
+
+TASK [cloud-agent : remove application versions] *******************************
+task path: /Users/yarahaddad/.ansible/roles/cloud-agent/tasks/darwin-uninstall.yml:34
+changed: [192.168.2.190] => (item={u'rusr': True, u'uid': 501, u'rgrp': True, u'xoth': True, u'islnk': False, u'woth': False, u'nlink': 11, u'issock': False, u'mtime': 1573035465.8782818, u'gr_name': u'admin', u'path': u'/Applications/Experitest/cloudagent-12.10.7524', u'xusr': True, u'atime': 1573035472.3835366, u'inode': 9871602, u'isgid': False, u'size': 352, u'isdir': True, u'ctime': 1573035465.8782818, u'isblk': False, u'wgrp': False, u'xgrp': True, u'isuid': False, u'dev': 16777220, u'roth': True, u'isreg': False, u'isfifo': False, u'mode': u'0755', u'pw_name': u'yarahaddad', u'gid': 80, u'ischr': False, u'wusr': True}) => {"ansible_loop_var": "item", "changed": true, "item": {"atime": 1573035472.3835366, "ctime": 1573035465.8782818, "dev": 16777220, "gid": 80, "gr_name": "admin", "inode": 9871602, "isblk": false, "ischr": false, "isdir": true, "isfifo": false, "isgid": false, "islnk": false, "isreg": false, "issock": false, "isuid": false, "mode": "0755", "mtime": 1573035465.8782818, "nlink": 11, "path": "/Applications/Experitest/cloudagent-12.10.7524", "pw_name": "yarahaddad", "rgrp": true, "roth": true, "rusr": true, "size": 352, "uid": 501, "wgrp": false, "woth": false, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}, "path": "/Applications/Experitest/cloudagent-12.10.7524", "state": "absent"}
+changed: [192.168.2.190] => (item={u'rusr': True, u'uid': 501, u'rgrp': True, u'xoth': True, u'islnk': False, u'woth': False, u'nlink': 12, u'issock': False, u'mtime': 1573041665.408994, u'gr_name': u'admin', u'path': u'/Applications/Experitest/cloudagent-12.11.7528', u'xusr': True, u'atime': 1573041672.030728, u'inode': 9884170, u'isgid': False, u'size': 384, u'isdir': True, u'ctime': 1573041665.408994, u'isblk': False, u'wgrp': False, u'xgrp': True, u'isuid': False, u'dev': 16777220, u'roth': True, u'isreg': False, u'isfifo': False, u'mode': u'0755', u'pw_name': u'yarahaddad', u'gid': 80, u'ischr': False, u'wusr': True}) => {"ansible_loop_var": "item", "changed": true, "item": {"atime": 1573041672.030728, "ctime": 1573041665.408994, "dev": 16777220, "gid": 80, "gr_name": "admin", "inode": 9884170, "isblk": false, "ischr": false, "isdir": true, "isfifo": false, "isgid": false, "islnk": false, "isreg": false, "issock": false, "isuid": false, "mode": "0755", "mtime": 1573041665.408994, "nlink": 12, "path": "/Applications/Experitest/cloudagent-12.11.7528", "pw_name": "yarahaddad", "rgrp": true, "roth": true, "rusr": true, "size": 384, "uid": 501, "wgrp": false, "woth": false, "wusr": true, "xgrp": true, "xoth": true, "xusr": true}, "path": "/Applications/Experitest/cloudagent-12.11.7528", "state": "absent"}
+
+TASK [add cloud-url.log to logback-local.xml agent] ****************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/cloudagent.yml:40
+skipping: [192.168.2.100] => {"changed": false, "skip_reason": "Conditional result was False"}
+skipping: [192.168.2.190] => {"changed": false, "skip_reason": "Conditional result was False"}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *********************************************************************
+192.168.2.100              : ok=20   changed=4    unreachable=0    failed=0    skipped=10   rescued=0    ignored=0   
+192.168.2.190              : ok=20   changed=4    unreachable=0    failed=0    skipped=10   rescued=0    ignored=0   
+

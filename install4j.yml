@@ -1,0 +1,11 @@
+- hosts: cloud-server
+
+  roles:
+    - role: link_finder
+      build_id: Cloud_CloudTrunk
+      product_key: SERVER
+
+    - role: cloud
+      custom_download_url: "{{ link_finder.file_to_download.download_url }}"
+      app_version: "{{ link_finder.file_to_download.app_version }}"
+      extra_logback_properties: "{{ scloud.extra_logback_properties | default([]) }}"

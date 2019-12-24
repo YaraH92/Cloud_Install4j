@@ -1,0 +1,51 @@
+
+- hosts: windows
+  tasks:
+    
+    - name: whoami command
+      win_whoami:
+      register: w1
+
+    - assert:
+        success_msg: non root user is correct
+        fail_msg: non root user is not correct
+        that: w1.account.account_name == ansible_user_id
+
+    - name: whoami command (admin)
+      win_whoami:
+      become: yes
+      register: w2
+
+    - assert:
+        success_msg: root user is correct
+        fail_msg: root user is not correct
+        that: w2.account.account_name == ansible_user_id
+
+- hosts: linux:mac
+  tasks:
+    
+    - name: whoami command
+      command: whoami
+      changed_when: no
+      register: w1
+
+    - assert:
+        success_msg: non root user is correct
+        fail_msg: non root user is not correct
+        that: w1.stdout == ansible_user_id
+
+    - name: whoami command (admin)
+      command: whoami
+      changed_when: no
+      become: yes
+      register: w2
+    
+    - assert:
+        success_msg: become user is root
+        fail_msg: become user is not root
+        that: w2.stdout == "root"
+
+- hosts: all
+  roles:
+    - role: disk-space-validator
+      required_space_mb: 5000

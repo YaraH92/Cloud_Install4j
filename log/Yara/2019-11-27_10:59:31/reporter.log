@@ -1,0 +1,551 @@
+ansible-playbook 2.8.1
+  config file = /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg
+  configured module search path = [u'/Users/yarahaddad/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /Library/Python/2.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 2.7.16 (default, Oct 17 2019, 17:14:30) [GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc-s
+Using /Users/yarahaddad/Documents/TestProject/qa-env-deployment/ansible.cfg as config file
+[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to 
+allow bad characters in group names by default, this will change, but still be 
+user configurable on deprecation. This feature will be removed in version 2.10.
+ Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+ [WARNING]: Invalid characters were found in group names but not replaced, use
+-vvvv to see details
+
+PLAYBOOK: reporter.yml *********************************************************
+1 plays in reporter.yml
+
+PLAY [reporters] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/reporter.yml:2
+ok: [192.168.3.189] => {"ansible_facts": {"ansible_all_ipv4_addresses": ["192.168.3.189"], "ansible_all_ipv6_addresses": ["fe80::9b75:981b:e1f4:3304"], "ansible_apparmor": {"status": "disabled"}, "ansible_architecture": "x86_64", "ansible_bios_date": "12/12/2018", "ansible_bios_version": "6.00", "ansible_cmdline": {"BOOT_IMAGE": "/vmlinuz-3.10.0-514.26.2.el7.x86_64", "LANG": "en_US.UTF-8", "crashkernel": "auto", "quiet": true, "rd.lvm.lv": "centos_webdev/root", "rhgb": true, "ro": true, "root": "/dev/mapper/centos_webdev-root"}, "ansible_date_time": {"date": "2019-11-27", "day": "27", "epoch": "1574845360", "hour": "11", "iso8601": "2019-11-27T09:02:40Z", "iso8601_basic": "20191127T110240170069", "iso8601_basic_short": "20191127T110240", "iso8601_micro": "2019-11-27T09:02:40.170155Z", "minute": "02", "month": "11", "second": "40", "time": "11:02:40", "tz": "IST", "tz_offset": "+0200", "weekday": "Wednesday", "weekday_number": "3", "weeknumber": "47", "year": "2019"}, "ansible_default_ipv4": {"address": "192.168.3.189", "alias": "ens160", "broadcast": "192.168.7.255", "gateway": "192.168.1.1", "interface": "ens160", "macaddress": "00:0c:29:ec:67:f1", "mtu": 1500, "netmask": "255.255.248.0", "network": "192.168.0.0", "type": "ether"}, "ansible_default_ipv6": {}, "ansible_device_links": {"ids": {"dm-0": ["dm-name-centos_webdev-swap", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGtXehx1NymDv6dUIGDWc6IPPuYhfJkTHa"], "dm-1": ["dm-name-centos_webdev-root", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGVkZCJ64FRxctrYQJupp57fITUAYOeByF"], "sda2": ["lvm-pv-uuid-HcPEAu-liE3-IwhY-AtZ0-JlSr-SLV9-4jI6ca"], "sr0": ["ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001"]}, "labels": {}, "masters": {"sda2": ["dm-0", "dm-1"]}, "uuids": {"dm-0": ["c1c840bc-1acc-459c-9af6-4dac282b3991"], "dm-1": ["cd25dbf9-8a58-4062-8f86-f91223da7120"], "sda1": ["db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"]}}, "ansible_devices": {"dm-0": {"holders": [], "host": "", "links": {"ids": ["dm-name-centos_webdev-swap", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGtXehx1NymDv6dUIGDWc6IPPuYhfJkTHa"], "labels": [], "masters": [], "uuids": ["c1c840bc-1acc-459c-9af6-4dac282b3991"]}, "model": null, "partitions": {}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "", "sectors": "6291456", "sectorsize": "512", "size": "3.00 GB", "support_discard": "0", "vendor": null, "virtual": 1}, "dm-1": {"holders": [], "host": "", "links": {"ids": ["dm-name-centos_webdev-root", "dm-uuid-LVM-F7Pm6tQuutTTkz6b7Dl4maYlcYiVRPMGVkZCJ64FRxctrYQJupp57fITUAYOeByF"], "labels": [], "masters": [], "uuids": ["cd25dbf9-8a58-4062-8f86-f91223da7120"]}, "model": null, "partitions": {}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "", "sectors": "55508992", "sectorsize": "512", "size": "26.47 GB", "support_discard": "0", "vendor": null, "virtual": 1}, "fd0": {"holders": [], "host": "", "links": {"ids": [], "labels": [], "masters": [], "uuids": []}, "model": null, "partitions": {}, "removable": "1", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "deadline", "sectors": "8", "sectorsize": "512", "size": "4.00 KB", "support_discard": "0", "vendor": null, "virtual": 1}, "sda": {"holders": [], "host": "SCSI storage controller: LSI Logic / Symbios Logic 53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI (rev 01)", "links": {"ids": [], "labels": [], "masters": [], "uuids": []}, "model": "Virtual disk", "partitions": {"sda1": {"holders": [], "links": {"ids": [], "labels": [], "masters": [], "uuids": ["db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"]}, "sectors": "1024000", "sectorsize": 512, "size": "500.00 MB", "start": "2048", "uuid": "db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"}, "sda2": {"holders": ["centos_webdev-swap", "centos_webdev-root"], "links": {"ids": ["lvm-pv-uuid-HcPEAu-liE3-IwhY-AtZ0-JlSr-SLV9-4jI6ca"], "labels": [], "masters": ["dm-0", "dm-1"], "uuids": []}, "sectors": "61888512", "sectorsize": 512, "size": "29.51 GB", "start": "1026048", "uuid": null}}, "removable": "0", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "deadline", "sectors": "62914560", "sectorsize": "512", "size": "30.00 GB", "support_discard": "0", "vendor": "VMware", "virtual": 1}, "sr0": {"holders": [], "host": "IDE interface: Intel Corporation 82371AB/EB/MB PIIX4 IDE (rev 01)", "links": {"ids": ["ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001"], "labels": [], "masters": [], "uuids": []}, "model": "VMware IDE CDR10", "partitions": {}, "removable": "1", "rotational": "1", "sas_address": null, "sas_device_handle": null, "scheduler_mode": "cfq", "sectors": "2097151", "sectorsize": "512", "size": "1024.00 MB", "support_discard": "0", "vendor": "NECVMWar", "virtual": 1}}, "ansible_distribution": "CentOS", "ansible_distribution_file_parsed": true, "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_major_version": "7", "ansible_distribution_release": "Core", "ansible_distribution_version": "7", "ansible_dns": {"nameservers": ["192.168.4.95", "192.168.0.112"], "search": ["experitest.local"]}, "ansible_domain": "experitest.local", "ansible_effective_group_id": 1002, "ansible_effective_user_id": 1002, "ansible_ens160": {"active": true, "device": "ens160", "features": {"busy_poll": "off [fixed]", "fcoe_mtu": "off [fixed]", "generic_receive_offload": "on", "generic_segmentation_offload": "on", "highdma": "on", "hw_tc_offload": "off [fixed]", "l2_fwd_offload": "off [fixed]", "large_receive_offload": "on", "loopback": "off [fixed]", "netns_local": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "on", "rx_all": "off [fixed]", "rx_checksumming": "on", "rx_fcs": "off [fixed]", "rx_vlan_filter": "on [fixed]", "rx_vlan_offload": "on", "rx_vlan_stag_filter": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "scatter_gather": "on", "tcp_segmentation_offload": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "tx_checksumming": "on", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_ipip_segmentation": "off [fixed]", "tx_lockless": "off [fixed]", "tx_mpls_segmentation": "off [fixed]", "tx_nocache_copy": "off", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_sit_segmentation": "off [fixed]", "tx_tcp6_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_segmentation": "on", "tx_udp_tnl_segmentation": "off [fixed]", "tx_vlan_offload": "on", "tx_vlan_stag_hw_insert": "off [fixed]", "udp_fragmentation_offload": "off [fixed]", "vlan_challenged": "off [fixed]"}, "hw_timestamp_filters": [], "ipv4": {"address": "192.168.3.189", "broadcast": "192.168.7.255", "netmask": "255.255.248.0", "network": "192.168.0.0"}, "ipv6": [{"address": "fe80::9b75:981b:e1f4:3304", "prefix": "64", "scope": "link"}], "macaddress": "00:0c:29:ec:67:f1", "module": "vmxnet3", "mtu": 1500, "pciid": "0000:03:00.0", "promisc": false, "speed": 10000, "timestamping": ["rx_software", "software"], "type": "ether"}, "ansible_env": {"HOME": "/home/qa", "LANG": "C", "LC_ALL": "C", "LC_NUMERIC": "C", "LESSOPEN": "||/usr/bin/lesspipe.sh %s", "LOGNAME": "qa", "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:", "MAIL": "/var/mail/qa", "PATH": "/usr/local/bin:/usr/bin", "PWD": "/home/qa", "SHELL": "/bin/bash", "SHLVL": "2", "SSH_CLIENT": "192.168.2.190 62934 22", "SSH_CONNECTION": "192.168.2.190 62934 192.168.3.189 22", "SSH_TTY": "/dev/pts/0", "TERM": "xterm-256color", "USER": "qa", "XDG_RUNTIME_DIR": "/run/user/1002", "XDG_SESSION_ID": "55", "_": "/usr/bin/python"}, "ansible_fibre_channel_wwn": [], "ansible_fips": false, "ansible_form_factor": "Other", "ansible_fqdn": "centos-vm1.experitest.local", "ansible_hostname": "centos-vm1", "ansible_hostnqn": "", "ansible_interfaces": ["lo", "ens160"], "ansible_is_chroot": true, "ansible_iscsi_iqn": "", "ansible_kernel": "3.10.0-514.26.2.el7.x86_64", "ansible_lo": {"active": true, "device": "lo", "features": {"busy_poll": "off [fixed]", "fcoe_mtu": "off [fixed]", "generic_receive_offload": "on", "generic_segmentation_offload": "on", "highdma": "on [fixed]", "hw_tc_offload": "off [fixed]", "l2_fwd_offload": "off [fixed]", "large_receive_offload": "off [fixed]", "loopback": "on [fixed]", "netns_local": "on [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "rx_all": "off [fixed]", "rx_checksumming": "on [fixed]", "rx_fcs": "off [fixed]", "rx_vlan_filter": "off [fixed]", "rx_vlan_offload": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "scatter_gather": "on", "tcp_segmentation_offload": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "tx_checksumming": "on", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_ipip_segmentation": "off [fixed]", "tx_lockless": "on [fixed]", "tx_mpls_segmentation": "off [fixed]", "tx_nocache_copy": "off [fixed]", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tx_sctp_segmentation": "on", "tx_sit_segmentation": "off [fixed]", "tx_tcp6_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_segmentation": "on", "tx_udp_tnl_segmentation": "off [fixed]", "tx_vlan_offload": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "udp_fragmentation_offload": "on", "vlan_challenged": "on [fixed]"}, "hw_timestamp_filters": [], "ipv4": {"address": "127.0.0.1", "broadcast": "host", "netmask": "255.0.0.0", "network": "127.0.0.0"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "mtu": 65536, "promisc": false, "timestamping": ["rx_software", "software"], "type": "loopback"}, "ansible_local": {}, "ansible_lsb": {}, "ansible_machine": "x86_64", "ansible_machine_id": "1bc4cdac369c446aa2e45a0a6fd5135f", "ansible_memfree_mb": 3365, "ansible_memory_mb": {"nocache": {"free": 3592, "used": 199}, "real": {"free": 3365, "total": 3791, "used": 426}, "swap": {"cached": 0, "free": 3071, "total": 3071, "used": 0}}, "ansible_memtotal_mb": 3791, "ansible_mounts": [{"block_available": 73006, "block_size": 4096, "block_total": 127147, "block_used": 54141, "device": "/dev/sda1", "fstype": "xfs", "inode_available": 511655, "inode_total": 512000, "inode_used": 345, "mount": "/boot", "options": "rw,relatime,attr2,inode64,noquota", "size_available": 299032576, "size_total": 520794112, "uuid": "db8ca3d4-478e-49ed-94d1-e74c97f4f7c1"}, {"block_available": 5906960, "block_size": 4096, "block_total": 6935236, "block_used": 1028276, "device": "/dev/mapper/centos_webdev-root", "fstype": "xfs", "inode_available": 27702262, "inode_total": 27754496, "inode_used": 52234, "mount": "/", "options": "rw,relatime,attr2,inode64,noquota", "size_available": 24194908160, "size_total": 28406726656, "uuid": "cd25dbf9-8a58-4062-8f86-f91223da7120"}], "ansible_nodename": "centos-vm1.experitest.local", "ansible_os_family": "RedHat", "ansible_pkg_mgr": "yum", "ansible_proc_cmdline": {"BOOT_IMAGE": "/vmlinuz-3.10.0-514.26.2.el7.x86_64", "LANG": "en_US.UTF-8", "crashkernel": "auto", "quiet": true, "rd.lvm.lv": ["centos_webdev/swap", "centos_webdev/root"], "rhgb": true, "ro": true, "root": "/dev/mapper/centos_webdev-root"}, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz", "1", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz"], "ansible_processor_cores": 1, "ansible_processor_count": 2, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 2, "ansible_product_name": "VMware Virtual Platform", "ansible_product_serial": "NA", "ansible_product_uuid": "NA", "ansible_product_version": "None", "ansible_python": {"executable": "/usr/bin/python", "has_sslcontext": true, "type": "CPython", "version": {"major": 2, "micro": 5, "minor": 7, "releaselevel": "final", "serial": 0}, "version_info": [2, 7, 5, "final", 0]}, "ansible_python_version": "2.7.5", "ansible_real_group_id": 1002, "ansible_real_user_id": 1002, "ansible_selinux": {"status": "disabled"}, "ansible_selinux_python_present": true, "ansible_service_mgr": "systemd", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEM4J6uIDuQiniyw+G6IiFM2rm9ChMrqwYgzSHN2/OLG1fGc+BgFYLoLFKWOIBvgsu1igQM0jP9ln461FQwOWdk=", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIFc1nwf+OPqlJVJ+RcXuVkHvyuO1maem7E00A1P0XK0/", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDvDju5lWxyapZGsrzeQn7Wzf7qjTPr3aY5hnYDkDwQjNajuvlnxtMJCUMuFqJ80WVpICQaAl+fdSZLMj8hUBCamZsaSLzJjMbA9okwhQLQxoSAq2ThURTVFfQvuCz0zkshieAx4KKiDIDv7SkTd81euytH0BA/F1rhymkJt2SiG2ZUqTHIp0GmGHQRWOqkmz1qmbqQY6d5o6psHuavr8OJAhgHW0rCxdutqPEzQ4wzWX5yxRMF0KZEphW/+9ccOrKQ83anWBb89F3vLtt77p1dsl/oM0NtSe12XedABvvUnfHWi1Kx3EePUvJ72qgiNh5HoEnr/+fMCsy/1A/MUuQj", "ansible_swapfree_mb": 3071, "ansible_swaptotal_mb": 3071, "ansible_system": "Linux", "ansible_system_capabilities": [""], "ansible_system_capabilities_enforced": "True", "ansible_system_vendor": "VMware, Inc.", "ansible_uptime_seconds": 165294, "ansible_user_dir": "/home/qa", "ansible_user_gecos": "", "ansible_user_gid": 1002, "ansible_user_id": "qa", "ansible_user_shell": "/bin/bash", "ansible_user_uid": 1002, "ansible_userspace_architecture": "x86_64", "ansible_userspace_bits": "64", "ansible_virtualization_role": "guest", "ansible_virtualization_type": "VMware", "discovered_interpreter_python": "/usr/bin/python", "gather_subset": ["all"], "module_setup": true}, "changed": false}
+
+TASK [stop the old service] ****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/reporter.yml:6
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [stop the old service] ****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/reporter.yml:13
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [kill_cmd] ****************************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/reporter.yml:20
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+META: ran handlers
+
+TASK [link_finder : override default branch version] ***************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:2
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:7
+ok: [192.168.3.189] => {
+    "install_branch_name": "12.11"
+}
+
+TASK [link_finder : read tasks from first file found, use 'tasks/' relative subdir] ***
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/main.yml:9
+included: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml for 192.168.3.189
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:2
+ok: [192.168.3.189] => (item=build_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "build_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=product_key) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "product_key", 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : assert all vars are set] ***********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:8
+ok: [192.168.3.189] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+
+TASK [link_finder : calculate download url mac] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:12
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : calculate download url win] ********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:21
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : calculate download url linux] ******************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:30
+ok: [192.168.3.189 -> localhost] => {"app_version": "12.11.1671", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:525167/artifacts/content/dist-Windows-REPORTER-12.11.1671.zip", "file_name": "dist-Windows-REPORTER-12.11.1671.zip"}
+
+TASK [link_finder : set_fact] **************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:48
+ok: [192.168.3.189] => {"ansible_facts": {"sanitize_role_name": "link_finder"}, "changed": false}
+
+TASK [link_finder : define file download link] *********************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:51
+ok: [192.168.3.189] => {"ansible_facts": {"link_finder": {"file_to_download": {"app_version": "12.11.1671", "changed": false, "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:525167/artifacts/content/dist-Windows-REPORTER-12.11.1671.zip", "failed": false, "file_name": "dist-Windows-REPORTER-12.11.1671.zip"}}}, "changed": false}
+
+TASK [link_finder : set app_version if install branch name is master] **********
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:56
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [link_finder : debug] *****************************************************
+task path: /Users/yarahaddad/Documents/TestProject/qa-env-deployment/roles/link_finder/tasks/reporter.yml:62
+ok: [192.168.3.189] => {
+    "link_finder.file_to_download": {
+        "app_version": "12.11.1671", 
+        "changed": false, 
+        "download_url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:525167/artifacts/content/dist-Windows-REPORTER-12.11.1671.zip", 
+        "failed": false, 
+        "file_name": "dist-Windows-REPORTER-12.11.1671.zip"
+    }
+}
+
+TASK [reporter : validate vars] ************************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/main.yml:3
+included: /Users/yarahaddad/.ansible/roles/reporter/tasks/variables.yml for 192.168.3.189
+
+TASK [reporter : gather os specific variables] *********************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/variables.yml:3
+ok: [192.168.3.189] => {"ansible_facts": {"__installation_root_folder": "/opt/Experitest", "installation_folder": "{{ installation_root_folder }}/{{ app_name }}-{{ app_version }}", "installer_file_name": "dist-Windows-REPORTER-{{ app_version }}.zip", "java_bin": "{{ java_installation_folder }}/jre{{ java_version }}/bin/java", "java_download_filename": "jre{{ java_version }}-linux-x64.tar.gz", "java_installation_folder": "{{ installation_root_folder }}/jre", "java_relative_path": "java/linux", "launcher_file_name": "start.sh", "relative_path": "reporter/windows", "reporter_data_folder": "/var/lib/Experitest/{{ app_name }}/uploads", "service_file_path": "/etc/systemd/system/{{ service_name }}", "service_name": "{{ app_name }}.service", "temp_folder": "/var/tmp/Experitest"}, "ansible_included_var_files": ["/Users/yarahaddad/.ansible/roles/reporter/vars/linux.yml"], "changed": false}
+
+TASK [reporter : make sure default values exist] *******************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/variables.yml:7
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=db_connection_string) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "db_connection_string", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=db_username) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "db_username", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=db_password) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "db_password", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=java_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "java_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [reporter : override default value] ***************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/variables.yml:13
+skipping: [192.168.3.189] => (item=app_version)  => {"ansible_loop_var": "item", "changed": false, "item": "app_version", "skip_reason": "Conditional result was False"}
+ok: [192.168.3.189] => (item=server_port) => {"ansible_facts": {"server_port": "8084"}, "ansible_loop_var": "item", "changed": false, "item": "server_port"}
+ok: [192.168.3.189] => (item=jmx_port) => {"ansible_facts": {"jmx_port": "51238"}, "ansible_loop_var": "item", "changed": false, "item": "jmx_port"}
+ok: [192.168.3.189] => (item=installation_root_folder) => {"ansible_facts": {"installation_root_folder": "/opt/Experitest"}, "ansible_loop_var": "item", "changed": false, "item": "installation_root_folder"}
+skipping: [192.168.3.189] => (item=db_connection_string)  => {"ansible_loop_var": "item", "changed": false, "item": "db_connection_string", "skip_reason": "Conditional result was False"}
+ok: [192.168.3.189] => (item=db_username) => {"ansible_facts": {"db_username": "postgres"}, "ansible_loop_var": "item", "changed": false, "item": "db_username"}
+skipping: [192.168.3.189] => (item=db_password)  => {"ansible_loop_var": "item", "changed": false, "item": "db_password", "skip_reason": "Conditional result was False"}
+ok: [192.168.3.189] => (item=java_version) => {"ansible_facts": {"java_version": "1.8.0_221"}, "ansible_loop_var": "item", "changed": false, "item": "java_version"}
+
+TASK [reporter : install] ******************************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/main.yml:6
+included: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml for 192.168.3.189
+
+TASK [reporter : assert all vars are set] **************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:4
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=clear_temp_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "clear_temp_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=service_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=main_class) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "main_class", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installation_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=clear_before_install) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "clear_before_install", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=server_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "server_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=jmx_port) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "jmx_port", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=service_file_path) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "service_file_path", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=installer_file_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installer_file_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=ansible_user_id) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "ansible_user_id", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=s3_download_url) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "s3_download_url", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=launcher_file_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "launcher_file_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=db_connection_string) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "db_connection_string", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=db_username) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "db_username", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=db_password) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "db_password", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=application_properties) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "application_properties", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=extra_java_options) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "extra_java_options", 
+    "msg": "All assertions passed"
+}
+
+TASK [reporter : make sure epel-release is installed] **************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:28
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["epel-release-7-11.noarch providing epel-release is already installed"]}
+
+TASK [reporter : make sure rsync is installed] *********************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:34
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["rsync-3.1.2-6.el7_6.1.x86_64 providing rsync is already installed"]}
+
+TASK [reporter : make sure unzip is installed] *********************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:40
+ok: [192.168.3.189] => {"changed": false, "msg": "", "rc": 0, "results": ["unzip-6.0-16.el7.x86_64 providing unzip is already installed"]}
+
+TASK [reporter : disable selinux] **********************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:48
+ok: [192.168.3.189] => {"changed": false, "configfile": "/etc/selinux/config", "msg": "", "policy": "targeted", "reboot_required": false, "state": "disabled"}
+
+TASK [reporter : stop and disable firewall] ************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:53
+ok: [192.168.3.189] => (item=firewalld) => {"ansible_loop_var": "item", "changed": false, "enabled": false, "item": "firewalld", "name": "firewalld", "state": "stopped", "status": {"ActiveEnterTimestampMonotonic": "0", "ActiveExitTimestampMonotonic": "0", "ActiveState": "inactive", "After": "polkit.service basic.target system.slice dbus.service", "AllowIsolate": "no", "AssertResult": "no", "AssertTimestampMonotonic": "0", "Before": "NetworkManager.service libvirtd.service shutdown.target network.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "BusName": "org.fedoraproject.FirewallD1", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "no", "ConditionTimestampMonotonic": "0", "Conflicts": "shutdown.target iptables.service ebtables.service ip6tables.service ipset.service", "ControlPID": "0", "DefaultDependencies": "yes", "Delegate": "no", "Description": "firewalld - dynamic firewall daemon", "DevicePolicy": "auto", "Documentation": "man:firewalld(1)", "EnvironmentFile": "/etc/sysconfig/firewalld (ignore_errors=yes)", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/usr/sbin/firewalld ; argv[]=/usr/sbin/firewalld --nofork --nopid $FIREWALLD_ARGS ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FragmentPath": "/usr/lib/systemd/system/firewalld.service", "GuessMainPID": "yes", "IOScheduling": "0", "Id": "firewalld.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestampMonotonic": "0", "JobTimeoutAction": "none", "JobTimeoutUSec": "0", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "15078", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "15078", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryCurrent": "18446744073709551615", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "firewalld.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "Requires": "basic.target", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "null", "StandardInput": "null", "StandardOutput": "null", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "dead", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "dbus", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "disabled", "Wants": "system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}}
+
+TASK [reporter : make sure temp folder] ****************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:65
+ok: [192.168.3.189] => {"changed": false, "gid": 0, "group": "root", "mode": "0766", "owner": "qa", "path": "/var/tmp/Experitest", "size": 4096, "state": "directory", "uid": 1002}
+
+TASK [reporter : make sure java is installed on the machine] *******************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:74
+changed: [192.168.3.189] => {"changed": true, "cmd": ["/opt/Experitest/jre/jre1.8.0_221/bin/java", "-version"], "delta": "0:00:00.085773", "end": "2019-11-27 11:02:47.527015", "rc": 0, "start": "2019-11-27 11:02:47.441242", "stderr": "java version \"1.8.0_221\"\nJava(TM) SE Runtime Environment (build 1.8.0_221-b11)\nJava HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)", "stderr_lines": ["java version \"1.8.0_221\"", "Java(TM) SE Runtime Environment (build 1.8.0_221-b11)", "Java HotSpot(TM) 64-Bit Server VM (build 25.221-b11, mixed mode)"], "stdout": "", "stdout_lines": []}
+
+TASK [reporter : fail if java is not found] ************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:80
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [reporter : download zip from s3 url] *************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:87
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [reporter : download zip from custom url] *********************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:94
+changed: [192.168.3.189] => {"changed": true, "checksum_dest": null, "checksum_src": "1ee9f23ada7778b91723804e585bfee2ed2a15cd", "dest": "/var/tmp/Experitest/dist-Windows-REPORTER-12.11.1671.zip", "elapsed": 10, "gid": 1002, "group": "qa", "md5sum": "2a3df65a956d1e06f4bf887f5591c9bd", "mode": "0664", "msg": "OK (52157904 bytes)", "owner": "qa", "size": 52157904, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574845204.8-152411251426141/tmpv23biO", "state": "file", "status_code": 200, "uid": 1002, "url": "http://192.168.1.213:8090/guestAuth/app/rest/builds/id:525167/artifacts/content/dist-Windows-REPORTER-12.11.1671.zip"}
+
+TASK [reporter : stop the old service] *****************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:103
+fatal: [192.168.3.189]: FAILED! => {"changed": false, "msg": "Could not find the requested service reporter.service: host"}
+...ignoring
+
+TASK [reporter : clear old installation folder] ********************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:112
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [reporter : make sure installation folder exists] *************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:120
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "qa", "path": "/opt/Experitest/reporter-12.11.1671", "size": 6, "state": "directory", "uid": 1002}
+
+TASK [reporter : unzip the file] ***********************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:127
+NOTIFIED HANDLER reporter : start the service for 192.168.3.189
+changed: [192.168.3.189] => {"changed": true, "dest": "/opt/Experitest/reporter-12.11.1671", "extract_results": {"cmd": ["/bin/unzip", "-o", "/var/tmp/Experitest/dist-Windows-REPORTER-12.11.1671.zip", "-x", "*.bat", "*.exe", "-d", "/opt/Experitest/reporter-12.11.1671"], "err": "", "out": "Archive:  /var/tmp/Experitest/dist-Windows-REPORTER-12.11.1671.zip\n   creating: /opt/Experitest/reporter-12.11.1671/config/\n  inflating: /opt/Experitest/reporter-12.11.1671/config/logback.xml  \n  inflating: /opt/Experitest/reporter-12.11.1671/config/testView-summary.ftl  \n  inflating: /opt/Experitest/reporter-12.11.1671/config/application.properties.merge  \n  inflating: /opt/Experitest/reporter-12.11.1671/config/application.properties.default  \n  inflating: /opt/Experitest/reporter-12.11.1671/config/version.properties  \n  inflating: /opt/Experitest/reporter-12.11.1671/config/application.properties  \n  inflating: /opt/Experitest/reporter-12.11.1671/reporter_server.vmoptions  \n  inflating: /opt/Experitest/reporter-12.11.1671/reporter-backup  \n   creating: /opt/Experitest/reporter-12.11.1671/libs/\n  inflating: /opt/Experitest/reporter-12.11.1671/libs/tomcat-jdbc-8.5.29.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/tomcat-embed-websocket-8.5.29.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/commons-csv-1.5.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-actuator-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/hibernate-core-5.0.12.Final.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/imageio-core-3.4.1.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-core-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-context-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/tomcat-juli-8.5.29.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-autoconfigure-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/imageio-metadata-3.4.1.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/guava-20.0.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/jackson-annotations-2.8.0.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/slf4j-api-1.7.25.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/httpcore-4.4.9.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/tomcat-embed-core-8.5.29.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/common-lang-3.4.1.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-web-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/javax.transaction-api-1.2.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-aop-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/error_prone_annotations-2.3.3.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/validation-api-1.1.0.Final.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/jcl-over-slf4j-1.7.25.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/VectorGraphics2D-0.13.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/postgresql-42.2.5.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/logback-classic-1.1.11.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-cache-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/common-io-3.4.1.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/jandex-2.0.0.Final.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-actuator-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/juniversalchardet-1.0.3.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-expression-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-data-jpa-1.11.11.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-data-commons-1.13.11.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/hibernate-jpa-2.1-api-1.0.0.Final.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-tx-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/checker-qual-2.6.0.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/imageio-tiff-3.4.1.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-security-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/classmate-1.3.4.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/manager-server-12.11-SNAPSHOT.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-aspects-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/commons-io-2.5.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-security-core-4.2.5.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-jdbc-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-webmvc-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/snakeyaml-1.17.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/jul-to-slf4j-1.7.25.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-jdbc-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/jackson-databind-2.8.11.1.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/javassist-3.21.0-GA.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/tomcat-annotations-api-8.5.29.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/commons-codec-1.10.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-tomcat-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/openpdf-1.2.5.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/common-image-3.4.1.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/log4j-over-slf4j-1.7.25.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/xchart-3.5.4.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/commons-collections-3.2.2.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/dom4j-1.6.1.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/aspectjweaver-1.8.13.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/hibernate-commons-annotations-5.0.1.Final.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-data-jpa-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/jboss-logging-3.3.2.Final.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/manager-client-api-12.11-SNAPSHOT.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/httpclient-4.5.8.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-context-support-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/vis-met-client-12.10-SNAPSHOT.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/hibernate-validator-5.3.6.Final.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-security-config-4.2.5.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-security-web-4.2.5.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/httpmime-4.5.5.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/flying-saucer-core-9.1.18.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-aop-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/caffeine-2.7.0.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/install4j-gradle-7.0.10.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-web-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-boot-starter-logging-1.5.12.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/antlr-2.7.7.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/freemarker-2.3.28.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/manager-commons-12.11-SNAPSHOT.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/hibernate-entitymanager-5.0.12.Final.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-beans-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/commons-lang3-3.7.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/jackson-core-2.8.11.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/tomcat-embed-el-8.5.29.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/flying-saucer-pdf-openpdf-9.1.18.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/commons-beanutils-1.9.3.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/spring-orm-4.3.16.RELEASE.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/libs/logback-core-1.1.11.jar  \n  inflating: /opt/Experitest/reporter-12.11.1671/reporter-backup.jar  \n", "rc": 0}, "gid": 0, "group": "root", "handler": "ZipArchive", "mode": "0755", "owner": "qa", "size": 110, "src": "/var/tmp/Experitest/dist-Windows-REPORTER-12.11.1671.zip", "state": "directory", "uid": 1002}
+
+TASK [reporter : copy service file] ********************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:140
+changed: [192.168.3.189] => {"changed": true, "checksum": "03ab1ce5201960f546ddd351a5c0c44ed83a3616", "dest": "/etc/systemd/system/reporter.service", "gid": 0, "group": "root", "md5sum": "fffb9018b898de7a4740c631b32a22a7", "mode": "0644", "owner": "root", "size": 324, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574845220.43-42249539745964/source", "state": "file", "uid": 0}
+
+TASK [reporter : copy start script] ********************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:146
+changed: [192.168.3.189] => {"changed": true, "checksum": "09320f1991d2faceff8d667bec218a35a89f9605", "dest": "/opt/Experitest/reporter-12.11.1671/start.sh", "gid": 0, "group": "root", "md5sum": "4582f24cfc06318b039a83aa9a04ea88", "mode": "0777", "owner": "qa", "size": 984, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574845221.64-250890487369210/source", "state": "file", "uid": 1002}
+
+TASK [reporter : update application properties file] ***************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:156
+changed: [192.168.3.189] => (item={'value': u'jdbc:postgresql://192.168.2.100:5432/reporter', 'key': u'spring.datasource.url'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "spring.datasource.url", "value": "jdbc:postgresql://192.168.2.100:5432/reporter"}, "msg": "line replaced"}
+changed: [192.168.3.189] => (item={'value': u'123456', 'key': u'spring.datasource.password'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "spring.datasource.password", "value": "123456"}, "msg": "line replaced"}
+changed: [192.168.3.189] => (item={'value': u'false', 'key': u'manager.security.cloud.secure'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "manager.security.cloud.secure", "value": "false"}, "msg": "line added"}
+changed: [192.168.3.189] => (item={'value': u'8084', 'key': u'server.port'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "server.port", "value": "8084"}, "msg": "line replaced"}
+ok: [192.168.3.189] => (item={'value': u'postgres', 'key': u'spring.datasource.username'}) => {"ansible_loop_var": "item", "backup": "", "changed": false, "item": {"key": "spring.datasource.username", "value": "postgres"}, "msg": ""}
+changed: [192.168.3.189] => (item={'value': u'YHaddad-pc', 'key': u'manager.security.cloud.host'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "manager.security.cloud.host", "value": "YHaddad-pc"}, "msg": "line added"}
+changed: [192.168.3.189] => (item={'value': u'c://Program Files//PostgreSQL//11/bin//pg_dump.exe', 'key': u'pg_dump.full.path'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "pg_dump.full.path", "value": "c://Program Files//PostgreSQL//11/bin//pg_dump.exe"}, "msg": "line added"}
+ok: [192.168.3.189] => (item={'value': u'org.postgresql.Driver', 'key': u'spring.datasource.driver-class-name'}) => {"ansible_loop_var": "item", "backup": "", "changed": false, "item": {"key": "spring.datasource.driver-class-name", "value": "org.postgresql.Driver"}, "msg": ""}
+changed: [192.168.3.189] => (item={'value': u'/var/lib/Experitest/reporter/uploads', 'key': u'reports-upload-dir-path'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "reports-upload-dir-path", "value": "/var/lib/Experitest/reporter/uploads"}, "msg": "line replaced"}
+changed: [192.168.3.189] => (item={'value': 80, 'key': u'manager.security.cloud.port'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "manager.security.cloud.port", "value": 80}, "msg": "line added"}
+changed: [192.168.3.189] => (item={'value': u'c://Program Files//PostgreSQL//11//bin//pg_restore.exe', 'key': u'pg_restore.full.path'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "pg_restore.full.path", "value": "c://Program Files//PostgreSQL//11//bin//pg_restore.exe"}, "msg": "line added"}
+changed: [192.168.3.189] => (item={'value': u'cloud', 'key': u'manager.security.policy'}) => {"ansible_loop_var": "item", "backup": "", "changed": true, "item": {"key": "manager.security.policy", "value": "cloud"}, "msg": "line replaced"}
+
+TASK [reporter : set permissions for logs folder] ******************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:164
+changed: [192.168.3.189] => {"changed": true, "gid": 0, "group": "root", "mode": "0777", "owner": "qa", "path": "/opt/Experitest/reporter-12.11.1671/logs", "size": 6, "state": "directory", "uid": 1002}
+
+TASK [reporter : update java path in reporter-backup file] *********************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:172
+changed: [192.168.3.189] => {"backup": "", "changed": true, "msg": "line replaced"}
+
+TASK [reporter : reset pairing key] ********************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:180
+ok: [192.168.3.189] => {"changed": false, "path": "/opt/Experitest/reporter-12.11.1671/config/pairing.conf.xml", "state": "absent"}
+
+TASK [reporter : sanitize role name] *******************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:188
+ok: [192.168.3.189] => {"ansible_facts": {"sanitize_role_name": "reporter"}, "changed": false}
+
+TASK [reporter : expose role output] *******************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-install.yml:192
+ok: [192.168.3.189] => {"ansible_facts": {"reporter": {"app_version": "12.11.1671", "configuration_file": "/opt/Experitest/reporter-12.11.1671/config/application.properties", "installation_folder": "/opt/Experitest/reporter-12.11.1671", "jmx_port": "51238", "server_port": "8084"}}, "changed": false}
+
+TASK [reporter : clear temp folder] ********************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/main.yml:10
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [reporter : track versions] ***********************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/main.yml:14
+included: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml for 192.168.3.189
+
+TASK [reporter : assert all vars are set] **************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:5
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [reporter : test for current installation version] ************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:14
+ok: [192.168.3.189] => {"changed": false, "stat": {"exists": false}}
+
+TASK [reporter : load current_version from remote file] ************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:19
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [reporter : print current version] ****************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:26
+skipping: [192.168.3.189] => {}
+
+TASK [reporter : move current to be previous] **********************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:32
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [reporter : print new app version] ****************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:41
+ok: [192.168.3.189] => {
+    "app_version": "12.11.1671"
+}
+
+TASK [reporter : update current version with new version] **********************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:45
+changed: [192.168.3.189] => {"changed": true, "checksum": "8480f91f888c4f47c25b666da6eae8b1b683847e", "dest": "/opt/Experitest/reporter-current", "gid": 0, "group": "root", "md5sum": "efe079f90ca32b8a62e3eed0921015fc", "mode": "0644", "owner": "root", "size": 10, "src": "/home/qa/.ansible/tmp/ansible-tmp-1574845235.84-94308769529023/source", "state": "file", "uid": 0}
+
+TASK [reporter : load the new current version from file] ***********************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:51
+ok: [192.168.3.189] => {"changed": false, "content": "MTIuMTEuMTY3MQ==", "encoding": "base64", "source": "/opt/Experitest/reporter-current"}
+
+TASK [reporter : print new current version from reporter-current file] *********
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-track-versions.yml:56
+ok: [192.168.3.189] => {
+    "msg": "12.11.1671"
+}
+
+TASK [reporter : remove archived versions] *************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/main.yml:18
+included: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml for 192.168.3.189
+
+TASK [reporter : assert all vars are set] **************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:4
+ok: [192.168.3.189] => (item=installation_root_folder) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "installation_root_folder", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_name) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_name", 
+    "msg": "All assertions passed"
+}
+ok: [192.168.3.189] => (item=app_version) => {
+    "ansible_loop_var": "item", 
+    "changed": false, 
+    "item": "app_version", 
+    "msg": "All assertions passed"
+}
+
+TASK [reporter : test for previous installation version] ***********************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:13
+ok: [192.168.3.189] => {"changed": false, "stat": {"exists": false}}
+
+TASK [reporter : load previous_version from remote file] ***********************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:18
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [reporter : set previous_version from remote file] ************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:25
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [reporter : test for current installation version] ************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:31
+ok: [192.168.3.189] => {"changed": false, "stat": {"atime": 1574845400.6688595, "attr_flags": "", "attributes": [], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "8480f91f888c4f47c25b666da6eae8b1b683847e", "ctime": 1574845399.9948597, "dev": 64769, "device_type": 0, "executable": false, "exists": true, "gid": 0, "gr_name": "root", "inode": 2330667, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0644", "mtime": 1574845399.2318597, "nlink": 1, "path": "/opt/Experitest/reporter-current", "pw_name": "root", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 10, "uid": 0, "version": "1780274816", "wgrp": false, "woth": false, "writeable": false, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+
+TASK [reporter : load current_version from remote file] ************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:36
+ok: [192.168.3.189] => {"changed": false, "content": "MTIuMTEuMTY3MQ==", "encoding": "base64", "source": "/opt/Experitest/reporter-current"}
+
+TASK [reporter : set current_version from remote file] *************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:43
+ok: [192.168.3.189] => {"ansible_facts": {"current_version": "12.11.1671"}, "changed": false}
+
+TASK [reporter : find old versions] ********************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:49
+ok: [192.168.3.189] => {"changed": false, "examined": 7, "files": [], "matched": 0, "msg": ""}
+
+TASK [reporter : remove old versions] ******************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/linux-remove-archived.yml:59
+
+TASK [reporter : uninstall] ****************************************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/tasks/main.yml:22
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+RUNNING HANDLER [reporter : start the service] *********************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/handlers/main.yml:2
+included: /Users/yarahaddad/.ansible/roles/reporter/handlers/linux-start-service.yml for 192.168.3.189
+
+RUNNING HANDLER [reporter : start the service] *********************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/handlers/linux-start-service.yml:2
+changed: [192.168.3.189] => {"changed": true, "enabled": true, "name": "reporter.service", "state": "started", "status": {"ActiveEnterTimestampMonotonic": "0", "ActiveExitTimestampMonotonic": "0", "ActiveState": "inactive", "After": "-.mount systemd-journald.socket basic.target system.slice", "AllowIsolate": "no", "AssertResult": "no", "AssertTimestampMonotonic": "0", "Before": "shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "18446744073709551615", "CPUAccounting": "no", "CPUQuotaPerSecUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "18446744073709551615", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "18446744073709551615", "ConditionResult": "no", "ConditionTimestampMonotonic": "0", "Conflicts": "shutdown.target", "ControlPID": "0", "DefaultDependencies": "yes", "Delegate": "no", "Description": "reporter service", "DevicePolicy": "auto", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/opt/Experitest/reporter-12.11.1671/start.sh ; argv[]=/opt/Experitest/reporter-12.11.1671/start.sh ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FragmentPath": "/etc/systemd/system/reporter.service", "GuessMainPID": "yes", "IOScheduling": "0", "Id": "reporter.service", "IgnoreOnIsolate": "no", "IgnoreOnSnapshot": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestampMonotonic": "0", "JobTimeoutAction": "none", "JobTimeoutUSec": "0", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "18446744073709551615", "LimitCORE": "18446744073709551615", "LimitCPU": "18446744073709551615", "LimitDATA": "18446744073709551615", "LimitFSIZE": "18446744073709551615", "LimitLOCKS": "18446744073709551615", "LimitMEMLOCK": "65536", "LimitMSGQUEUE": "819200", "LimitNICE": "0", "LimitNOFILE": "4096", "LimitNPROC": "15078", "LimitRSS": "18446744073709551615", "LimitRTPRIO": "0", "LimitRTTIME": "18446744073709551615", "LimitSIGPENDING": "15078", "LimitSTACK": "18446744073709551615", "LoadState": "loaded", "MainPID": "0", "MemoryAccounting": "no", "MemoryCurrent": "18446744073709551615", "MemoryLimit": "18446744073709551615", "MountFlags": "0", "Names": "reporter.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "PrivateDevices": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "ProtectHome": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "Requires": "basic.target -.mount", "RequiresMountsFor": "/opt/Experitest/reporter-12.11.1671", "Restart": "no", "RestartUSec": "100ms", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitInterval": "10000000", "StartupBlockIOWeight": "18446744073709551615", "StartupCPUShares": "18446744073709551615", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "dead", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "simple", "UMask": "0022", "UnitFilePreset": "disabled", "UnitFileState": "disabled", "Wants": "system.slice", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0", "WorkingDirectory": "/opt/Experitest/reporter-12.11.1671"}}
+
+RUNNING HANDLER [reporter : wait for service to start] *************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/handlers/linux-start-service.yml:10
+ok: [192.168.3.189] => {"changed": false, "failed_attempts": 3}
+
+RUNNING HANDLER [reporter : get installed version from version.properties file] ***
+task path: /Users/yarahaddad/.ansible/roles/reporter/handlers/linux-start-service.yml:16
+ok: [192.168.3.189] => {"changed": false, "content": "dmVyc2lvbj0xMi4xMS4xNjcx", "encoding": "base64", "source": "/opt/Experitest/reporter-12.11.1671/config/version.properties"}
+
+RUNNING HANDLER [reporter : print installed version] ***************************
+task path: /Users/yarahaddad/.ansible/roles/reporter/handlers/linux-start-service.yml:21
+ok: [192.168.3.189] => {
+    "msg": " Installed version: 12.11.1671"
+}
+
+RUNNING HANDLER [reporter : fail if app_version is not equal to installed version] ***
+task path: /Users/yarahaddad/.ansible/roles/reporter/handlers/linux-start-service.yml:25
+skipping: [192.168.3.189] => {"changed": false, "skip_reason": "Conditional result was False"}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *********************************************************************
+192.168.3.189              : ok=53   changed=11   unreachable=0    failed=0    skipped=19   rescued=0    ignored=1   
+

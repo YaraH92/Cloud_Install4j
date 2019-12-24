@@ -1,0 +1,138 @@
+
+# validation
+
+- name: assert all vars are set
+  assert: { that: "{{ item }} != '' " }
+  with_items:
+  - app_name
+  - temp_folder
+  - clear_temp_folder
+  - installation_folder
+  - clear_before_install
+  - installer_file_name
+
+# required dependencies
+
+- name: install Chocolatey
+  win_chocolatey:
+    name: chocolatey
+    state: latest
+
+- name: disable enhanced exit codes
+  win_chocolatey_feature:
+    name: useEnhancedExitCodes
+    state: disabled
+
+# set temp folder
+
+- name: make sure temp folder exists
+  win_file:
+    path: "{{ temp_folder }}"
+    state: directory
+
+# download the file
+
+- name: download zip from s3 url
+  win_get_url:
+    url: "{{ s3_download_url }}"
+    dest: "{{ temp_folder }}\\{{ installer_file_name }}"
+    timeout: "{{ download_timeout | default(60) }}"
+    force: no
+  when: custom_download_url == ""
+
+- name: download zip from custom url
+  win_get_url:
+    url: "{{ custom_download_url }}"
+    dest: "{{ temp_folder }}\\{{ installer_file_name }}"
+    timeout: "{{ download_timeout | default(60) }}"
+    force: no
+  when: custom_download_url != ""
+
+- debug: msg="{{clean_installation}}"
+
+- name: add varfile to temp folder
+  win_copy:
+    src: "{{inventory_dir}}/group_vars/response.varfile"
+    dest: "{{ temp_folder }}\\response.varfile"
+  when: 
+    - clean_installation == True
+    #- ansible_os_family == "windows"
+
+
+# unpack all the files to the installation folder
+
+- name: make sure installation folder exists
+  win_file:
+    path: "{{ installation_folder }}"
+    state: directory
+  become: yes
+
+# set command line to upgrade cloud
+- name: set command to upgrade cloud
+  set_fact:
+    comm_line: "{{ temp_folder }}\\{{ installer_file_name }} -q -wait 600"
+  when: 
+   - clean_installation == False
+  
+
+# set command line to clean install cloud with hardware verification
+- name: set command to install cloud with hardware verification
+  set_fact:
+    comm_line: "{{ temp_folder }}\\{{ installer_file_name }} -q -varfile {{ temp_folder }}\\response.varfile -wait 10000"
+  when: 
+   - clean_installation == True
+   - hardware_verification == True 
+
+
+# set command line to clean install cloud without hardware verification
+- name: set command to install cloud without hardware verification
+  set_fact:
+    comm_line: "{{ temp_folder }}\\{{ installer_file_name }} -q -varfile {{ temp_folder }}\\response.varfile -Vcheck.system.requirements=false -wait 10000"
+  when: 
+   - clean_installation == True
+   - hardware_verification == False 
+
+
+# run command line
+
+- name: run command line
+  win_command: "{{ comm_line }}"
+  async: 10000
+  poll: 0
+  register: installer_sync
+  become: yes
+
+- name: wait for installer
+  async_status:
+    jid: "{{ installer_sync.ansible_job_id }}"
+  register: wait_for_installer
+  until: wait_for_installer.finished
+  retries: 40
+  delay: 10 
+  ignore_errors: yes
+
+- name: fail when error is not disconnection
+  fail:
+    msg: "unrecognized error {{ wait_for_installer.msg }}"
+  when:
+    - wait_for_installer is failed
+    - wait_for_installer.msg != 'Unexpected failure during module execution.'
+    - wait_for_installer.msg !='non-zero return code'
+
+- name: fail when cannot connect to the Database Server or when hardware is not suitable 
+  fail:
+    msg: "Rolling back changes; {{ wait_for_installer.stdout_lines[2] }}"
+  when:
+    - wait_for_installer is failed
+    - wait_for_installer.stdout | search("Rolling back changes")
+    
+
+# configure installed 
+
+- name: set permissions for logs folder
+  win_file:
+    path: "{{ installation_folder }}\\logs"
+    state: directory
+  become: yes
+
+

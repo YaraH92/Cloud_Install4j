@@ -1,0 +1,44 @@
+- changing role cloud-server from develop to develop
+- extracting cloud-server to /Users/yarahaddad/.ansible/roles/cloud-server
+- cloud-server (develop) was installed successfully
+- changing role regional-proxy from develop to develop
+- extracting regional-proxy to /Users/yarahaddad/.ansible/roles/regional-proxy
+- regional-proxy (develop) was installed successfully
+- changing role cloud-agent from develop to develop
+- extracting cloud-agent to /Users/yarahaddad/.ansible/roles/cloud-agent
+- cloud-agent (develop) was installed successfully
+- changing role file-storage from develop to develop
+- extracting file-storage to /Users/yarahaddad/.ansible/roles/file-storage
+- file-storage (develop) was installed successfully
+- changing role app-signer from develop to develop
+- extracting app-signer to /Users/yarahaddad/.ansible/roles/app-signer
+- app-signer (develop) was installed successfully
+- changing role reporter from develop to develop
+- extracting reporter to /Users/yarahaddad/.ansible/roles/reporter
+- reporter (develop) was installed successfully
+- changing role cloud-nv from develop to develop
+- extracting cloud-nv to /Users/yarahaddad/.ansible/roles/cloud-nv
+- cloud-nv (develop) was installed successfully
+- changing role selenium-agent from develop to develop
+- extracting selenium-agent to /Users/yarahaddad/.ansible/roles/selenium-agent
+- selenium-agent (develop) was installed successfully
+- changing role brew2 from master to master
+- extracting brew2 to /Users/yarahaddad/.ansible/roles/brew2
+- brew2 (master) was installed successfully
+- changing role disk-space-validator from master to master
+- extracting disk-space-validator to /Users/yarahaddad/.ansible/roles/disk-space-validator
+- disk-space-validator (master) was installed successfully
+- changing role cloud-agent-audio-support from develop to develop
+- extracting cloud-agent-audio-support to /Users/yarahaddad/.ansible/roles/cloud-agent-audio-support
+- cloud-agent-audio-support (develop) was installed successfully
+- changing role cloud-emulator from develop to develop
+- extracting cloud-emulator to /Users/yarahaddad/.ansible/roles/cloud-emulator
+- cloud-emulator (develop) was installed successfully
+- changing role postgres from develop to develop
+- extracting postgres to /Users/yarahaddad/.ansible/roles/postgres
+- postgres (develop) was installed successfully
+- changing role java8 from develop to develop
+- extracting java8 to /Users/yarahaddad/.ansible/roles/java8
+- java8 (develop) was installed successfully
+- extracting winrm-startup to /Users/yarahaddad/.ansible/roles/winrm-startup
+- winrm-startup (develop) was installed successfully

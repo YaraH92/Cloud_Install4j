@@ -1,0 +1,5 @@
+temp_folder: "C:\\temp\\experitest"
+#__installation_folder: "{{ ansible_user_dir }}\\SeeTest"
+__installation_folder: "C:\\Program Files\\Experitest\\Cloud"
+installer_file_name: "expericloud_windows-x64_{{ app_version }}.exe"
+
