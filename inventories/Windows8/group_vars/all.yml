@@ -1,7 +1,7 @@
 
-install_branch_name: "12.12"
+install_branch_name: "master"
 #clear_temp_folder: True
-state: "absent"
+#state: "absent"
 clean_installation: BOOL1
 hardware_verification: BOOL2
 
